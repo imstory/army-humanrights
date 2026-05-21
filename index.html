@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아미휴먼라이트 | 군 인권교육 전문 플랫폼</title>
+  <meta name="description" content="군 인권교관 및 군 인권에 관심있는 모든 분을 위한 전문 플랫폼. 인권교육자료, 결정례, 병영고민상담, 강사연계.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== TOKENS ===== */
+    :root {
+      --dark:    #0b1220;
+      --dark2:   #111927;
+      --dark3:   #1a2640;
+      --light:   #f7f9fc;
+      --light2:  #eef1f7;
+      --white:   #ffffff;
+      --navy:    #0d1f3c;
+      --blue:    #1a6ef5;
+      --blue2:   #2e8cf4;
+      --gold:    #c9960e;
+      --gold2:   #e8b020;
+      --red:     #d93025;
+      --green:   #00b894;
+      --txt-d:   #0d1f3c;
+      --txt-m:   #556070;
+      --txt-l:   rgba(255,255,255,0.7);
+      --border:  #e2e8f0;
+      --border-d: rgba(255,255,255,0.1);
+      --r: 14px;
+      --r2: 22px;
+      --r3: 32px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Noto Sans KR',sans-serif;color:var(--txt-d);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+
+    /* ===== NAV ===== */
+    nav{
+      position:fixed;top:0;width:100%;z-index:1000;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 3rem;height:68px;
+      background:rgba(11,18,32,0.96);
+      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border-d);
+      transition:all .3s;
+    }
+    .nav-logo{display:flex;align-items:center;gap:10px;}
+    .n-emblem{
+      width:36px;height:36px;border-radius:10px;
+      background:linear-gradient(135deg,var(--blue),var(--gold2));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:.95rem;color:#fff;
+    }
+    .n-text{font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:-.3px;}
+    .n-text em{color:var(--gold2);font-style:normal;}
+    .n-links{display:flex;gap:.1rem;list-style:none;}
+    .n-links a{color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500;padding:.45rem .8rem;border-radius:8px;transition:all .2s;}
+    .n-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+    .n-report{
+      background:var(--red)!important;color:#fff!important;
+      border-radius:20px!important;padding:.45rem 1.1rem!important;font-weight:700!important;
+      box-shadow:0 0 18px rgba(217,48,37,.4);
+      animation:rpulse 2.5s ease-in-out infinite;
+    }
+    @keyframes rpulse{0%,100%{box-shadow:0 0 18px rgba(217,48,37,.4)}50%{box-shadow:0 0 30px rgba(217,48,37,.7)}}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;}
+    .ham span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
+
+    /* mobile overlay */
+    .mob{
+      display:none;position:fixed;inset:0;z-index:9999;
+      background:rgba(11,18,32,.98);backdrop-filter:blur(20px);
+      flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;
+    }
+    .mob.on{display:flex;}
+    .mob-x{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.6rem;cursor:pointer;}
+    .mob a{font-size:1.4rem;font-weight:700;color:rgba(255,255,255,.85);}
+    .mob a:hover{color:var(--gold2);}
+
+    /* ===== UTIL ===== */
+    .inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;}
+    .tag-pill{
+      display:inline-block;
+      font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      padding:.3rem .9rem;border-radius:20px;margin-bottom:1rem;
+    }
+    .tag-blue{background:rgba(26,110,245,.1);color:var(--blue);border:1px solid rgba(26,110,245,.25);}
+    .tag-gold{background:rgba(201,150,14,.1);color:var(--gold);border:1px solid rgba(201,150,14,.25);}
+    .tag-red{background:rgba(217,48,37,.1);color:var(--red);border:1px solid rgba(217,48,37,.25);}
+    .tag-white{background:rgba(255,255,255,.1);color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.2);}
+
+    .sec-heading{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-1.2px;line-height:1.15;margin-bottom:.8rem;}
+    .sec-sub{color:var(--txt-m);font-size:.95rem;line-height:1.75;}
+    .sec-sub-w{color:var(--txt-l);font-size:.95rem;line-height:1.75;}
+    .span-gold{color:var(--gold2);}
+    .span-blue{color:var(--blue2);}
+
+    /* text-link style (brainall pattern) */
+    .tlink{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:.85rem;font-weight:700;color:var(--blue);
+      border-bottom:1px solid transparent;transition:all .2s;
+      margin-top:1.2rem;
+    }
+    .tlink:hover{border-bottom-color:var(--blue);gap:10px;}
+    .tlink-w{color:rgba(255,255,255,.8);}
+    .tlink-w:hover{color:#fff;border-bottom-color:rgba(255,255,255,.5);}
+    .tlink-g{color:var(--gold2);}
+    .tlink-g:hover{border-bottom-color:var(--gold2);}
+
+    /* btn */
+    .btn-fill{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;
+      padding:.85rem 2rem;border-radius:var(--r);
+      transition:all .25s;border:none;cursor:pointer;
+    }
+    .btn-fill:hover{background:#1560d4;transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,110,245,.3);}
+    .btn-fill-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0d00;}
+    .btn-fill-gold:hover{box-shadow:0 8px 24px rgba(201,150,14,.35);}
+    .btn-fill-red{background:var(--red);color:#fff;}
+    .btn-fill-red:hover{background:#c0271e;box-shadow:0 8px 24px rgba(217,48,37,.35);}
+    .btn-line{
+      display:inline-flex;align-items:center;gap:8px;
+      background:transparent;color:var(--blue);font-weight:700;font-size:.9rem;
+      padding:.85rem 2rem;border-radius:var(--r);
+      border:2px solid var(--blue);transition:all .25s;cursor:pointer;
+    }
+    .btn-line:hover{background:var(--blue);color:#fff;}
+    .btn-line-w{color:#fff;border-color:rgba(255,255,255,.4);}
+    .btn-line-w:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+
+    /* scroll animation */
+    .sa{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+    .sa.show{opacity:1;transform:none;}
+    .sd1{transition-delay:.08s}.sd2{transition-delay:.16s}.sd3{transition-delay:.24s}.sd4{transition-delay:.32s}
+
+    /* ===== SECTION PATTERNS ===== */
+    .sec-dark{background:var(--dark);color:#fff;padding:6rem 1.5rem;}
+    .sec-dark2{background:var(--dark2);color:#fff;padding:6rem 1.5rem;}
+    .sec-light{background:var(--light);color:var(--txt-d);padding:6rem 1.5rem;}
+    .sec-white{background:#fff;color:var(--txt-d);padding:6rem 1.5rem;}
+
+    /* ===== HERO ===== */
+    .hero{
+      min-height:100vh;background:var(--dark);
+      display:flex;align-items:center;
+      padding-top:68px;position:relative;overflow:hidden;
+    }
+    /* abstract shapes */
+    .hero::before{
+      content:'';position:absolute;right:-200px;top:-100px;
+      width:700px;height:700px;border-radius:50%;
+      background:radial-gradient(circle,rgba(26,110,245,.12) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero::after{
+      content:'';position:absolute;left:-150px;bottom:-100px;
+      width:500px;height:500px;border-radius:50%;
+      background:radial-gradient(circle,rgba(201,150,14,.08) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero-inner{
+      max-width:1180px;margin:0 auto;padding:5rem 1.5rem;
+      display:grid;grid-template-columns:1.15fr .85fr;gap:5rem;align-items:center;
+      position:relative;z-index:1;
+    }
+    /* 키워드 타이핑 줄 */
+    .hero-kw{
+      display:flex;align-items:center;gap:.5rem;
+      margin-bottom:1.8rem;flex-wrap:wrap;
+    }
+    .kw{
+      display:inline-block;
+      font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+      padding:.3rem .75rem;border-radius:20px;
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+      color:rgba(255,255,255,.75);
+    }
+    .kw-live{background:rgba(0,184,148,.12);border-color:rgba(0,184,148,.3);color:var(--green);}
+    .live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:4px;animation:ldot 1.5s ease-in-out infinite;}
+    @keyframes ldot{0%,100%{opacity:1}50%{opacity:.3}}
+
+    .hero h1{
+      font-size:clamp(3rem,6vw,5rem);font-weight:900;
+      letter-spacing:-2.5px;line-height:1.08;color:#fff;
+      margin-bottom:1.5rem;
+    }
+    .hero h1 .g{color:var(--gold2);}
+    .hero h1 .b{
+      background:linear-gradient(90deg,var(--blue2),#64c8ff);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .hero-desc{color:rgba(255,255,255,.6);font-size:1rem;line-height:1.9;max-width:480px;margin-bottom:2.5rem;}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
+
+    /* hero stats row */
+    .hstats{display:flex;gap:0;border:1px solid var(--border-d);border-radius:var(--r2);overflow:hidden;}
+    .hs{flex:1;padding:1.2rem 1.4rem;border-right:1px solid var(--border-d);}
+    .hs:last-child{border-right:none;}
+    .hs-n{font-size:1.7rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;}
+    .hs-l{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.3rem;}
+
+    /* hero right — quote */
+    .qcard{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);border-radius:var(--r3);
+      padding:2.5rem;position:relative;overflow:hidden;
+    }
+    .qcard::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,transparent,var(--gold2),transparent);
+    }
+    .q-today{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+      color:var(--green);background:rgba(0,184,148,.1);border:1px solid rgba(0,184,148,.25);
+      padding:.3rem .8rem;border-radius:20px;margin-bottom:1.2rem;
+    }
+    .q-today::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:ldot 1.5s ease-in-out infinite;}
+    .q-lbl{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.2rem;}
+    .q-mark{font-size:6rem;line-height:.8;color:var(--gold);opacity:.18;font-family:Georgia,serif;position:absolute;top:1.5rem;right:1.8rem;}
+    .q-body{
+      font-size:1rem;line-height:1.95;font-weight:500;color:rgba(255,255,255,.88);
+      border-left:3px solid var(--gold2);padding-left:1.1rem;margin-bottom:1.2rem;
+    }
+    .q-src{font-size:.78rem;color:rgba(255,255,255,.4);}
+    .q-next{
+      display:inline-flex;align-items:center;gap:6px;margin-top:1.4rem;
+      font-size:.78rem;color:var(--blue2);cursor:pointer;transition:opacity .2s;
+    }
+    .q-next:hover{opacity:.7;}
+
+    /* ===== INTRO / MISSION (brainall "20년 신뢰" 패턴) ===== */
+    .mission-inner{
+      display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+    }
+    .mission-txt h2{font-size:clamp(1.9rem,3vw,2.8rem);font-weight:900;letter-spacing:-1px;line-height:1.2;color:#fff;margin-bottom:1.2rem;}
+    .mission-txt p{color:rgba(255,255,255,.6);line-height:1.9;font-size:.95rem;}
+
+    .mission-nums{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+    .mn{background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:var(--r2);padding:2rem 1.8rem;}
+    .mn-n{font-size:2.2rem;font-weight:900;letter-spacing:-1px;line-height:1;margin-bottom:.4rem;}
+    .mn-n.c-gold{color:var(--gold2);}
+    .mn-n.c-blue{color:var(--blue2);}
+    .mn-n.c-green{color:var(--green);}
+    .mn-n.c-red{color:#ff6b6b;}
+    .mn-l{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.5;}
+
+    /* ===== ONE STOP SOLUTION (4 cards — brainall pattern) ===== */
+    .sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem;}
+    .sol-card{
+      background:#fff;border:1px solid var(--border);border-radius:var(--r2);
+      padding:2rem 1.6rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden;
+    }
+    .sol-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+    .sol-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(13,31,60,.1);border-color:var(--blue);}
+    .sol-card:hover::after{transform:scaleX(1);}
+    .sol-icon{width:54px;height:54px;border-radius:var(--r);background:rgba(26,110,245,.08);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.3rem;}
+    .sol-card h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;}
+    .sol-card p{font-size:.8rem;color:var(--txt-m);line-height:1.7;}
+
+    /* ===== CASES GRID (8-product style) ===== */
+    .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+    .case-card{
+      background:#fff;border:1px solid var(--border);border-radius:var(--r2);
+      overflow:hidden;transition:all .3s;cursor:pointer;
+    }
+    .case-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(13,31,60,.1);}
+    .case-thumb{
+      height:160px;display:flex;align-items:center;justify-content:center;
+      font-size:2.5rem;position:relative;
+    }
+    .ct-1{background:linear-gradient(135deg,#0d1b3e,#1a6ef5);}
+    .ct-2{background:linear-gradient(135deg,#1a0a3e,#7c3aed);}
+    .ct-3{background:linear-gradient(135deg,#0d3e22,#00b894);}
+    .ct-4{background:linear-gradient(135deg,#3e0d0d,#d93025);}
+    .ct-5{background:linear-gradient(135deg,#2a1a00,#c9960e);}
+    .ct-6{background:linear-gradient(135deg,#0a1e3e,#0891b2);}
+    .case-badge-abs{
+      position:absolute;top:.8rem;left:.8rem;
+      font-size:.68rem;font-weight:700;padding:.25rem .65rem;border-radius:20px;
+    }
+    .cb-hot{background:rgba(217,48,37,.15);color:#ff6b6b;border:1px solid rgba(217,48,37,.3);}
+    .cb-new{background:rgba(0,184,148,.15);color:var(--green);border:1px solid rgba(0,184,148,.3);}
+    .cb-dec{background:rgba(26,110,245,.15);color:var(--blue2);border:1px solid rgba(26,110,245,.3);}
+    .case-body{padding:1.4rem 1.4rem 1.6rem;}
+    .case-body h3{font-size:.92rem;font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:.5rem;}
+    .case-body p{font-size:.78rem;color:var(--txt-m);line-height:1.65;}
+    .case-meta{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;font-size:.73rem;color:var(--txt-m);}
+    .case-meta a{color:var(--blue);font-weight:700;}
+    .view-more-wrap{text-align:center;margin-top:2.5rem;}
+    .view-more{
+      display:inline-flex;align-items:center;gap:8px;
+      border:2px solid var(--border);color:var(--txt-m);
+      font-size:.85rem;font-weight:700;padding:.75rem 2rem;border-radius:var(--r);
+      transition:all .2s;
+    }
+    .view-more:hover{border-color:var(--blue);color:var(--blue);}
+
+    /* ===== STATS BAR (brainall pattern) ===== */
+    .stats-bar{background:var(--dark3);padding:5rem 1.5rem;}
+    .stats-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:0;}
+    .st{border-right:1px solid rgba(255,255,255,.08);padding:2rem 1.5rem;text-align:center;}
+    .st:last-child{border-right:none;}
+    .st-n{font-size:2.2rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;margin-bottom:.4rem;}
+    .st-n span{font-size:1.4rem;color:var(--gold2);}
+    .st-l{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.5;}
+    .st-icon{font-size:1.4rem;margin-bottom:.7rem;}
+
+    /* ===== INFINITE SCROLL LOGOS (brainall pattern) ===== */
+    .logo-strip{background:var(--dark2);padding:3rem 0;overflow:hidden;border-top:1px solid var(--border-d);border-bottom:1px solid var(--border-d);}
+    .logo-track{display:flex;width:max-content;animation:slide 28s linear infinite;}
+    .logo-track:hover{animation-play-state:paused;}
+    .logo-item{
+      display:inline-flex;align-items:center;gap:8px;
+      white-space:nowrap;padding:0 2.5rem;
+      font-size:.82rem;font-weight:700;color:rgba(255,255,255,.4);
+      border-right:1px solid rgba(255,255,255,.07);
+      transition:color .2s;
+    }
+    .logo-item:hover{color:rgba(255,255,255,.85);}
+    .logo-item .logo-icon{font-size:1.2rem;}
+    @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ===== BOARD + VIDEO GRID ===== */
+    .bv-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:2rem;margin-top:3rem;}
+
+    /* board */
+    .board-box{background:#fff;border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;}
+    .board-head{
+      display:grid;grid-template-columns:55px 1fr 85px 65px;
+      padding:.8rem 1.4rem;background:var(--navy);
+      font-size:.72rem;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.5px;text-transform:uppercase;
+    }
+    .b-row{
+      display:grid;grid-template-columns:55px 1fr 85px 65px;
+      padding:.95rem 1.4rem;border-bottom:1px solid var(--light2);
+      font-size:.82rem;align-items:center;transition:background .15s;cursor:pointer;
+    }
+    .b-row:last-child{border-bottom:none;}
+    .b-row:hover{background:var(--light);}
+    .b-row .num{color:var(--txt-m);}
+    .b-row .btit{color:var(--txt-d);font-weight:500;}
+    .b-row .btit.notice{color:var(--blue);font-weight:700;}
+    .b-row .date,.b-row .views{color:var(--txt-m);font-size:.75rem;}
+    .board-write{
+      display:flex;align-items:center;justify-content:center;gap:7px;
+      margin:1.2rem;padding:.85rem;background:var(--blue);
+      border-radius:var(--r);color:#fff;font-weight:700;font-size:.85rem;
+      transition:opacity .2s;
+    }
+    .board-write:hover{opacity:.88;}
+
+    /* video side */
+    .video-side{display:flex;flex-direction:column;gap:1rem;}
+    .v-card{
+      display:flex;gap:1rem;align-items:flex-start;
+      background:#fff;border:1px solid var(--border);border-radius:var(--r2);
+      overflow:hidden;transition:all .25s;cursor:pointer;
+    }
+    .v-card:hover{box-shadow:0 8px 30px rgba(13,31,60,.1);border-color:var(--blue);}
+    .v-thumb{
+      width:110px;flex-shrink:0;aspect-ratio:16/9;
+      display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+      background:linear-gradient(135deg,var(--dark3),var(--blue));
+    }
+    .v-info{padding:.9rem .9rem .9rem 0;}
+    .v-info h4{font-size:.82rem;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:.3rem;}
+    .v-info p{font-size:.72rem;color:var(--txt-m);}
+    .v-dur{
+      display:inline-block;background:rgba(0,0,0,.65);color:#fff;
+      font-size:.65rem;padding:.15rem .4rem;border-radius:5px;margin-top:.4rem;
+    }
+
+    /* ===== CITIZEN (dark) ===== */
+    .citizen-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;}
+    .citizen-txt h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-1.5px;line-height:1.12;color:#fff;margin-bottom:1.2rem;}
+    .citizen-txt p{color:rgba(255,255,255,.6);line-height:1.9;font-size:.95rem;margin-bottom:2rem;}
+    .cpillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .cp{
+      background:rgba(255,255,255,.04);border:1px solid var(--border-d);
+      border-radius:var(--r2);padding:1.5rem;transition:all .3s;
+    }
+    .cp:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);}
+    .cp .ico{font-size:1.5rem;margin-bottom:.6rem;}
+    .cp h4{font-size:.88rem;font-weight:700;color:var(--gold2);margin-bottom:.3rem;}
+    .cp p{font-size:.77rem;color:rgba(255,255,255,.5);line-height:1.6;}
+
+    /* ===== REPORT (light) ===== */
+    .rep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin:3rem 0 2rem;}
+    .rep-card{
+      background:#fff;border:1px solid var(--border);border-radius:var(--r2);
+      padding:2rem 1.4rem;text-align:center;transition:all .3s;cursor:pointer;
+    }
+    .rep-card:hover{border-color:var(--red);transform:translateY(-5px);box-shadow:0 20px 50px rgba(217,48,37,.1);}
+    .rep-ico{width:56px;height:56px;border-radius:var(--r);background:rgba(217,48,37,.08);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1rem;transition:all .3s;}
+    .rep-card:hover .rep-ico{background:rgba(217,48,37,.15);}
+    .rep-card h4{font-size:.9rem;font-weight:800;color:var(--navy);margin-bottom:.4rem;}
+    .rep-card p{font-size:.77rem;color:var(--txt-m);line-height:1.65;}
+
+    .rep-cta{
+      background:var(--dark);border-radius:var(--r3);padding:3rem;
+      display:flex;justify-content:space-between;align-items:center;gap:2rem;
+      position:relative;overflow:hidden;
+    }
+    .rep-cta::before{content:'';position:absolute;left:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(217,48,37,.12),transparent 70%);}
+    .rep-cta-txt{position:relative;z-index:1;}
+    .rep-cta-txt h3{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.4rem;}
+    .rep-cta-txt p{font-size:.88rem;color:rgba(255,255,255,.55);}
+    .rep-cta-btns{display:flex;gap:.8rem;flex-shrink:0;position:relative;z-index:1;}
+
+    /* ===== INSTRUCTORS (light) ===== */
+    .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+    .ins-card{
+      background:#fff;border:1px solid var(--border);border-radius:var(--r3);
+      padding:2.2rem;text-align:center;transition:all .35s;cursor:pointer;
+      position:relative;overflow:hidden;
+    }
+    .ins-card::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(26,110,245,.04),transparent 60%);
+      pointer-events:none;
+    }
+    .ins-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(13,31,60,.12);border-color:var(--blue);}
+    .ins-av{
+      width:78px;height:78px;border-radius:50%;
+      margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-size:2rem;
+      background:linear-gradient(135deg,rgba(26,110,245,.12),rgba(26,110,245,.04));
+      border:2px solid rgba(26,110,245,.2);transition:all .3s;
+    }
+    .ins-card:hover .ins-av{border-color:var(--blue);background:rgba(26,110,245,.12);box-shadow:0 0 24px rgba(26,110,245,.2);}
+    .ins-card h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.3rem;}
+    .ins-spec{font-size:.77rem;color:var(--blue);font-weight:600;margin-bottom:.7rem;}
+    .ins-card p{font-size:.8rem;color:var(--txt-m);line-height:1.7;margin-bottom:1.2rem;}
+    .ins-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-bottom:1.3rem;}
+    .itag{font-size:.68rem;padding:.22rem .6rem;border-radius:20px;background:var(--light2);border:1px solid var(--border);color:var(--txt-m);}
+    .ins-btn{
+      display:block;width:100%;padding:.75rem;border-radius:var(--r);
+      background:rgba(26,110,245,.07);color:var(--blue);border:1px solid rgba(26,110,245,.2);
+      font-size:.83rem;font-weight:700;text-align:center;transition:all .25s;
+    }
+    .ins-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+    /* ===== FOOTER ===== */
+    footer{background:var(--dark);padding:5rem 1.5rem 2.5rem;border-top:1px solid var(--border-d);}
+    .ft-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem;}
+    .ft-brand .ft-logo{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:.8rem;}
+    .ft-brand .ft-logo em{color:var(--gold2);font-style:normal;}
+    .ft-brand p{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.85;max-width:270px;}
+    footer h5{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:1.1rem;letter-spacing:.5px;text-transform:uppercase;}
+    footer ul{list-style:none;}
+    footer li{margin-bottom:.55rem;}
+    footer a{font-size:.8rem;color:rgba(255,255,255,.38);transition:color .2s;}
+    footer a:hover{color:var(--gold2);}
+    .ft-bottom{
+      max-width:1180px;margin:0 auto;
+      border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:.75rem;color:rgba(255,255,255,.3);
+    }
+
+    /* float btn */
+    .float-btn{
+      position:fixed;bottom:2rem;right:2rem;z-index:999;
+      display:flex;align-items:center;gap:7px;
+      background:var(--red);color:#fff;font-weight:700;font-size:.82rem;
+      padding:.9rem 1.5rem;border-radius:50px;
+      box-shadow:0 8px 28px rgba(217,48,37,.45);
+      animation:fbounce 3s ease-in-out infinite;transition:all .2s;
+    }
+    .float-btn:hover{transform:scale(1.05) translateY(-3px);box-shadow:0 12px 36px rgba(217,48,37,.65);}
+    @keyframes fbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1024px){
+      .sol-grid{grid-template-columns:repeat(2,1fr);}
+      .stats-inner{grid-template-columns:repeat(3,1fr);}
+      .st:nth-child(4){border-top:1px solid rgba(255,255,255,.08);}
+      .st:nth-child(5){border-top:1px solid rgba(255,255,255,.08);border-right:none;}
+      .rep-grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:900px){
+      .hero-inner,.mission-inner,.bv-grid,.citizen-grid,.ft-grid{grid-template-columns:1fr;}
+      .hero-inner{gap:2.5rem;padding:3rem 1.5rem;}
+      .qcard{max-width:520px;}
+      .hstats{flex-wrap:wrap;}
+      .hs{border-bottom:1px solid var(--border-d);border-right:none;flex:1 0 40%;}
+      .ins-grid{grid-template-columns:repeat(2,1fr);}
+      .cases-grid{grid-template-columns:repeat(2,1fr);}
+      .rep-cta{flex-direction:column;text-align:center;}
+      .rep-cta-btns{justify-content:center;flex-wrap:wrap;}
+      .n-links{display:none;}
+      .ham{display:flex;}
+      .citizen-grid{gap:2.5rem;}
+    }
+    @media(max-width:600px){
+      .sol-grid,.cases-grid,.ins-grid,.rep-grid{grid-template-columns:1fr;}
+      .stats-inner{grid-template-columns:repeat(2,1fr);}
+      .cpillars{grid-template-columns:1fr;}
+      .bv-grid{grid-template-columns:1fr;}
+      .hero h1{font-size:2.8rem;letter-spacing:-1.5px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Mobile Nav -->
+<div class="mob" id="mob">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="#cases"       onclick="closeMob()">인권사례</a>
+  <a href="#board"       onclick="closeMob()">병영고민</a>
+  <a href="#videos"      onclick="closeMob()">영상자료</a>
+  <a href="#citizen"     onclick="closeMob()">제복입은시민</a>
+  <a href="#instructors" onclick="closeMob()">강사연계</a>
+  <a href="#report" style="color:#ff6b6b;font-weight:900;" onclick="closeMob()">🚨 신고하기</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="n-emblem">A</div>
+    <div class="n-text"><em>아미</em>휴먼라이트</div>
+  </a>
+  <ul class="n-links">
+    <li><a href="#cases">인권사례</a></li>
+    <li><a href="#board">병영고민</a></li>
+    <li><a href="#videos">영상자료</a></li>
+    <li><a href="#citizen">제복입은시민</a></li>
+    <li><a href="#instructors">강사연계</a></li>
+    <li><a href="#report" class="n-report">🚨 인권침해 신고</a></li>
+  </ul>
+  <div class="ham" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ======== HERO (dark) ======== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="sa">
+      <div class="hero-kw">
+        <span class="kw kw-live"><span class="live-dot"></span>LIVE 업데이트</span>
+        <span class="kw">군 인권교육</span>
+        <span class="kw">결정례 DB</span>
+        <span class="kw">강사연계</span>
+      </div>
+      <h1>제복을 입어도<br><span class="g">인권</span>은<br><span class="b">살아있다</span></h1>
+      <p class="hero-desc">군 인권교관 및 군 인권에 관심있는 모든 분을 위한 교육자료·결정례·강사연계·신고채널을 한곳에서 만나보세요.</p>
+      <div class="hero-btns">
+        <a href="#board" class="btn-fill">병영 고민 나누기 →</a>
+        <a href="#cases" class="btn-line btn-line-w">최근 인권사례</a>
+      </div>
+      <div class="hstats">
+        <div class="hs"><div class="hs-n">1,240<sup style="font-size:.9rem">+</sup></div><div class="hs-l">등록 교육자료</div></div>
+        <div class="hs"><div class="hs-n">86</div><div class="hs-l">이달 결정례</div></div>
+        <div class="hs"><div class="hs-n">312</div><div class="hs-l">등록 강사</div></div>
+        <div class="hs"><div class="hs-n">4,800<sup style="font-size:.9rem">+</sup></div><div class="hs-l">월 방문자</div></div>
+      </div>
+    </div>
+    <!-- quote card -->
+    <div class="qcard sa sd2">
+      <div class="q-today">오늘의 인권문장 · 매일 업데이트</div>
+      <div class="q-lbl">Today's Human Rights Quote</div>
+      <div class="q-mark">"</div>
+      <blockquote class="q-body" id="qText">"군인은 국가의 명령에 복종하는 사람이기 이전에, 헌법이 보장하는 기본권의 주체인 시민이다."</blockquote>
+      <div class="q-src" id="qSrc">— 헌법재판소, 2010헌마418</div>
+      <div class="q-next" onclick="nextQ()">↻ 다음 문장 보기</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== MISSION / 소개 (dark) ======== -->
+<section class="sec-dark">
+  <div class="inner">
+    <div class="mission-inner">
+      <div class="mission-txt sa">
+        <div class="tag-pill tag-gold">아미휴먼라이트 소개</div>
+        <h2>인권의 보편성과<br>군 현장을 잇는<br><span class="span-gold">전문 플랫폼</span></h2>
+        <p style="color:rgba(255,255,255,.55);margin-top:1rem;line-height:1.9;">헌법이 보장하는 기본권은 군복을 입는다고 사라지지 않습니다. 아미휴먼라이트는 군 인권교관 양성, 결정례 제공, 병영고민 상담, 강사연계까지 군 인권교육의 전 과정을 지원합니다.</p>
+        <a href="#" class="tlink tlink-g">자세히 보기 →</a>
+      </div>
+      <div class="mission-nums sa sd2">
+        <div class="mn"><div class="mn-n c-gold">20<span style="font-size:1.2rem">년+</span></div><div class="mn-l">군 인권교육 연구 경험</div></div>
+        <div class="mn"><div class="mn-n c-blue">No.1</div><div class="mn-l">군 인권교육 전문 플랫폼</div></div>
+        <div class="mn"><div class="mn-n c-green">99%</div><div class="mn-l">교육자료 정확도</div></div>
+        <div class="mn"><div class="mn-n c-red">24h</div><div class="mn-l">신고채널 운영</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ONE STOP SOLUTION (light) ======== -->
+<section class="sec-light">
+  <div class="inner">
+    <div class="sa" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <div class="tag-pill tag-blue">One Stop Solution</div>
+      <h2 class="sec-heading">군 인권교육의 <span class="span-blue">모든 것</span></h2>
+      <p class="sec-sub">교육자료 검색부터 강사연계, 인권침해 신고까지 한곳에서</p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card sa sd1">
+        <div class="sol-icon">📚</div>
+        <h3>교육자료 DB</h3>
+        <p>인권보편성, 과잉금지원칙, 결정례 등 1,240건+ 교육자료 즉시 열람</p>
+        <a href="#" class="tlink">자료 검색하기 →</a>
+      </div>
+      <div class="sol-card sa sd2">
+        <div class="sol-icon" style="background:rgba(201,150,14,.1);">⚖️</div>
+        <h3>결정례 분석</h3>
+        <p>국가인권위원회 결정례와 주요 판례를 쉬운 언어로 해설</p>
+        <a href="#" class="tlink">결정례 보기 →</a>
+      </div>
+      <div class="sol-card sa sd3">
+        <div class="sol-icon" style="background:rgba(0,184,148,.1);">💬</div>
+        <h3>병영고민 상담</h3>
+        <p>익명 게시판과 1:1 전문가 상담으로 병영 속 고민 해결</p>
+        <a href="#" class="tlink">상담 신청 →</a>
+      </div>
+      <div class="sol-card sa sd4">
+        <div class="sol-icon" style="background:rgba(217,48,37,.08);">🚨</div>
+        <h3>인권침해 신고</h3>
+        <p>24시간 신고채널 안내 및 구제절차 전문 안내 서비스</p>
+        <a href="#report" class="tlink" style="color:var(--red);">신고 채널 보기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CASES GRID (white) ======== -->
+<section class="sec-white" id="cases">
+  <div class="inner">
+    <div class="sa" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="tag-pill tag-blue">최근 인권사례</div>
+        <h2 class="sec-heading">군 인권 결정례 &amp; <span class="span-blue">판례</span></h2>
+        <p class="sec-sub">국가인권위원회 결정례와 주요 판례를 쉽고 빠르게 확인하세요.</p>
+      </div>
+      <a href="#" class="tlink" style="margin-top:0;">전체 목록 보기 →</a>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card sa sd1">
+        <div class="case-thumb ct-1"><div class="case-badge-abs cb-hot">🔥 이달의 결정</div></div>
+        <div class="case-body">
+          <h3>반복적 욕설·인격비하 — 인권위 시정 권고</h3>
+          <p>중대장이 훈련 중 특정 병사에게 반복 욕설을 사용한 사안. 재발방지 교육 권고.</p>
+          <div class="case-meta"><span>2026.05.12</span><a href="#">보기 →</a></div>
+        </div>
+      </div>
+      <div class="case-card sa sd2">
+        <div class="case-thumb ct-2"><div class="case-badge-abs cb-dec">📋 결정례</div></div>
+        <div class="case-body">
+          <h3>개인 SNS 삭제 강요 — 표현의 자유 침해</h3>
+          <p>부대 내 개인 SNS 게시물 삭제 강요가 표현의 자유를 침해한다고 판단.</p>
+          <div class="case-meta"><span>2026.04.30</span><a href="#">보기 →</a></div>
+        </div>
+      </div>
+      <div class="case-card sa sd3">
+        <div class="case-thumb ct-3"><div class="case-badge-abs cb-new">🆕 NEW</div></div>
+        <div class="case-body">
+          <h3>종교 행사 강제 참여 — 신앙의 자유 위반</h3>
+          <p>비신자 장병에게 종교 행사 참석 강요. 헌법 제20조 신앙의 자유 위반.</p>
+          <div class="case-meta"><span>2026.05.18</span><a href="#">보기 →</a></div>
+        </div>
+      </div>
+      <div class="case-card sa sd1">
+        <div class="case-thumb ct-4"><div class="case-badge-abs cb-hot">🔥 HOT</div></div>
+        <div class="case-body">
+          <h3>군 내 성희롱 처리 지연 — 2차 피해 인정</h3>
+          <p>피해자 신고 후 처리 지연으로 2차 피해 발생. 구제 조치 권고.</p>
+          <div class="case-meta"><span>2026.04.15</span><a href="#">보기 →</a></div>
+        </div>
+      </div>
+      <div class="case-card sa sd2">
+        <div class="case-thumb ct-5"><div class="case-badge-abs cb-dec">⚖️ 대법원</div></div>
+        <div class="case-body">
+          <h3>과도한 얼차려 — 신체의 자유 침해</h3>
+          <p>규정 외 장시간 기합이 군형법 제62조 가혹행위에 해당한다고 판시.</p>
+          <div class="case-meta"><span>2026.03.28</span><a href="#">보기 →</a></div>
+        </div>
+      </div>
+      <div class="case-card sa sd3">
+        <div class="case-thumb ct-6"><div class="case-badge-abs cb-new">🆕 NEW</div></div>
+        <div class="case-body">
+          <h3>다문화 병사 차별 — 평등권 침해</h3>
+          <p>다문화 배경 병사에 대한 반복 언어 차별이 평등권을 침해한다는 결정.</p>
+          <div class="case-meta"><span>2026.05.20</span><a href="#">보기 →</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="view-more-wrap sa">
+      <a href="#" class="view-more">[View More] 더 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== STATS BAR (dark) ======== -->
+<section class="stats-bar">
+  <div class="inner">
+    <div class="stats-inner">
+      <div class="st sa sd1"><div class="st-icon">📂</div><div class="st-n">1,240<span>+</span></div><div class="st-l">등록 교육자료</div></div>
+      <div class="st sa sd2"><div class="st-icon">⚖️</div><div class="st-n">86</div><div class="st-l">이달 결정례</div></div>
+      <div class="st sa sd3"><div class="st-icon">👨‍🏫</div><div class="st-n">312</div><div class="st-l">등록 강사</div></div>
+      <div class="st sa sd4"><div class="st-icon">🛡️</div><div class="st-n">99<span>%</span></div><div class="st-l">자료 정확도</div></div>
+      <div class="st sa" style="transition-delay:.4s"><div class="st-icon">📞</div><div class="st-n">24<span>h</span></div><div class="st-l">신고채널 운영</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== LOGO SCROLL (brainall 무한 스크롤 패턴) ======== -->
+<div class="logo-strip">
+  <div class="logo-track">
+    <!-- 첫 번째 세트 -->
+    <div class="logo-item"><span class="logo-icon">🏛️</span> 국가인권위원회</div>
+    <div class="logo-item"><span class="logo-icon">🪖</span> 국방부</div>
+    <div class="logo-item"><span class="logo-icon">⚖️</span> 육군본부</div>
+    <div class="logo-item"><span class="logo-icon">🌐</span> 해군본부</div>
+    <div class="logo-item"><span class="logo-icon">✈️</span> 공군본부</div>
+    <div class="logo-item"><span class="logo-icon">🔵</span> 해병대사령부</div>
+    <div class="logo-item"><span class="logo-icon">📋</span> 국방부 법무관리관실</div>
+    <div class="logo-item"><span class="logo-icon">🎓</span> 육군사관학교</div>
+    <div class="logo-item"><span class="logo-icon">📚</span> 국방대학교</div>
+    <div class="logo-item"><span class="logo-icon">🏥</span> 국군의무사령부</div>
+    <div class="logo-item"><span class="logo-icon">🔐</span> 군사법원</div>
+    <!-- 두 번째 세트 (무한 루프용) -->
+    <div class="logo-item"><span class="logo-icon">🏛️</span> 국가인권위원회</div>
+    <div class="logo-item"><span class="logo-icon">🪖</span> 국방부</div>
+    <div class="logo-item"><span class="logo-icon">⚖️</span> 육군본부</div>
+    <div class="logo-item"><span class="logo-icon">🌐</span> 해군본부</div>
+    <div class="logo-item"><span class="logo-icon">✈️</span> 공군본부</div>
+    <div class="logo-item"><span class="logo-icon">🔵</span> 해병대사령부</div>
+    <div class="logo-item"><span class="logo-icon">📋</span> 국방부 법무관리관실</div>
+    <div class="logo-item"><span class="logo-icon">🎓</span> 육군사관학교</div>
+    <div class="logo-item"><span class="logo-icon">📚</span> 국방대학교</div>
+    <div class="logo-item"><span class="logo-icon">🏥</span> 국군의무사령부</div>
+    <div class="logo-item"><span class="logo-icon">🔐</span> 군사법원</div>
+  </div>
+</div>
+
+<!-- ======== BOARD + VIDEOS (white) ======== -->
+<section class="sec-white" id="board">
+  <div class="inner">
+    <div class="sa" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="tag-pill tag-blue">병영 속 고민사례</div>
+        <h2 class="sec-heading">익명 <span class="span-blue">고민 게시판</span></h2>
+        <p class="sec-sub">병영 생활 속 인권 고민을 익명으로 나누고 전문가 답변을 받아보세요.</p>
+      </div>
+      <a href="#" class="tlink" style="margin-top:0;">전체 게시글 보기 →</a>
+    </div>
+    <div class="bv-grid">
+      <!-- board -->
+      <div class="sa sd1">
+        <div class="board-box">
+          <div class="board-head">
+            <span>번호</span><span>제목</span><span>날짜</span><span>조회</span>
+          </div>
+          <div class="b-row"><span class="num">공지</span><span class="btit notice">📢 게시판 이용 안내 및 익명 보장 정책</span><span class="date">상시</span><span class="views">—</span></div>
+          <div class="b-row"><span class="num">128</span><span class="btit">휴가 중에도 업무 연락이 와서 너무 힘들어요</span><span class="date">05.21</span><span class="views">342</span></div>
+          <div class="b-row"><span class="num">127</span><span class="btit">선임이 개인 업무를 자꾸 시키는데 어떻게 해야 하나요?</span><span class="date">05.20</span><span class="views">518</span></div>
+          <div class="b-row"><span class="num">126</span><span class="btit">종교 행사 불참했다고 불이익 받는 것 같아요</span><span class="date">05.19</span><span class="views">291</span></div>
+          <div class="b-row"><span class="num">125</span><span class="btit">고충 신고했는데 오히려 따돌림 당하고 있어요</span><span class="date">05.18</span><span class="views">744</span></div>
+          <div class="b-row"><span class="num">124</span><span class="btit">반복적인 언어 폭력, 어디에 신고하면 되나요?</span><span class="date">05.17</span><span class="views">621</span></div>
+          <div class="b-row"><span class="num">123</span><span class="btit">여성 간부인데 보직 배치 차별을 받는 것 같아요</span><span class="date">05.16</span><span class="views">389</span></div>
+        </div>
+        <a href="#" class="board-write">✏️ 익명으로 고민 올리기</a>
+      </div>
+      <!-- videos -->
+      <div class="video-side sa sd2" id="videos">
+        <div style="margin-bottom:.8rem;">
+          <div class="tag-pill tag-blue" style="margin-bottom:.4rem;">인권관련 영상</div>
+          <strong style="font-size:1.05rem;color:var(--navy);">교육 영상 자료실</strong>
+        </div>
+        <div class="v-card">
+          <div class="v-thumb vt-1">▶</div>
+          <div class="v-info">
+            <h4>과잉금지원칙, 군 현장에서 어떻게 적용하나?</h4>
+            <p>인권교관 심화과정 · 조회 4,821</p>
+            <span class="v-dur">18:32</span>
+          </div>
+        </div>
+        <div class="v-card">
+          <div class="v-thumb" style="background:linear-gradient(135deg,#1a0a3e,#7c3aed);width:110px;flex-shrink:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">▶</div>
+          <div class="v-info">
+            <h4>병사의 눈으로 본 인권침해 사례</h4>
+            <p>병영인권 기초 · 조회 7,102</p>
+            <span class="v-dur">12:15</span>
+          </div>
+        </div>
+        <div class="v-card">
+          <div class="v-thumb" style="background:linear-gradient(135deg,#0d3e22,#00b894);width:110px;flex-shrink:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">▶</div>
+          <div class="v-info">
+            <h4>인권 친화적 리더십 — 강한 부대의 비결</h4>
+            <p>지휘관 리더십 · 조회 3,290</p>
+            <span class="v-dur">25:44</span>
+          </div>
+        </div>
+        <a href="#" class="tlink">전체 영상 보기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CITIZEN (dark2) ======== -->
+<section class="sec-dark2" id="citizen">
+  <div class="inner">
+    <div class="citizen-grid">
+      <div class="citizen-txt sa">
+        <div class="tag-pill tag-gold">제복입은 시민</div>
+        <h2 class="sec-heading" style="color:#fff;">군인은<br><span class="span-gold">시민입니다</span></h2>
+        <p>제복을 입는 순간 시민의 자격을 잃는 것이 아닙니다. 헌법이 보장하는 기본권의 주체로서 군인은 존재합니다.</p>
+        <a href="#" class="tlink tlink-g">더 알아보기 →</a>
+      </div>
+      <div class="cpillars sa sd2">
+        <div class="cp"><div class="ico">⚖️</div><h4>법적 권리</h4><p>헌법·군인복무법이 보장하는 군인의 기본권 안내</p></div>
+        <div class="cp"><div class="ico">🛡️</div><h4>인권 보호</h4><p>부당한 처우로부터 스스로를 지키는 방법</p></div>
+        <div class="cp"><div class="ico">📋</div><h4>고충 처리</h4><p>단계별 고충 처리 절차와 이용 방법</p></div>
+        <div class="cp"><div class="ico">🤝</div><h4>상호 존중</h4><p>인권 친화적 병영 문화 함께 만들기</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== REPORT (light) ======== -->
+<section class="sec-light" id="report">
+  <div class="inner">
+    <div class="sa" style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="tag-pill tag-red">인권침해 신고하기</div>
+      <h2 class="sec-heading">신고·구제 <span style="color:var(--red);">채널 안내</span></h2>
+      <p class="sec-sub">인권침해를 당했거나 목격했다면 즉시 신고하세요.</p>
+    </div>
+    <div class="rep-grid">
+      <div class="rep-card sa sd1"><div class="rep-ico">🏛️</div><h4>국가인권위원회</h4><p>☎ 1331<br>온라인 진정 가능<br>24시간 접수</p></div>
+      <div class="rep-card sa sd2"><div class="rep-ico">🪖</div><h4>군 인권보호관</h4><p>각 부대 인권보호관<br>직접 상담 가능<br>익명 보장</p></div>
+      <div class="rep-card sa sd3"><div class="rep-ico">📞</div><h4>국방부 신고센터</h4><p>☎ 1337<br>온라인 신고<br>군사망 사고 포함</p></div>
+      <div class="rep-card sa sd4"><div class="rep-ico">⚖️</div><h4>군검찰·헌병대</h4><p>형사 사건 처리<br>가혹행위·폭행<br>공식 수사 진행</p></div>
+    </div>
+    <div class="rep-cta sa">
+      <div class="rep-cta-txt">
+        <h3>🚨 지금 즉시 신고가 필요하신가요?</h3>
+        <p>24시간 운영 · 익명 보장 · 2차 피해 방지 시스템 운영</p>
+      </div>
+      <div class="rep-cta-btns">
+        <a href="tel:1331" class="btn-fill btn-fill-red">☎ 1331 전화 신고</a>
+        <a href="#" class="btn-line btn-line-w">온라인 신고하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== INSTRUCTORS (white) ======== -->
+<section class="sec-white" id="instructors">
+  <div class="inner">
+    <div class="sa" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="tag-pill tag-blue">인권교육 강사 연계</div>
+        <h2 class="sec-heading">검증된 <span class="span-blue">인권교육 강사진</span></h2>
+        <p class="sec-sub">부대·기관 인권교육에 필요한 전문 강사를 연계해 드립니다.</p>
+      </div>
+      <a href="#" class="tlink" style="margin-top:0;">전체 강사 보기 →</a>
+    </div>
+    <div class="ins-grid">
+      <div class="ins-card sa sd1">
+        <div class="ins-av">👨‍⚖️</div>
+        <h4>김인권 강사</h4>
+        <div class="ins-spec">군 인권 전문 · 전 국가인권위 조사관</div>
+        <p>15년 군 복무 후 인권위 조사관 출신. 실전 사례 중심 군 인권교육 전문가.</p>
+        <div class="ins-tags"><span class="itag">과잉금지원칙</span><span class="itag">사례분석</span><span class="itag">지휘관교육</span></div>
+        <a href="#" class="ins-btn">강의 연계 신청</a>
+      </div>
+      <div class="ins-card sa sd2">
+        <div class="ins-av">👩‍🏫</div>
+        <h4>박인연 강사</h4>
+        <div class="ins-spec">성평등·다양성 전문 · 법학박사</div>
+        <p>군 내 성희롱·성폭력 예방교육 전문. 참여형 워크숍 방식 적용.</p>
+        <div class="ins-tags"><span class="itag">성희롱예방</span><span class="itag">다양성교육</span><span class="itag">워크숍</span></div>
+        <a href="#" class="ins-btn">강의 연계 신청</a>
+      </div>
+      <div class="ins-card sa sd3">
+        <div class="ins-av">👨‍💼</div>
+        <h4>이제복 강사</h4>
+        <div class="ins-spec">리더십·인권문화 전문 · 예비역 대령</div>
+        <p>30년 군 복무 경험으로 인권 친화적 리더십 교육 특화.</p>
+        <div class="ins-tags"><span class="itag">리더십</span><span class="itag">병영문화</span><span class="itag">간부교육</span></div>
+        <a href="#" class="ins-btn">강의 연계 신청</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER (dark) ======== -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="ft-logo"><em>아미</em>휴먼라이트</div>
+      <p>군 인권교관 및 군 인권에 관심있는 모든 분을 위한 전문 플랫폼. 보편적 인권 가치와 군 현장을 잇습니다.</p>
+    </div>
+    <div>
+      <h5>주요 메뉴</h5>
+      <ul>
+        <li><a href="#">최근 인권사례</a></li>
+        <li><a href="#">오늘의 인권문장</a></li>
+        <li><a href="#">병영 고민 게시판</a></li>
+        <li><a href="#">인권교육 자료실</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>서비스</h5>
+      <ul>
+        <li><a href="#">제복입은 시민</a></li>
+        <li><a href="#">인권침해 신고</a></li>
+        <li><a href="#">강사 연계</a></li>
+        <li><a href="#">인권교육 영상</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>신고 채널</h5>
+      <ul>
+        <li><a href="tel:1331">국가인권위원회 ☎ 1331</a></li>
+        <li><a href="tel:1337">국방부 신고센터 ☎ 1337</a></li>
+        <li><a href="#">온라인 신고</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 아미휴먼라이트. All rights reserved.</span>
+    <span>인권침해 신고: ☎ 1331 | ☎ 1337</span>
+  </div>
+</footer>
+
+<a href="#report" class="float-btn">🚨 인권침해 신고</a>
+
+<script>
+  // scroll animation
+  const obs = new IntersectionObserver(e => {
+    e.forEach(x => { if(x.isIntersecting) x.target.classList.add('show'); });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.sa').forEach(el => obs.observe(el));
+
+  // nav scroll
+  window.addEventListener('scroll', () => {
+    const n = document.getElementById('nav');
+    n.style.background = window.scrollY > 60
+      ? 'rgba(11,18,32,.99)'
+      : 'rgba(11,18,32,.96)';
+  });
+
+  // mobile
+  function openMob()  { document.getElementById('mob').classList.add('on'); }
+  function closeMob() { document.getElementById('mob').classList.remove('on'); }
+
+  // quote
+  const QS = [
+    {t:'"군인은 국가의 명령에 복종하는 사람이기 이전에, 헌법이 보장하는 기본권의 주체인 시민이다."', s:'— 헌법재판소, 2010헌마418'},
+    {t:'"인권은 보편적이고 불가분하며 상호의존적이고 상호연관된 것이다."', s:'— 비엔나선언 및 행동계획, 1993'},
+    {t:'"강한 군대는 규율과 인권이 함께 살아있는 군대입니다."', s:'— 국방부 인권정책 기본계획, 2023'},
+    {t:'"고문 및 잔혹한 처우는 어떤 상황에서도 정당화될 수 없다."', s:'— 고문방지협약(CAT) 제2조'},
+    {t:'"인권교육은 인권에 관한, 인권을 통한, 인권을 위한 교육이다."', s:'— UN 인권교육선언 제2조, 2011'}
+  ];
+  let qi = 0;
+  function nextQ() {
+    qi = (qi + 1) % QS.length;
+    const t = document.getElementById('qText');
+    const s = document.getElementById('qSrc');
+    t.style.opacity = s.style.opacity = '0';
+    setTimeout(() => {
+      t.textContent = QS[qi].t;
+      s.textContent = QS[qi].s;
+      t.style.transition = s.style.transition = 'opacity .5s';
+      t.style.opacity = s.style.opacity = '1';
+    }, 300);
+  }
+</script>
+</body>
+</html>
