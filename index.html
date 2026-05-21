@@ -557,6 +557,25 @@
     @media(max-width:900px){
       .hs{border-bottom-color:var(--border)!important;}
     }
+
+    /* ===== QUICK LINKS ===== */
+    .qlinks{background:#f8fafc;padding:4.5rem 1.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .ql-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem;}
+    .ql-card{
+      display:flex;flex-direction:column;align-items:center;gap:.5rem;
+      background:#fff;border:1px solid var(--border);border-radius:var(--r2);
+      padding:1.8rem 1rem;text-align:center;transition:all .25s;
+    }
+    .ql-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(13,31,60,.1);transform:translateY(-4px);}
+    .ql-icon{font-size:2.2rem;margin-bottom:.3rem;}
+    .ql-name{font-size:.85rem;font-weight:800;color:var(--navy);line-height:1.3;}
+    .ql-sub{font-size:.72rem;color:var(--txt-m);line-height:1.45;margin-top:.2rem;}
+    .ql-badge{font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:20px;margin-top:.4rem;}
+    .ql-badge-b{background:rgba(26,110,245,.08);color:var(--blue);border:1px solid rgba(26,110,245,.2);}
+    .ql-badge-r{background:rgba(217,48,37,.08);color:var(--red);border:1px solid rgba(217,48,37,.2);}
+    .ql-badge-y{background:rgba(255,0,0,.06);color:#ff0000;border:1px solid rgba(255,0,0,.15);}
+    @media(max-width:900px){.ql-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:600px){.ql-grid{grid-template-columns:repeat(2,1fr);}}
   </style>
 </head>
 <body>
@@ -657,13 +676,13 @@
         <div class="sol-icon">📚</div>
         <h3>교육자료 DB</h3>
         <p>인권보편성, 과잉금지원칙, 결정례 등 1,240건+ 교육자료 즉시 열람</p>
-        <a href="#" class="tlink">자료 검색하기 →</a>
+        <a href="https://edu.humanrights.go.kr" target="_blank" class="tlink">자료 검색하기 →</a>
       </div>
       <div class="sol-card sa sd2">
         <div class="sol-icon" style="background:rgba(201,150,14,.1);">⚖️</div>
         <h3>결정례 분석</h3>
         <p>국가인권위원회 결정례와 주요 판례를 쉬운 언어로 해설</p>
-        <a href="#" class="tlink">결정례 보기 →</a>
+        <a href="https://www.humanrights.go.kr" target="_blank" class="tlink">결정례 보기 →</a>
       </div>
       <div class="sol-card sa sd3">
         <div class="sol-icon" style="background:rgba(0,184,148,.1);">💬</div>
@@ -690,7 +709,7 @@
         <h2 class="sec-heading">군 인권 결정례 &amp; <span class="span-blue">판례</span></h2>
         <p class="sec-sub">국가인권위원회 결정례와 주요 판례를 쉽고 빠르게 확인하세요.</p>
       </div>
-      <a href="#" class="tlink" style="margin-top:0;">전체 목록 보기 →</a>
+      <a href="https://www.humanrights.go.kr" target="_blank" class="tlink" style="margin-top:0;">국가인권위 결정례 전체 보기 →</a>
     </div>
     <div class="cases-grid">
       <div class="case-card sa sd1">
@@ -821,35 +840,38 @@
       </div>
       <!-- videos -->
       <div class="video-side sa sd2" id="videos">
-        <div style="margin-bottom:.8rem;">
-          <div class="tag-pill tag-blue" style="margin-bottom:.4rem;">인권관련 영상</div>
-          <strong style="font-size:1.05rem;color:var(--navy);">교육 영상 자료실</strong>
+        <div style="margin-bottom:.8rem;display:flex;justify-content:space-between;align-items:flex-end;">
+          <div>
+            <div class="tag-pill tag-blue" style="margin-bottom:.4rem;">인권관련 영상</div>
+            <strong style="font-size:1.05rem;color:var(--navy);">국가인권위 유튜브 채널</strong>
+          </div>
+          <a href="https://www.youtube.com/@NHRCkr" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:.75rem;font-weight:700;color:#ff0000;background:rgba(255,0,0,.06);border:1px solid rgba(255,0,0,.2);padding:.3rem .7rem;border-radius:20px;">▶ YouTube</a>
         </div>
-        <div class="v-card">
+        <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="v-card">
           <div class="v-thumb vt-1">▶</div>
           <div class="v-info">
             <h4>과잉금지원칙, 군 현장에서 어떻게 적용하나?</h4>
-            <p>인권교관 심화과정 · 조회 4,821</p>
-            <span class="v-dur">18:32</span>
+            <p>인권교관 심화과정 · 국가인권위원회</p>
+            <span class="v-dur">YouTube</span>
           </div>
-        </div>
-        <div class="v-card">
+        </a>
+        <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="v-card">
           <div class="v-thumb" style="background:linear-gradient(135deg,#1a0a3e,#7c3aed);width:110px;flex-shrink:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">▶</div>
           <div class="v-info">
             <h4>병사의 눈으로 본 인권침해 사례</h4>
-            <p>병영인권 기초 · 조회 7,102</p>
-            <span class="v-dur">12:15</span>
+            <p>병영인권 기초 · 국가인권위원회</p>
+            <span class="v-dur">YouTube</span>
           </div>
-        </div>
-        <div class="v-card">
+        </a>
+        <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="v-card">
           <div class="v-thumb" style="background:linear-gradient(135deg,#0d3e22,#00b894);width:110px;flex-shrink:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">▶</div>
           <div class="v-info">
             <h4>인권 친화적 리더십 — 강한 부대의 비결</h4>
-            <p>지휘관 리더십 · 조회 3,290</p>
-            <span class="v-dur">25:44</span>
+            <p>지휘관 리더십 · 국가인권위원회</p>
+            <span class="v-dur">YouTube</span>
           </div>
-        </div>
-        <a href="#" class="tlink">전체 영상 보기 →</a>
+        </a>
+        <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="tlink">유튜브 채널에서 더보기 →</a>
       </div>
     </div>
   </div>
@@ -896,7 +918,7 @@
       </div>
       <div class="rep-cta-btns">
         <a href="tel:1331" class="btn-fill btn-fill-red">☎ 1331 전화 신고</a>
-        <a href="#" class="btn-line btn-line-w">온라인 신고하기</a>
+        <a href="https://case.humanrights.go.kr" target="_blank" class="btn-line btn-line-w">온라인 신고하기 (인권e)</a>
       </div>
     </div>
   </div>
@@ -942,6 +964,49 @@
   </div>
 </section>
 
+<!-- ======== QUICK LINKS ======== -->
+<section class="qlinks">
+  <div class="inner">
+    <div class="sa" style="text-align:center;max-width:520px;margin:0 auto;">
+      <div class="tag-pill tag-blue">관련 기관 바로가기</div>
+      <h2 class="sec-heading">인권 관련 <span class="span-blue">공식 채널</span></h2>
+      <p class="sec-sub">국가인권위원회 및 관련 기관의 공식 채널을 한곳에서 연결합니다.</p>
+    </div>
+    <div class="ql-grid">
+      <a href="https://www.humanrights.go.kr" target="_blank" class="ql-card sa sd1">
+        <div class="ql-icon">🏛️</div>
+        <div class="ql-name">국가인권위원회</div>
+        <div class="ql-sub">결정례 · 진정신청 · 인권정책</div>
+        <span class="ql-badge ql-badge-b">공식 사이트</span>
+      </a>
+      <a href="https://edu.humanrights.go.kr" target="_blank" class="ql-card sa sd2">
+        <div class="ql-icon">🎓</div>
+        <div class="ql-name">국가인권교육원</div>
+        <div class="ql-sub">인권교육자료실 · 온라인 강좌</div>
+        <span class="ql-badge ql-badge-b">교육자료</span>
+      </a>
+      <a href="https://library.humanrights.go.kr" target="_blank" class="ql-card sa sd3">
+        <div class="ql-icon">📚</div>
+        <div class="ql-name">인권도서관</div>
+        <div class="ql-sub">발간자료 · 간행물 · 연구보고서</div>
+        <span class="ql-badge ql-badge-b">자료실</span>
+      </a>
+      <a href="https://case.humanrights.go.kr" target="_blank" class="ql-card sa sd4">
+        <div class="ql-icon">📋</div>
+        <div class="ql-name">인권e (온라인 신고)</div>
+        <div class="ql-sub">진정 · 조정 온라인 신청 시스템</div>
+        <span class="ql-badge ql-badge-r">신고·구제</span>
+      </a>
+      <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="ql-card sa" style="transition-delay:.4s">
+        <div class="ql-icon">▶️</div>
+        <div class="ql-name">인권위 유튜브</div>
+        <div class="ql-sub">인권교육 영상 · 홍보자료 채널</div>
+        <span class="ql-badge ql-badge-y">YouTube</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ======== FOOTER (dark) ======== -->
 <footer>
   <div class="ft-grid">
@@ -952,19 +1017,19 @@
     <div>
       <h5>주요 메뉴</h5>
       <ul>
-        <li><a href="#">최근 인권사례</a></li>
-        <li><a href="#">오늘의 인권문장</a></li>
-        <li><a href="#">병영 고민 게시판</a></li>
-        <li><a href="#">인권교육 자료실</a></li>
+        <li><a href="#cases">최근 인권사례</a></li>
+        <li><a href="#board">오늘의 인권문장</a></li>
+        <li><a href="#board">병영 고민 게시판</a></li>
+        <li><a href="https://edu.humanrights.go.kr" target="_blank">인권교육자료실</a></li>
       </ul>
     </div>
     <div>
-      <h5>서비스</h5>
+      <h5>관련 기관</h5>
       <ul>
-        <li><a href="#">제복입은 시민</a></li>
-        <li><a href="#">인권침해 신고</a></li>
-        <li><a href="#">강사 연계</a></li>
-        <li><a href="#">인권교육 영상</a></li>
+        <li><a href="https://www.humanrights.go.kr" target="_blank">국가인권위원회</a></li>
+        <li><a href="https://edu.humanrights.go.kr" target="_blank">국가인권교육원</a></li>
+        <li><a href="https://library.humanrights.go.kr" target="_blank">인권도서관</a></li>
+        <li><a href="https://www.youtube.com/@NHRCkr" target="_blank">인권위 유튜브</a></li>
       </ul>
     </div>
     <div>
@@ -972,8 +1037,8 @@
       <ul>
         <li><a href="tel:1331">국가인권위원회 ☎ 1331</a></li>
         <li><a href="tel:1337">국방부 신고센터 ☎ 1337</a></li>
-        <li><a href="#">온라인 신고</a></li>
-        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="https://case.humanrights.go.kr" target="_blank">온라인 신고 (인권e)</a></li>
+        <li><a href="#instructors">강사 연계 신청</a></li>
       </ul>
     </div>
   </div>
@@ -996,8 +1061,8 @@
   window.addEventListener('scroll', () => {
     const n = document.getElementById('nav');
     n.style.background = window.scrollY > 60
-      ? 'rgba(11,18,32,.99)'
-      : 'rgba(11,18,32,.96)';
+      ? 'rgba(255,255,255,1)'
+      : 'rgba(255,255,255,.96)';
   });
 
   // mobile
