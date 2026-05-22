@@ -81,6 +81,8 @@ def fetch_page(page: int) -> list[dict]:
 
         category = guess_category(title)
 
+        outline = r.get("DCS_OUTLINE", "").strip()
+
         items.append({
             "id": doc_id,
             "title": title,
@@ -89,7 +91,8 @@ def fetch_page(page: int) -> list[dict]:
             "date": date,
             "committee": committee,
             "team": team,
-            "result": "",  # API에 결과(인용/각하) 필드 없음
+            "result": "",
+            "outline": outline,
         })
     return items
 

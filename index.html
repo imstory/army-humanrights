@@ -317,9 +317,56 @@
       .ftg{grid-template-columns:1fr;}
       .hero h1{font-size:1.85rem;}
     }
+
+    /* ===== 결정례 모달 ===== */
+    #decModal{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem;}
+    #decModal.on{display:flex;}
+    .dm-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);}
+    .dm-box{position:relative;background:#fff;border-radius:12px;width:100%;max-width:720px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.25);z-index:1;}
+    .dm-head{padding:1.4rem 1.6rem 1rem;border-bottom:1px solid var(--border);flex-shrink:0;}
+    .dm-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem;}
+    .dm-title{font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.45;}
+    .dm-info{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem;font-size:.75rem;color:var(--txt3);}
+    .dm-info span strong{color:var(--txt2);}
+    .dm-body{padding:1.4rem 1.6rem;overflow-y:auto;flex:1;}
+    .dm-outline{font-size:.85rem;line-height:1.85;color:var(--txt);white-space:pre-wrap;word-break:break-all;}
+    .dm-empty{color:var(--txt3);font-size:.85rem;text-align:center;padding:2rem;}
+    .dm-foot{padding:1rem 1.6rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+    .dm-foot a{font-size:.78rem;color:var(--blue);font-weight:600;}
+    .dm-close{background:var(--navy);color:#fff;border:none;border-radius:6px;padding:.52rem 1.1rem;font-size:.8rem;font-weight:700;cursor:pointer;transition:background .2s;}
+    .dm-close:hover{background:var(--blue);}
+    .dm-xbtn{position:absolute;top:.9rem;right:1rem;background:none;border:none;font-size:1.3rem;color:var(--txt3);cursor:pointer;line-height:1;padding:.2rem .4rem;}
+    .dm-xbtn:hover{color:var(--txt);}
   </style>
 </head>
 <body>
+
+<!-- 결정례 상세 모달 -->
+<div id="decModal" role="dialog" aria-modal="true">
+  <div class="dm-overlay" onclick="closeDecModal()"></div>
+  <div class="dm-box">
+    <button class="dm-xbtn" onclick="closeDecModal()" aria-label="닫기">✕</button>
+    <div class="dm-head">
+      <div class="dm-meta">
+        <span id="dm-cat" class="bcat"></span>
+        <span id="dm-committee" class="bcat" style="background:var(--sky);color:var(--navy)"></span>
+      </div>
+      <div class="dm-title" id="dm-title"></div>
+      <div class="dm-info">
+        <span>사건번호 <strong id="dm-id"></strong></span>
+        <span>결정일 <strong id="dm-date"></strong></span>
+        <span>담당 <strong id="dm-team"></strong></span>
+      </div>
+    </div>
+    <div class="dm-body">
+      <div class="dm-outline" id="dm-outline"></div>
+    </div>
+    <div class="dm-foot">
+      <a id="dm-srclink" href="#" target="_blank">국가인권위원회 원문 보기 →</a>
+      <button class="dm-close" onclick="closeDecModal()">닫기</button>
+    </div>
+  </div>
+</div>
 
 <!-- MOBILE -->
 <div class="mob" id="mob">
@@ -977,32 +1024,64 @@
 
   // ===== 결정례 자동 연동 =====
   const CAT_CLASS = {
-    '가혹행위':'cr','성희롱·성폭력':'cr','표현·종교의 자유':'cg2','평등권·차별':'','기타':''
+    '가혹행위':'cr','성희롱·성폭력':'cr','표현·종교의 자유':'cg2',
+    '평등권·차별':'','인사·처우':'','휴가·이동의 자유':'','기타':''
   };
-  const RES_CLASS = {'권고':'cg','각하':'cn','기각':'cn','인용':'cg'};
   let _decisions = [];
-  let _decFilter = '전체';
+
+  let _currentItems = [];
 
   function renderDecisions(items){
+    _currentItems = items || [];
     const tbody = document.getElementById('decisions-tbody');
     if(!tbody) return;
     if(!items || items.length===0){
       tbody.innerHTML='<tr><td colspan="5" style="text-align:center;padding:1.5rem;color:var(--txt3);">해당 분류의 결정례가 없습니다.</td></tr>';
       return;
     }
-    tbody.innerHTML = items.map(d=>`
-      <tr>
-        <td class="td-no" style="font-size:.7rem">${d.id||'-'}</td>
-        <td><span class="bcat ${CAT_CLASS[d.category]||''}">${d.category||'-'}</span></td>
-        <td class="td-tit"><a href="${d.url||'#'}" target="_blank">${d.title}</a></td>
-        <td class="td-date">${d.date||'-'}</td>
-        <td style="font-size:.72rem;color:var(--txt2)">${d.team||d.committee||'-'}</td>
+    tbody.innerHTML = items.map((d,i)=>`
+      <tr style="cursor:pointer" onclick="openDecModal(${i})">
+        <td class="td-no" style="font-size:.7rem">${escH(d.id||'-')}</td>
+        <td><span class="bcat ${CAT_CLASS[d.category]||''}">${escH(d.category||'-')}</span></td>
+        <td class="td-tit" style="color:var(--blue);text-decoration:underline dotted">${escH(d.title)}</td>
+        <td class="td-date">${escH(d.date||'-')}</td>
+        <td style="font-size:.72rem;color:var(--txt2)">${escH(d.team||d.committee||'-')}</td>
       </tr>`).join('');
   }
 
+  function escH(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function openDecModal(idx){
+    const d = _currentItems[idx];
+    if(!d) return;
+    document.getElementById('dm-cat').textContent = d.category||'';
+    document.getElementById('dm-cat').className = 'bcat '+(CAT_CLASS[d.category]||'');
+    document.getElementById('dm-committee').textContent = d.committee||'';
+    document.getElementById('dm-title').textContent = d.title||'';
+    document.getElementById('dm-id').textContent = d.id||'-';
+    document.getElementById('dm-date').textContent = d.date||'-';
+    document.getElementById('dm-team').textContent = d.team||d.committee||'-';
+    const outline = d.outline||'';
+    const outlineEl = document.getElementById('dm-outline');
+    if(outline){
+      outlineEl.textContent = outline;
+    } else {
+      outlineEl.innerHTML = '<div class="dm-empty">상세 내용이 없습니다.<br>아래 원문 링크를 통해 확인하세요.</div>';
+    }
+    const srcLink = document.getElementById('dm-srclink');
+    srcLink.href = 'https://case.humanrights.go.kr/dici/diciList.do';
+    document.getElementById('decModal').classList.add('on');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeDecModal(){
+    document.getElementById('decModal').classList.remove('on');
+    document.body.style.overflow='';
+  }
+
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDecModal(); });
+
   function filterDecisions(cat, btn){
-    _decFilter = cat;
-    document.querySelectorAll('#decisions-wrap').forEach(()=>{});
     const wrap = btn.closest('.sa');
     if(wrap) wrap.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
     btn.classList.add('on');
