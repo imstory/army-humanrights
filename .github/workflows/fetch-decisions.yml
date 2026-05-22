@@ -26,10 +26,13 @@ jobs:
       - name: 결정례 수집 실행
         run: python scripts/fetch_decisions.py
 
+      - name: 영상자료 수집 실행
+        run: python scripts/fetch_videos.py
+
       - name: 변경사항 커밋 및 푸시
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/decisions.json
-          git diff --staged --quiet || git commit -m "chore: 결정례 자동 업데이트 $(date +'%Y-%m-%d')"
+          git add data/decisions.json data/videos.json
+          git diff --staged --quiet || git commit -m "chore: 결정례·영상 자동 업데이트 $(date +'%Y-%m-%d')"
           git push

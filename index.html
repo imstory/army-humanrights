@@ -318,6 +318,29 @@
       .hero h1{font-size:1.85rem;}
     }
 
+    /* ===== 영상 카드 썸네일 ===== */
+    .vthumb img{width:100%;height:100%;object-fit:cover;border-radius:4px;}
+    .vthumb{position:relative;overflow:hidden;}
+    .vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);opacity:0;transition:opacity .2s;}
+    .vcard:hover .vplay{opacity:1;}
+    .vplay-ic{width:36px;height:36px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;}
+
+    /* ===== iframe 모달 ===== */
+    #iframeModal{position:fixed;inset:0;z-index:8500;display:none;flex-direction:column;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);}
+    #iframeModal.on{display:flex;}
+    .ifm-bar{background:var(--navy2);color:#fff;padding:.55rem 1rem;display:flex;align-items:center;gap:.8rem;flex-shrink:0;}
+    .ifm-title{font-size:.82rem;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .ifm-url{font-size:.67rem;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px;}
+    .ifm-actions{display:flex;gap:.4rem;flex-shrink:0;}
+    .ifm-btn{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:4px;padding:.35rem .7rem;font-size:.72rem;cursor:pointer;transition:background .2s;}
+    .ifm-btn:hover{background:rgba(255,255,255,.25);}
+    .ifm-btn.red{background:rgba(217,48,37,.4);}
+    .ifm-btn.red:hover{background:var(--red);}
+    .ifm-body{flex:1;overflow:hidden;position:relative;}
+    .ifm-body iframe{width:100%;height:100%;border:none;display:block;}
+    .ifm-fallback{display:none;flex-direction:column;align-items:center;justify-content:center;height:100%;background:#f4f6fb;gap:1rem;padding:2rem;}
+    .ifm-fallback.on{display:flex;}
+
     /* ===== 결정례 모달 ===== */
     #decModal{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem;}
     #decModal.on{display:flex;}
@@ -340,6 +363,29 @@
   </style>
 </head>
 <body>
+
+<!-- iframe 모달 (외부 사이트 내장 보기) -->
+<div id="iframeModal">
+  <div class="ifm-bar">
+    <div>
+      <div class="ifm-title" id="ifm-title"></div>
+      <div class="ifm-url" id="ifm-url"></div>
+    </div>
+    <div class="ifm-actions">
+      <a id="ifm-newwin" href="#" target="_blank" class="ifm-btn">새창 열기 ↗</a>
+      <button class="ifm-btn red" onclick="closeIframeModal()">✕ 닫기</button>
+    </div>
+  </div>
+  <div class="ifm-body">
+    <iframe id="ifm-frame" src="" title="외부 페이지"></iframe>
+    <div class="ifm-fallback" id="ifm-fallback">
+      <div style="font-size:2.5rem">🔒</div>
+      <div style="font-size:.95rem;font-weight:700;color:var(--navy)">페이지를 직접 내장할 수 없습니다</div>
+      <div style="font-size:.82rem;color:var(--txt3);text-align:center">해당 사이트의 보안 정책으로 인해<br>내장 표시가 제한됩니다.</div>
+      <a id="ifm-fallback-link" href="#" target="_blank" class="sec-more" style="margin-top:.5rem;">사이트 직접 방문 →</a>
+    </div>
+  </div>
+</div>
 
 <!-- 결정례 상세 모달 -->
 <div id="decModal" role="dialog" aria-modal="true">
@@ -435,8 +481,8 @@
       <h1>제복을 입어도<br><em>인권</em>은 살아있다</h1>
       <p class="hero-desc">군 인권교관 및 군 인권에 관심있는 모든 분을 위한 결정례·교육자료·강사연계·신고채널을 한곳에서 만나보세요.</p>
       <div class="hero-btns">
-        <a href="https://www.humanrights.go.kr" target="_blank" class="btn-w">결정례 검색 →</a>
-        <a href="https://edu.humanrights.go.kr" target="_blank" class="btn-ol">인권교육자료실</a>
+        <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/dici/diciList.do','결정례 검색 — 국가인권위원회');return false;" class="btn-w">결정례 검색 →</a>
+        <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;" class="btn-ol">인권교육자료실</a>
         <a href="#report" class="btn-r">🚨 신고하기</a>
       </div>
       <div class="hero-stats">
@@ -459,7 +505,7 @@
 <!-- QUICK ACCESS -->
 <div class="qa">
   <div class="qai">
-    <a href="https://edu.humanrights.go.kr" target="_blank" class="qa-item">
+    <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실');return false;" class="qa-item">
       <div class="qa-ic">📚</div><div class="qa-nm">인권교육<br>자료실</div>
     </a>
     <a href="https://www.humanrights.go.kr" target="_blank" class="qa-item">
@@ -468,7 +514,7 @@
     <a href="#board" class="qa-item">
       <div class="qa-ic">💬</div><div class="qa-nm">병영고민<br>게시판</div>
     </a>
-    <a href="https://case.humanrights.go.kr" target="_blank" class="qa-item">
+    <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/dici/diciList.do','결정례 검색');return false;" class="qa-item">
       <div class="qa-ic">🚨</div><div class="qa-nm">인권침해<br>신고(인권e)</div>
     </a>
     <a href="#instructors" class="qa-item">
@@ -659,9 +705,9 @@
             <div style="font-size:.72rem;color:var(--txt2);margin-bottom:.9rem;">인권교육 영상·홍보자료·캠페인 영상</div>
             <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="sec-more" style="justify-content:center;">채널 구독하기 →</a>
           </div>
-          <div class="nitem"><span class="ncat">영상</span><div><div class="ntit">2026 군 인권 캠페인 영상</div><div class="ndate">2026.05</div></div></div>
-          <div class="nitem"><span class="ncat cg">NEW</span><div><div class="ntit">인권위 창립 25주년 기념 영상</div><div class="ndate">2026.04</div></div></div>
-          <div class="nitem"><span class="ncat">영상</span><div><div class="ntit">군 인권보호관 제도 안내 영상</div><div class="ndate">2026.03</div></div></div>
+          <div id="vid-v2-list">
+            <div class="nitem"><span class="ncat">영상</span><div><div class="ntit">최신 영상을 불러오는 중...</div><div class="ndate"></div></div></div>
+          </div>
         </div>
         <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="sec-more" style="margin-top:.7rem;display:inline-flex;">유튜브 채널 →</a>
       </div>
@@ -1021,6 +1067,80 @@
       if(p.id===group+'-'+paneId) p.classList.add('on');
     });
   }
+
+  // ===== iframe 모달 =====
+  function openIframeModal(url, title){
+    const modal = document.getElementById('iframeModal');
+    const frame = document.getElementById('ifm-frame');
+    const fallback = document.getElementById('ifm-fallback');
+    document.getElementById('ifm-title').textContent = title||url;
+    document.getElementById('ifm-url').textContent = url;
+    document.getElementById('ifm-newwin').href = url;
+    document.getElementById('ifm-fallback-link').href = url;
+    fallback.classList.remove('on');
+    frame.style.display = 'block';
+    frame.src = url;
+    // iframe 로드 실패 감지 (X-Frame-Options로 차단된 경우)
+    frame.onload = function(){
+      try{
+        // cross-origin이면 접근 불가 → 에러 발생하지 않음, 그냥 로드된 것으로 간주
+      }catch(e){
+        frame.style.display='none';
+        fallback.classList.add('on');
+      }
+    };
+    frame.onerror = function(){
+      frame.style.display='none';
+      fallback.classList.add('on');
+    };
+    modal.classList.add('on');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeIframeModal(){
+    const modal = document.getElementById('iframeModal');
+    modal.classList.remove('on');
+    document.getElementById('ifm-frame').src='';
+    document.body.style.overflow='';
+  }
+
+  // ===== 영상자료 동적 로딩 =====
+  (async function loadVideos(){
+    try{
+      const r = await fetch('data/videos.json?v='+Date.now());
+      if(!r.ok) throw new Error();
+      const json = await r.json();
+      const items = (json.items||[]).slice(0,4);
+      const wrap = document.getElementById('vid-v1');
+      if(!wrap || !items.length) return;
+      wrap.innerHTML = items.map(v=>`
+        <a href="${v.url}" target="_blank" class="vcard">
+          <div class="vthumb" style="background:#1c3869;">
+            <img src="${v.thumbnail}" alt="${escH(v.title)}" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML+='▶'">
+            <div class="vplay"><div class="vplay-ic">▶</div></div>
+          </div>
+          <div class="vinfo">
+            <h4 style="overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${escH(v.title)}</h4>
+            <p>${v.date||''}</p>
+            <span class="yt-badge">▶ YouTube</span>
+          </div>
+        </a>`).join('');
+
+      // 유튜브 채널 탭 나머지 영상 목록도 업데이트
+      const v2 = document.getElementById('vid-v2-list');
+      if(v2 && json.items){
+        v2.innerHTML = json.items.slice(4,8).map(v=>`
+          <div class="nitem">
+            <span class="ncat">영상</span>
+            <div>
+              <div class="ntit"><a href="${v.url}" target="_blank" style="color:var(--txt)">${escH(v.title)}</a></div>
+              <div class="ndate">${v.date||''}</div>
+            </div>
+          </div>`).join('');
+      }
+    }catch(e){}
+  })();
 
   // ===== 결정례 자동 연동 =====
   const CAT_CLASS = {
