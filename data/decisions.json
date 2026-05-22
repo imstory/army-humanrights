@@ -1,7 +1,7 @@
 {
-  "updated": "2026-05-22 11:52 UTC",
+  "updated": "2026-05-22 11:54 UTC",
   "source": "https://case.humanrights.go.kr/dici/diciList.do",
-  "count": 10,
+  "count": 30,
   "items": [
     {
       "id": "25-진재-0002400",
@@ -99,6 +99,206 @@
       "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0693500",
       "category": "가혹행위",
       "date": "2025.12.30",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0758800",
+      "title": "대학교의 학생에 대한 종교의 자유 침해 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0758800",
+      "category": "표현·종교의 자유",
+      "date": "2025.12.23",
+      "committee": "아동권리위원회",
+      "team": "아동청소년인권과",
+      "result": ""
+    },
+    {
+      "id": "25-정책-0033",
+      "title": "인권친화적 학교조성 정책권고의 건",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-정책-0033",
+      "category": "기타",
+      "date": "2025.12.08",
+      "committee": "전원위원회",
+      "team": "아동청소년인권과",
+      "result": ""
+    },
+    {
+      "id": "25-직권-0000400",
+      "title": "양평군 단월면장에 대한 인권침해 사건 직권조사",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-직권-0000400",
+      "category": "기타",
+      "date": "2025.12.01",
+      "committee": "전원위원회",
+      "team": "조사총괄과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0499600",
+      "title": "경찰의 발달장애인에 대한 수사절차 위반 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0499600",
+      "category": "평등권·차별",
+      "date": "2025.12.01",
+      "committee": "장애인차별시정위원회",
+      "team": "대전인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0618100",
+      "title": "지자체의 장애인에 대한 정당한 편의 제공 의무 위반",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0618100",
+      "category": "평등권·차별",
+      "date": "2025.12.01",
+      "committee": "장애인차별시정위원회",
+      "team": "대전인권사무소",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0980800",
+      "title": "군 사망사건 진상규명 요청 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0980800",
+      "category": "기타",
+      "date": "2025.11.26",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0059600",
+      "title": "아파트 장애인전용주차구역 철거에 의한 장애인 차별",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0059600",
+      "category": "평등권·차별",
+      "date": "2025.11.06",
+      "committee": "장애인차별시정위원회",
+      "team": "장애차별조사1과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0351300",
+      "title": "정신의료기관 폐쇄병동 입원환자에 대한 휴대전화 사용제한",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0351300",
+      "category": "기타",
+      "date": "2025.11.06",
+      "committee": "장애인차별시정위원회",
+      "team": "대전인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0264300",
+      "title": "산불 진압 과정에서 소방관의 과도한 연속 근무",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0264300",
+      "category": "기타",
+      "date": "2025.10.28",
+      "committee": "침해구제제2위원회",
+      "team": "대구인권사무소",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0624900",
+      "title": "직업군인에 대한 일반장애 장애보상금 적용 배제로 인한 인권침해",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0624900",
+      "category": "평등권·차별",
+      "date": "2025.09.19",
+      "committee": "군인권보호위원회",
+      "team": "군인권보호총괄과",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0820100",
+      "title": "군사법원의 과도한 개인정보 수집, 알권리 침해 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0820100",
+      "category": "기타",
+      "date": "2025.09.19",
+      "committee": "군인권보호위원회",
+      "team": "군인권보호총괄과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0018800",
+      "title": "군 소속 직원의 직장내 괴롭힘 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0018800",
+      "category": "기타",
+      "date": "2025.09.19",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0392200",
+      "title": "육군 부대 선임의 폭행 및 괴롭힘",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0392200",
+      "category": "가혹행위",
+      "date": "2025.09.19",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0322600",
+      "title": "정신의료기관의 환자에 대한 부당한 격리·강박 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0322600",
+      "category": "기타",
+      "date": "2025.09.03",
+      "committee": "장애인차별시정위원회",
+      "team": "장애차별조사2과",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0793600",
+      "title": "지자체의 공무직 근로자의 호봉 산정 시 민간경력 불인정 차별",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0793600",
+      "category": "평등권·차별",
+      "date": "2025.08.19",
+      "committee": "차별시정위원회",
+      "team": "차별시정총괄과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0145800",
+      "title": "공공기관의 일부 직렬 평가급(성과급) 지급대상 제외 차별",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0145800",
+      "category": "평등권·차별",
+      "date": "2025.08.19",
+      "committee": "차별시정위원회",
+      "team": "차별시정총괄과",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0468400",
+      "title": "고등학교의 용모규제로 인한 인권침해",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0468400",
+      "category": "기타",
+      "date": "2025.07.18",
+      "committee": "아동권리위원회",
+      "team": "아동청소년인권과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0258700",
+      "title": "고등학교의 두발 제한",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0258700",
+      "category": "기타",
+      "date": "2025.07.18",
+      "committee": "아동권리위원회",
+      "team": "대구인권사무소",
+      "result": ""
+    },
+    {
+      "id": "24-진정-0498901",
+      "title": "교도소의 과밀수용으로 인한 행복추구권 등 침해",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=24-진정-0498901",
+      "category": "기타",
+      "date": "2025.07.09",
+      "committee": "침해구제제2위원회",
+      "team": "인권침해조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0102500",
+      "title": "해군 지휘관의 부당한 지시",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0102500",
+      "category": "기타",
+      "date": "2025.06.24",
       "committee": "군인권보호위원회",
       "team": "군인권조사과",
       "result": ""
