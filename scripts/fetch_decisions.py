@@ -50,7 +50,7 @@ def guess_category(title: str) -> str:
 
 def fetch_page(page: int) -> list[dict]:
     payload = {
-        "pageIndex": str(page),
+        "pageNumber": str(page),
         "searchCondition": "",
         "searchKeyword": "",
         "dcsnSttCd": "",
