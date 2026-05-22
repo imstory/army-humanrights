@@ -96,11 +96,18 @@ def fetch_page(page: int) -> list[dict]:
 
 def main():
     all_items = []
-    # 최신 3페이지 (30건) 수집
+    seen_ids = set()
+
+    # 최신 3페이지 수집 (중복 제거)
     for page in range(1, 4):
         batch = fetch_page(page)
-        all_items.extend(batch)
-        print(f"[페이지 {page}] {len(batch)}건 수집")
+        new_items = []
+        for item in batch:
+            if item["id"] not in seen_ids:
+                seen_ids.add(item["id"])
+                new_items.append(item)
+        all_items.extend(new_items)
+        print(f"[페이지 {page}] {len(batch)}건 수집, {len(new_items)}건 신규")
         if not batch:
             break
 
