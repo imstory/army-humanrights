@@ -325,6 +325,17 @@
     .vcard:hover .vplay{opacity:1;}
     .vplay-ic{width:36px;height:36px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;}
 
+    /* ===== YouTube 플레이어 모달 ===== */
+    #ytModal{position:fixed;inset:0;z-index:9100;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.85);}
+    #ytModal.on{display:flex;}
+    .yt-box{position:relative;width:100%;max-width:800px;}
+    .yt-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000;}
+    .yt-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+    .yt-title-bar{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;gap:.8rem;}
+    .yt-title{color:#fff;font-size:.85rem;font-weight:600;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .yt-close{background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:4px;padding:.4rem .8rem;cursor:pointer;font-size:.78rem;font-weight:700;transition:background .2s;flex-shrink:0;}
+    .yt-close:hover{background:rgba(217,48,37,.8);}
+
     /* ===== iframe 모달 ===== */
     #iframeModal{position:fixed;inset:0;z-index:8500;display:none;flex-direction:column;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);}
     #iframeModal.on{display:flex;}
@@ -363,6 +374,19 @@
   </style>
 </head>
 <body>
+
+<!-- YouTube 플레이어 모달 -->
+<div id="ytModal" onclick="if(event.target===this)closeYTModal()">
+  <div class="yt-box">
+    <div class="yt-title-bar">
+      <div class="yt-title" id="yt-title"></div>
+      <button class="yt-close" onclick="closeYTModal()">✕ 닫기</button>
+    </div>
+    <div class="yt-ratio">
+      <iframe id="yt-frame" src="" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 
 <!-- iframe 모달 (외부 사이트 내장 보기) -->
 <div id="iframeModal">
@@ -431,15 +455,15 @@
   <div class="tbi">
     <div class="top-sites">
       <a href="https://www.humanrights.go.kr" target="_blank">국가인권위원회</a>
-      <a href="https://edu.humanrights.go.kr" target="_blank">국가인권교육원</a>
+      <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/main/main.do','국가인권교육원');return false;">국가인권교육원</a>
       <a href="https://library.humanrights.go.kr" target="_blank">인권도서관</a>
-      <a href="https://case.humanrights.go.kr" target="_blank">인권e(온라인신고)</a>
+      <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/rprsntStep/regStep00.do','인권침해 신고 — 인권e');return false;">인권e(온라인신고)</a>
       <a href="https://uhr.humanrights.go.kr" target="_blank">국제인권정보</a>
-      <a href="https://www.youtube.com/@NHRCkr" target="_blank">▶ 유튜브채널</a>
+      <a href="https://www.youtube.com/@NHRCkr" target="_blank">국가인권위원회 유튜브 채널</a>
     </div>
     <div class="top-right">
-      <a href="tel:1331">☎ 1331 인권위</a>
-      <a href="tel:1337">☎ 1337 국방부</a>
+      <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/rprsntStep/regStep00.do','인권침해 신고 — 국가인권위원회');return false;">☎ 1331 인권위</a>
+      <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr/html/military/index.html','국방부 군인권보호 신고센터');return false;">☎ 1337 국방부</a>
     </div>
   </div>
 </div>
@@ -457,7 +481,7 @@
     <ul class="gnb">
       <li><a href="#cases">인권사례·결정례</a></li>
       <li><a href="#board">병영고민 게시판</a></li>
-      <li><a href="#edumat">교육자료실</a></li>
+      <li><a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;">교육자료실</a></li>
       <li><a href="#videos">영상자료</a></li>
       <li><a href="#citizen">제복입은 시민</a></li>
       <li><a href="#instructors">강사 연계</a></li>
@@ -508,13 +532,13 @@
     <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실');return false;" class="qa-item">
       <div class="qa-ic">📚</div><div class="qa-nm">인권교육<br>자료실</div>
     </a>
-    <a href="https://www.humanrights.go.kr" target="_blank" class="qa-item">
+    <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/dici/diciList.do','결정례 검색');return false;" class="qa-item">
       <div class="qa-ic">⚖️</div><div class="qa-nm">결정례<br>검색</div>
     </a>
     <a href="#board" class="qa-item">
       <div class="qa-ic">💬</div><div class="qa-nm">병영고민<br>게시판</div>
     </a>
-    <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/dici/diciList.do','결정례 검색');return false;" class="qa-item">
+    <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/rprsntStep/regStep00.do','인권침해 신고 — 인권e');return false;" class="qa-item">
       <div class="qa-ic">🚨</div><div class="qa-nm">인권침해<br>신고(인권e)</div>
     </a>
     <a href="#instructors" class="qa-item">
@@ -909,17 +933,17 @@
       </div>
     </div>
     <div class="rep-grid">
-      <a href="https://case.humanrights.go.kr" target="_blank" class="rep-card sa sd1">
+      <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/rprsntStep/regStep00.do','인권침해 신고 — 국가인권위원회');return false;" class="rep-card sa sd1">
         <div class="rep-ico">🏛️</div>
         <h4>국가인권위원회</h4>
         <p>☎ 1331<br>온라인 진정 가능<br>24시간 접수 (인권e)</p>
       </a>
-      <div class="rep-card sa sd2">
+      <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr/html/military/index.html','군 인권보호관');return false;" class="rep-card sa sd2">
         <div class="rep-ico">🪖</div>
         <h4>군 인권보호관</h4>
         <p>각 부대 인권보호관<br>직접 상담 가능<br>익명 보장</p>
-      </div>
-      <a href="tel:1337" class="rep-card sa sd3">
+      </a>
+      <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr/html/military/index.html','국방부 군인권보호 신고센터');return false;" class="rep-card sa sd3">
         <div class="rep-ico">📞</div>
         <h4>국방부 신고센터</h4>
         <p>☎ 1337<br>온라인 신고<br>군사망 사고 포함</p>
@@ -936,8 +960,8 @@
         <p>24시간 운영 · 익명 보장 · 2차 피해 방지 시스템 운영</p>
       </div>
       <div class="rep-btns">
-        <a href="tel:1331" class="btn-r">☎ 1331 전화 신고</a>
-        <a href="https://case.humanrights.go.kr" target="_blank" class="btn-ol">온라인 신고 (인권e) →</a>
+        <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/rprsntStep/regStep00.do','인권침해 신고 — 국가인권위원회');return false;" class="btn-r">🏛️ 인권위 온라인 신고</a>
+        <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr/html/military/index.html','국방부 군인권보호 신고');return false;" class="btn-ol">🪖 국방부 군인권 신고 →</a>
       </div>
     </div>
   </div>
@@ -988,7 +1012,7 @@
     <div class="ql-label">관련 기관 바로가기</div>
     <div class="ql-items">
       <a href="https://www.humanrights.go.kr" target="_blank" class="ql-item">🏛️ 국가인권위원회</a>
-      <a href="https://edu.humanrights.go.kr" target="_blank" class="ql-item">🎓 국가인권교육원</a>
+      <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/main/main.do','국가인권교육원');return false;" class="ql-item">🎓 국가인권교육원</a>
       <a href="https://library.humanrights.go.kr" target="_blank" class="ql-item">📚 인권도서관</a>
       <a href="https://case.humanrights.go.kr" target="_blank" class="ql-item">📋 인권e (온라인신고)</a>
       <a href="https://uhr.humanrights.go.kr" target="_blank" class="ql-item">🌐 국제인권정보</a>
@@ -1068,6 +1092,24 @@
     });
   }
 
+  // ===== YouTube 플레이어 모달 =====
+  function openYTModal(videoId, title){
+    const modal = document.getElementById('ytModal');
+    document.getElementById('yt-title').textContent = title||'';
+    document.getElementById('yt-frame').src =
+      `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    modal.classList.add('on');
+    document.body.style.overflow='hidden';
+  }
+  function closeYTModal(){
+    document.getElementById('ytModal').classList.remove('on');
+    document.getElementById('yt-frame').src='';
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown', e=>{
+    if(e.key==='Escape'){ closeYTModal(); closeIframeModal(); closeDecModal(); }
+  });
+
   // ===== iframe 모달 =====
   function openIframeModal(url, title){
     const modal = document.getElementById('iframeModal');
@@ -1114,10 +1156,10 @@
       const wrap = document.getElementById('vid-v1');
       if(!wrap || !items.length) return;
       wrap.innerHTML = items.map(v=>`
-        <a href="${v.url}" target="_blank" class="vcard">
+        <div class="vcard" style="cursor:pointer" onclick="openYTModal('${v.id}',${JSON.stringify(v.title)})">
           <div class="vthumb" style="background:#1c3869;">
             <img src="${v.thumbnail}" alt="${escH(v.title)}" loading="lazy"
-              onerror="this.style.display='none';this.parentElement.innerHTML+='▶'">
+              onerror="this.style.display='none';this.parentElement.querySelector('.vplay-ic').textContent='▶'">
             <div class="vplay"><div class="vplay-ic">▶</div></div>
           </div>
           <div class="vinfo">
@@ -1125,16 +1167,16 @@
             <p>${v.date||''}</p>
             <span class="yt-badge">▶ YouTube</span>
           </div>
-        </a>`).join('');
+        </div>`).join('');
 
-      // 유튜브 채널 탭 나머지 영상 목록도 업데이트
+      // 유튜브 채널 탭 나머지 영상 목록도 업데이트 (클릭 시 팝업 재생)
       const v2 = document.getElementById('vid-v2-list');
       if(v2 && json.items){
-        v2.innerHTML = json.items.slice(4,8).map(v=>`
-          <div class="nitem">
+        v2.innerHTML = json.items.slice(4,10).map(v=>`
+          <div class="nitem" style="cursor:pointer" onclick="openYTModal('${v.id}',${JSON.stringify(v.title)})">
             <span class="ncat">영상</span>
             <div>
-              <div class="ntit"><a href="${v.url}" target="_blank" style="color:var(--txt)">${escH(v.title)}</a></div>
+              <div class="ntit" style="color:var(--blue)">${escH(v.title)}</div>
               <div class="ndate">${v.date||''}</div>
             </div>
           </div>`).join('');
@@ -1199,7 +1241,6 @@
     document.body.style.overflow='';
   }
 
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDecModal(); });
 
   function filterDecisions(cat, btn){
     const wrap = btn.closest('.sa');
