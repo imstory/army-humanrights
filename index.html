@@ -479,7 +479,7 @@
       </div>
     </a>
     <ul class="gnb">
-      <li><a href="#cases">인권사례·결정례</a></li>
+      <li><a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/dici/diciList.do','인권사례·결정례 — 국가인권위원회');return false;">인권사례·결정례</a></li>
       <li><a href="#board">병영고민 게시판</a></li>
       <li><a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;">교육자료실</a></li>
       <li><a href="#videos">영상자료</a></li>
@@ -563,36 +563,39 @@
           <button class="tab-btn"    onclick="switchTab('main','t3',this)">보도자료</button>
         </div>
 
-        <!-- 공지사항 -->
+        <!-- 공지사항 (인권위 공지사항 자동 연동) -->
         <div class="tab-pane on" id="main-t1">
-          <div class="nitem"><span class="ncat cr">공지</span><div><div class="ntit notice">2026 군 인권교관 양성과정 모집 (7~8월)</div><div class="ndate">2026.05.20</div></div></div>
-          <div class="nitem"><span class="ncat">안내</span><div><div class="ntit">인권교육 표준 강의안 v3.0 업데이트</div><div class="ndate">2026.05.15</div></div></div>
-          <div class="nitem"><span class="ncat cg">NEW</span><div><div class="ntit">병영인권 온라인 특강 수강 신청 안내</div><div class="ndate">2026.05.10</div></div></div>
-          <div class="nitem"><span class="ncat">공지</span><div><div class="ntit">강사 연계 신청 절차 변경 안내 (6월~)</div><div class="ndate">2026.05.02</div></div></div>
-          <div class="nitem"><span class="ncat">안내</span><div><div class="ntit">2026년도 군 인권 결정례 DB 업데이트 완료</div><div class="ndate">2026.04.25</div></div></div>
-          <div class="nitem"><span class="ncat">공지</span><div><div class="ntit">개인정보처리방침 개정 안내</div><div class="ndate">2026.04.10</div></div></div>
+          <div id="notice-list">
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=4&menuid=001003001','공지사항 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cr">공지</span><div><div class="ntit notice">2026 군 인권교관 양성과정 모집 (7~8월)</div><div class="ndate">2026.05.20</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=4&menuid=001003001','공지사항 — 국가인권위원회')" style="cursor:pointer"><span class="ncat">안내</span><div><div class="ntit">인권교육 표준 강의안 v3.0 업데이트</div><div class="ndate">2026.05.15</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=4&menuid=001003001','공지사항 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cg">NEW</span><div><div class="ntit">병영인권 온라인 특강 수강 신청 안내</div><div class="ndate">2026.05.10</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=4&menuid=001003001','공지사항 — 국가인권위원회')" style="cursor:pointer"><span class="ncat">공지</span><div><div class="ntit">강사 연계 신청 절차 변경 안내 (6월~)</div><div class="ndate">2026.05.02</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=4&menuid=001003001','공지사항 — 국가인권위원회')" style="cursor:pointer"><span class="ncat">안내</span><div><div class="ntit">2026년도 군 인권 결정례 DB 업데이트 완료</div><div class="ndate">2026.04.25</div></div></div>
+          </div>
         </div>
 
-        <!-- 인권뉴스 -->
+        <!-- 인권뉴스 (자동 로딩) -->
         <div class="tab-pane" id="main-t2">
-          <div class="nitem"><span class="ncat cg">뉴스</span><div><div class="ntit">인권위, 군 내 성평등 실태조사 결과 발표</div><div class="ndate">2026.05.19</div></div></div>
-          <div class="nitem"><span class="ncat">뉴스</span><div><div class="ntit">국방부, 병사 인권보호관 제도 전면 개편</div><div class="ndate">2026.05.14</div></div></div>
-          <div class="nitem"><span class="ncat cr">HOT</span><div><div class="ntit">군사법원 개혁 후 1년, 군 인권 어떻게 달라졌나</div><div class="ndate">2026.05.08</div></div></div>
-          <div class="nitem"><span class="ncat">뉴스</span><div><div class="ntit">다문화 배경 병사 인권교육 표준안 마련</div><div class="ndate">2026.04.29</div></div></div>
-          <div class="nitem"><span class="ncat">뉴스</span><div><div class="ntit">UN 자유권위원회, 한국 군 인권 개선 권고</div><div class="ndate">2026.04.20</div></div></div>
-          <div class="nitem"><span class="ncat cg">뉴스</span><div><div class="ntit">인권위, 군 복무 중 종교 자유 실태조사 착수</div><div class="ndate">2026.04.12</div></div></div>
+          <div id="news-list">
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=24&menuid=002004002','인권뉴스 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cg">뉴스</span><div><div class="ntit">인권위, 군 내 성평등 실태조사 결과 발표</div><div class="ndate">2026.05.19</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=24&menuid=002004002','인권뉴스 — 국가인권위원회')" style="cursor:pointer"><span class="ncat">뉴스</span><div><div class="ntit">국방부, 병사 인권보호관 제도 전면 개편</div><div class="ndate">2026.05.14</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=24&menuid=002004002','인권뉴스 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cr">HOT</span><div><div class="ntit">군사법원 개혁 후 1년, 군 인권 어떻게 달라졌나</div><div class="ndate">2026.05.08</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=24&menuid=002004002','인권뉴스 — 국가인권위원회')" style="cursor:pointer"><span class="ncat">뉴스</span><div><div class="ntit">다문화 배경 병사 인권교육 표준안 마련</div><div class="ndate">2026.04.29</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=24&menuid=002004002','인권뉴스 — 국가인권위원회')" style="cursor:pointer"><span class="ncat">뉴스</span><div><div class="ntit">UN 자유권위원회, 한국 군 인권 개선 권고</div><div class="ndate">2026.04.20</div></div></div>
+          </div>
         </div>
 
-        <!-- 보도자료 -->
+        <!-- 보도자료 (자동 로딩) -->
         <div class="tab-pane" id="main-t3">
-          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">인권위 "군 가혹행위 신고 40% 증가…교육 강화 시급"</div><div class="ndate">2026.05.18</div></div></div>
-          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">국방부, 인권침해 사건 처리기간 평균 45일→28일 단축</div><div class="ndate">2026.05.11</div></div></div>
-          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">인권위, 군 구타·가혹행위 결정례 해설서 발간</div><div class="ndate">2026.05.05</div></div></div>
-          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">2026년 군인권 실태조사 결과 발표</div><div class="ndate">2026.04.28</div></div></div>
-          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">인권교육센터, 군 특화 온라인 과정 신설</div><div class="ndate">2026.04.15</div></div></div>
-          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">헌병대 조사 과정 인권침해 시정 권고</div><div class="ndate">2026.04.05</div></div></div>
+          <div id="press-list">
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=39&menuid=002004001','보도자료 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cn">보도</span><div><div class="ntit">인권위 "군 가혹행위 신고 40% 증가…교육 강화 시급"</div><div class="ndate">2026.05.18</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=39&menuid=002004001','보도자료 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cn">보도</span><div><div class="ntit">국방부, 인권침해 사건 처리기간 평균 45일→28일 단축</div><div class="ndate">2026.05.11</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=39&menuid=002004001','보도자료 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cn">보도</span><div><div class="ntit">인권위, 군 구타·가혹행위 결정례 해설서 발간</div><div class="ndate">2026.05.05</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=39&menuid=002004001','보도자료 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cn">보도</span><div><div class="ntit">2026년 군인권 실태조사 결과 발표</div><div class="ndate">2026.04.28</div></div></div>
+            <div class="nitem" onclick="openIframeModal('https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=39&menuid=002004001','보도자료 — 국가인권위원회')" style="cursor:pointer"><span class="ncat cn">보도</span><div><div class="ntit">인권교육센터, 군 특화 온라인 과정 신설</div><div class="ndate">2026.04.15</div></div></div>
+          </div>
         </div>
-        <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more" style="margin-top:.7rem;display:inline-flex;">더보기 +</a>
+        <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr','국가인권위원회');return false;" class="sec-more" style="margin-top:.7rem;display:inline-flex;">더보기 +</a>
       </div>
 
       <!-- 중: 인권교육 자료 -->
@@ -607,35 +610,35 @@
           <div class="edu-item">
             <div class="edu-ico edu-ic1">📋</div>
             <div>
-              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">2026 군 인권교관 표준 강의안</div></a>
+              <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;"><div class="edu-ttl">2026 군 인권교관 표준 강의안</div></a>
               <div class="edu-meta">인권교육원 · PDF · 2026.04</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic2">📗</div>
             <div>
-              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">과잉금지원칙과 군 현장 적용 사례집</div></a>
+              <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;"><div class="edu-ttl">과잉금지원칙과 군 현장 적용 사례집</div></a>
               <div class="edu-meta">인권교육원 · PDF · 2026.03</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic3">📙</div>
             <div>
-              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">병영 내 성희롱 예방 교육자료</div></a>
+              <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;"><div class="edu-ttl">병영 내 성희롱 예방 교육자료</div></a>
               <div class="edu-meta">인권교육원 · PPT · 2026.02</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic4">📕</div>
             <div>
-              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">다문화 배경 장병 인권교육 가이드</div></a>
+              <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;"><div class="edu-ttl">다문화 배경 장병 인권교육 가이드</div></a>
               <div class="edu-meta">인권교육원 · PDF · 2026.01</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic5">📘</div>
             <div>
-              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">군인의 기본권 — 헌법과 판례 해설</div></a>
+              <a href="#" onclick="openIframeModal('https://edu.humanrights.go.kr/academy/contents/bbsContentsList.do','인권교육자료실 — 국가인권교육원');return false;"><div class="edu-ttl">군인의 기본권 — 헌법과 판례 해설</div></a>
               <div class="edu-meta">인권교육원 · PDF · 2025.12</div>
             </div>
           </div>
@@ -646,35 +649,35 @@
           <div class="edu-item">
             <div class="edu-ico edu-ic1">📋</div>
             <div>
-              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">2025 국가인권위원회 연간보고서</div></a>
+              <a href="#" onclick="openIframeModal('https://library.humanrights.go.kr','인권도서관 — 국가인권위원회');return false;"><div class="edu-ttl">2025 국가인권위원회 연간보고서</div></a>
               <div class="edu-meta">국가인권위원회 · 2026.03</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic2">📗</div>
             <div>
-              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">군 인권 결정례 해설집 제8호</div></a>
+              <a href="#" onclick="openIframeModal('https://library.humanrights.go.kr','인권도서관 — 국가인권위원회');return false;"><div class="edu-ttl">군 인권 결정례 해설집 제8호</div></a>
               <div class="edu-meta">국가인권위원회 · 2026.02</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic3">📙</div>
             <div>
-              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">2025 군인인권 실태조사 보고서</div></a>
+              <a href="#" onclick="openIframeModal('https://library.humanrights.go.kr','인권도서관 — 국가인권위원회');return false;"><div class="edu-ttl">2025 군인인권 실태조사 보고서</div></a>
               <div class="edu-meta">국가인권위원회 · 2026.01</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic4">📕</div>
             <div>
-              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">병영문화 혁신 정책 연구보고서</div></a>
+              <a href="#" onclick="openIframeModal('https://library.humanrights.go.kr','인권도서관 — 국가인권위원회');return false;"><div class="edu-ttl">병영문화 혁신 정책 연구보고서</div></a>
               <div class="edu-meta">국방부 · 2025.11</div>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-ico edu-ic5">📘</div>
             <div>
-              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">UN 자유권 규약과 군 인권 적용</div></a>
+              <a href="#" onclick="openIframeModal('https://library.humanrights.go.kr','인권도서관 — 국가인권위원회');return false;"><div class="edu-ttl">UN 자유권 규약과 군 인권 적용</div></a>
               <div class="edu-meta">인권교육원 · 2025.10</div>
             </div>
           </div>
@@ -867,7 +870,7 @@
         <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">인권사례·결정례 게시판</span></div>
         <div class="sec-stxt">국가인권위원회 결정례 및 관련 판례 — 군 관련 사건 분류</div>
       </div>
-      <a href="https://case.humanrights.go.kr/dici/diciList.do" target="_blank" class="sec-more">인권위 결정례 전체 →</a>
+      <a href="#" onclick="openIframeModal('https://case.humanrights.go.kr/dici/diciList.do','결정례 검색 — 국가인권위원회');return false;" class="sec-more">인권위 결정례 전체 →</a>
     </div>
 
     <!-- 자동 업데이트 안내 -->
@@ -943,16 +946,16 @@
         <h4>군 인권보호관</h4>
         <p>각 부대 인권보호관<br>직접 상담 가능<br>익명 보장</p>
       </a>
-      <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr/html/military/index.html','국방부 군인권보호 신고센터');return false;" class="rep-card sa sd3">
+      <a href="#" onclick="openIframeModal('https://www.mnd.go.kr/mbshome/mbs/mnd/subview.jsp?id=mnd_030200000000','국방부 신고센터');return false;" class="rep-card sa sd3">
         <div class="rep-ico">📞</div>
         <h4>국방부 신고센터</h4>
         <p>☎ 1337<br>온라인 신고<br>군사망 사고 포함</p>
       </a>
-      <div class="rep-card sa sd4">
+      <a href="#" onclick="openIframeModal('https://www.humanrights.go.kr/html/military/index.html','군검찰·헌병대 — 군사법원·수사기관');return false;" class="rep-card sa sd4">
         <div class="rep-ico">⚖️</div>
         <h4>군검찰·헌병대</h4>
         <p>형사 사건 처리<br>가혹행위·폭행<br>공식 수사 진행</p>
-      </div>
+      </a>
     </div>
     <div class="rep-cta sa">
       <div class="rep-cta-txt">
@@ -1181,6 +1184,36 @@
             </div>
           </div>`).join('');
       }
+    }catch(e){}
+  })();
+
+  // ===== 뉴스·보도자료 자동 로딩 =====
+  const NEWS_URL_NEWS = 'https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=24&menuid=002004002';
+  const NEWS_URL_PRESS = 'https://www.humanrights.go.kr/site/program/board/basicboard/list?boardtypeid=39&menuid=002004001';
+
+  (async function loadNews(){
+    try{
+      const r = await fetch('data/news.json?v='+Date.now());
+      if(!r.ok) throw new Error();
+      const json = await r.json();
+
+      function renderNewsItems(items, containerId, boardUrl, cat){
+        const el = document.getElementById(containerId);
+        if(!el || !items || !items.length) return;
+        const catClass = cat==='뉴스'?'cg':'cn';
+        el.innerHTML = items.slice(0,6).map(d=>`
+          <div class="nitem" style="cursor:pointer"
+            onclick="openIframeModal('${d.url||boardUrl}','${escH(d.title)} — 국가인권위원회')">
+            <span class="ncat ${catClass}">${cat}</span>
+            <div>
+              <div class="ntit">${escH(d.title)}</div>
+              <div class="ndate">${d.date||''}</div>
+            </div>
+          </div>`).join('');
+      }
+
+      if(json.news && json.news.length) renderNewsItems(json.news, 'news-list', NEWS_URL_NEWS, '뉴스');
+      if(json.press && json.press.length) renderNewsItems(json.press, 'press-list', NEWS_URL_PRESS, '보도');
     }catch(e){}
   })();
 
