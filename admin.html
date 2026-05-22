@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 | 아미휴먼라이트</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#1c3869;--navy2:#152d56;--blue:#1a5dc8;--sky:#e8f0fb;--bg:#f4f6fb;--border:#dde3ef;--txt:#1a2340;--txt2:#4a5568;--txt3:#8898aa;--red:#d93025;--green:#0a7c52;--gold:#c9960e;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;cursor:pointer;}
+    input,textarea,select{font-family:inherit;}
+
+    /* ===== LOGIN ===== */
+    #loginScreen{position:fixed;inset:0;background:linear-gradient(135deg,var(--navy2),var(--navy));display:flex;align-items:center;justify-content:center;z-index:9999;}
+    .login-box{background:#fff;border-radius:12px;padding:2.5rem;width:360px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+    .login-logo{text-align:center;margin-bottom:2rem;}
+    .login-logo .em{font-size:2.5rem;display:block;margin-bottom:.5rem;}
+    .login-logo .t{font-size:1.1rem;font-weight:800;color:var(--navy);}
+    .login-logo .s{font-size:.75rem;color:var(--txt3);margin-top:.2rem;}
+    .form-row{margin-bottom:1rem;}
+    .form-row label{display:block;font-size:.75rem;font-weight:700;color:var(--txt2);margin-bottom:.4rem;}
+    .form-row input{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:6px;font-size:.88rem;color:var(--txt);transition:border-color .2s;outline:none;}
+    .form-row input:focus{border-color:var(--blue);}
+    .login-btn{width:100%;padding:.85rem;background:var(--navy);color:#fff;border:none;border-radius:6px;font-size:.9rem;font-weight:700;cursor:pointer;transition:background .2s;}
+    .login-btn:hover{background:var(--blue);}
+    .login-err{display:none;color:var(--red);font-size:.78rem;text-align:center;margin-top:.7rem;}
+
+    /* ===== ADMIN APP ===== */
+    #adminApp{display:none;min-height:100vh;}
+    .layout{display:grid;grid-template-columns:220px 1fr;min-height:100vh;}
+
+    /* SIDEBAR */
+    .sidebar{background:var(--navy2);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;}
+    .sb-logo{padding:1.4rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.08);}
+    .sb-logo .t{font-size:.95rem;font-weight:800;color:#fff;}
+    .sb-logo .t em{color:#7dd3fc;font-style:normal;}
+    .sb-logo .s{font-size:.62rem;color:rgba(255,255,255,.4);margin-top:.15rem;}
+    .sb-nav{flex:1;padding:.6rem 0;}
+    .sb-section{font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:1.5px;text-transform:uppercase;padding:.6rem 1.2rem .3rem;}
+    .sb-link{display:flex;align-items:center;gap:.6rem;padding:.62rem 1.2rem;font-size:.78rem;color:rgba(255,255,255,.55);cursor:pointer;transition:all .15s;border-left:3px solid transparent;}
+    .sb-link:hover{color:#fff;background:rgba(255,255,255,.06);}
+    .sb-link.on{color:#fff;background:rgba(255,255,255,.1);border-left-color:#7dd3fc;}
+    .sb-footer{padding:1rem 1.2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:.5rem;}
+    .sb-footer a{font-size:.73rem;color:rgba(255,255,255,.45);transition:color .15s;}
+    .sb-footer a:hover{color:#7dd3fc;}
+    .logout-btn{background:rgba(217,48,37,.2);color:#fca5a5;border:1px solid rgba(217,48,37,.3);border-radius:4px;padding:.45rem;font-size:.72rem;font-weight:700;cursor:pointer;transition:all .2s;}
+    .logout-btn:hover{background:var(--red);color:#fff;}
+
+    /* MAIN */
+    .admin-main{background:var(--bg);padding:1.8rem;overflow-y:auto;}
+    .page-hd{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--navy);}
+    .page-hd h2{font-size:1.2rem;font-weight:800;color:var(--navy);}
+    .page-hd p{font-size:.75rem;color:var(--txt2);margin-top:.2rem;}
+
+    /* CARDS */
+    .card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.4rem;margin-bottom:1.2rem;}
+    .card-title{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;}
+
+    /* TABLE */
+    .at{width:100%;border-collapse:collapse;}
+    .at thead tr{background:var(--navy);}
+    .at thead th{padding:.55rem .8rem;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.8);text-align:left;white-space:nowrap;}
+    .at tbody tr{border-bottom:1px solid var(--border);transition:background .12s;}
+    .at tbody tr:hover{background:var(--bg);}
+    .at td{padding:.7rem .8rem;font-size:.78rem;color:var(--txt);}
+    .td-actions{display:flex;gap:.4rem;}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;gap:4px;padding:.45rem .9rem;border-radius:4px;font-size:.75rem;font-weight:700;cursor:pointer;border:none;transition:all .15s;}
+    .btn-primary{background:var(--navy);color:#fff;}
+    .btn-primary:hover{background:var(--blue);}
+    .btn-success{background:var(--green);color:#fff;}
+    .btn-success:hover{opacity:.85;}
+    .btn-danger{background:var(--red);color:#fff;}
+    .btn-danger:hover{opacity:.85;}
+    .btn-secondary{background:var(--bg);color:var(--txt2);border:1px solid var(--border);}
+    .btn-secondary:hover{border-color:var(--blue);color:var(--blue);}
+    .btn-sm{padding:.3rem .6rem;font-size:.68rem;}
+    .btn-gold{background:var(--gold);color:#fff;}
+
+    /* FORM */
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+    .form-grid.g1{grid-template-columns:1fr;}
+    .form-grid.g3{grid-template-columns:1fr 1fr 1fr;}
+    .fg{display:flex;flex-direction:column;gap:.3rem;}
+    .fg label{font-size:.72rem;font-weight:700;color:var(--txt2);}
+    .fg input,.fg select,.fg textarea{padding:.55rem .75rem;border:1.5px solid var(--border);border-radius:4px;font-size:.8rem;color:var(--txt);outline:none;transition:border-color .15s;font-family:inherit;}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);}
+    .fg textarea{resize:vertical;min-height:80px;}
+    .form-actions{display:flex;gap:.6rem;margin-top:1rem;}
+    .span2{grid-column:span 2;}
+    .span3{grid-column:span 3;}
+
+    /* BADGE */
+    .badge{font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:3px;}
+    .badge-b{background:var(--sky);color:var(--blue);}
+    .badge-r{background:rgba(217,48,37,.08);color:var(--red);}
+    .badge-g{background:rgba(10,124,82,.08);color:var(--green);}
+    .badge-gold{background:rgba(201,150,14,.08);color:var(--gold);}
+    .badge-n{background:rgba(28,56,105,.08);color:var(--navy);}
+
+    /* ALERT */
+    .alert{padding:.7rem 1rem;border-radius:5px;font-size:.78rem;margin-bottom:1rem;display:none;}
+    .alert-success{background:rgba(10,124,82,.1);border:1px solid rgba(10,124,82,.2);color:var(--green);}
+    .alert-danger{background:rgba(217,48,37,.1);border:1px solid rgba(217,48,37,.2);color:var(--red);}
+
+    /* STATS */
+    .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem;}
+    .stat-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.2rem;text-align:center;}
+    .stat-n{font-size:1.8rem;font-weight:900;color:var(--navy);letter-spacing:-1px;}
+    .stat-l{font-size:.72rem;color:var(--txt3);margin-top:.2rem;}
+
+    /* SECTION PANELS */
+    .sec-panel{display:none;}
+    .sec-panel.on{display:block;}
+
+    /* PASSWORD CHANGE */
+    .pw-form{max-width:400px;}
+
+    /* DATA MGMT */
+    .data-btns{display:flex;gap:.7rem;flex-wrap:wrap;}
+    textarea.json-area{width:100%;height:200px;font-family:monospace;font-size:.72rem;}
+
+    /* CAT SELECT colors */
+    select option{font-weight:600;}
+  </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <span class="em">⚖️</span>
+      <div class="t"><em style="color:var(--blue);font-style:normal;">아미</em>휴먼라이트</div>
+      <div class="s">관리자 전용 페이지</div>
+    </div>
+    <div class="form-row">
+      <label>관리자 비밀번호</label>
+      <input type="password" id="pwInput" placeholder="비밀번호 입력" onkeydown="if(event.key==='Enter')doLogin()">
+    </div>
+    <button class="login-btn" onclick="doLogin()">로그인</button>
+    <div class="login-err" id="loginErr">비밀번호가 올바르지 않습니다.</div>
+    <div style="margin-top:1rem;font-size:.68rem;color:var(--txt3);text-align:center;">초기 비밀번호: amihuman2026!</div>
+  </div>
+</div>
+
+<!-- ADMIN APP -->
+<div id="adminApp">
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sb-logo">
+        <div class="t"><em>아미</em>휴먼라이트</div>
+        <div class="s">관리자 페이지</div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">대시보드</div>
+        <a class="sb-link on" onclick="showSec('dashboard')">📊 대시보드</a>
+        <div class="sb-section">게시판 관리</div>
+        <a class="sb-link" onclick="showSec('notices')">📢 공지사항</a>
+        <a class="sb-link" onclick="showSec('news')">📰 인권뉴스</a>
+        <a class="sb-link" onclick="showSec('press')">📋 보도자료</a>
+        <a class="sb-link" onclick="showSec('decisions')">⚖️ 결정례 게시판</a>
+        <a class="sb-link" onclick="showSec('board')">💬 병영고민 게시판</a>
+        <div class="sb-section">자료 관리</div>
+        <a class="sb-link" onclick="showSec('edumat')">📚 교육자료</a>
+        <a class="sb-link" onclick="showSec('publications')">📗 발간자료</a>
+        <a class="sb-link" onclick="showSec('videos')">▶️ 영상자료</a>
+        <div class="sb-section">시스템</div>
+        <a class="sb-link" onclick="showSec('settings')">⚙️ 설정 · 데이터</a>
+      </nav>
+      <div class="sb-footer">
+        <a href="index.html" target="_blank">홈페이지 보기 →</a>
+        <button class="logout-btn" onclick="doLogout()">로그아웃</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <div id="alertBox" class="alert alert-success">저장되었습니다.</div>
+
+      <!-- 대시보드 -->
+      <div class="sec-panel on" id="sec-dashboard">
+        <div class="page-hd"><h2>📊 대시보드</h2><p>아미휴먼라이트 관리자 현황</p></div>
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="card">
+          <div class="card-title">빠른 작업</div>
+          <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="showSec('notices')">📢 공지사항 추가</button>
+            <button class="btn btn-primary" onclick="showSec('decisions')">⚖️ 결정례 추가</button>
+            <button class="btn btn-primary" onclick="showSec('board')">💬 고민 게시글 추가</button>
+            <button class="btn btn-primary" onclick="showSec('edumat')">📚 교육자료 추가</button>
+            <button class="btn btn-gold" onclick="showSec('settings')">💾 데이터 내보내기</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 공지사항 -->
+      <div class="sec-panel" id="sec-notices">
+        <div class="page-hd"><h2>📢 공지사항 관리</h2><p>홈페이지 공지사항 탭에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 공지사항 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('notices')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg"><label>분류</label>
+              <select id="n-cat"><option value="공지">공지</option><option value="안내">안내</option><option value="NEW">NEW</option><option value="HOT">HOT</option></select></div>
+            <div class="fg"><label>분류 색상</label>
+              <select id="n-catClass"><option value="">기본(파랑)</option><option value="cr">빨강(긴급)</option><option value="cg">초록(NEW)</option><option value="cn">진한파랑(공식)</option></select></div>
+            <div class="fg span2"><label>제목 *</label><input type="text" id="n-title" placeholder="공지사항 제목"></div>
+            <div class="fg"><label>날짜 *</label><input type="text" id="n-date" placeholder="2026.05.20"></div>
+            <div class="fg"><label>링크 URL (선택)</label><input type="text" id="n-link" placeholder="https://..."></div>
+            <div class="fg span2"><label>내용 (선택)</label><textarea id="n-content" placeholder="상세 내용을 입력하세요 (선택사항)"></textarea></div>
+            <div class="fg"><label>공지글 고정</label>
+              <select id="n-isNotice"><option value="false">일반 글</option><option value="true">공지 고정</option></select></div>
+          </div>
+          <input type="hidden" id="n-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('notices')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('notices')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">공지사항 목록 <span id="notices-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="notices-list"></div>
+        </div>
+      </div>
+
+      <!-- 인권뉴스 -->
+      <div class="sec-panel" id="sec-news">
+        <div class="page-hd"><h2>📰 인권뉴스 관리</h2><p>홈페이지 인권뉴스 탭에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 뉴스 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('news')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg"><label>분류</label>
+              <select id="ne-cat"><option value="뉴스">뉴스</option><option value="HOT">HOT</option><option value="NEW">NEW</option></select></div>
+            <div class="fg"><label>분류 색상</label>
+              <select id="ne-catClass"><option value="cg">초록(뉴스)</option><option value="cr">빨강(HOT)</option><option value="">기본</option></select></div>
+            <div class="fg span2"><label>제목 *</label><input type="text" id="ne-title" placeholder="뉴스 제목"></div>
+            <div class="fg"><label>날짜 *</label><input type="text" id="ne-date" placeholder="2026.05.19"></div>
+            <div class="fg"><label>출처</label><input type="text" id="ne-source" placeholder="국가인권위원회"></div>
+            <div class="fg span2"><label>링크 URL</label><input type="text" id="ne-link" placeholder="https://www.humanrights.go.kr"></div>
+          </div>
+          <input type="hidden" id="ne-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('news')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('news')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">인권뉴스 목록 <span id="news-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="news-list"></div>
+        </div>
+      </div>
+
+      <!-- 보도자료 -->
+      <div class="sec-panel" id="sec-press">
+        <div class="page-hd"><h2>📋 보도자료 관리</h2><p>홈페이지 보도자료 탭에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 보도자료 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('press')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg span2"><label>제목 *</label><input type="text" id="pr-title" placeholder="보도자료 제목"></div>
+            <div class="fg"><label>날짜 *</label><input type="text" id="pr-date" placeholder="2026.05.18"></div>
+            <div class="fg"><label>출처</label><input type="text" id="pr-source" placeholder="국가인권위원회"></div>
+            <div class="fg span2"><label>링크 URL</label><input type="text" id="pr-link" placeholder="https://www.humanrights.go.kr"></div>
+          </div>
+          <input type="hidden" id="pr-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('press')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('press')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">보도자료 목록 <span id="press-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="press-list"></div>
+        </div>
+      </div>
+
+      <!-- 결정례 -->
+      <div class="sec-panel" id="sec-decisions">
+        <div class="page-hd"><h2>⚖️ 결정례 게시판 관리</h2><p>인권사례·결정례 게시판에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 결정례 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('decisions')">초기화</button></div>
+          <div class="form-grid g3">
+            <div class="fg"><label>사건번호 *</label><input type="text" id="dc-id" placeholder="2026-7"></div>
+            <div class="fg"><label>분류 *</label>
+              <select id="dc-cat">
+                <option value="가혹행위">가혹행위</option><option value="표현자유">표현자유</option>
+                <option value="종교자유">종교자유</option><option value="평등권">평등권</option>
+                <option value="차별">차별</option><option value="성희롱">성희롱</option>
+                <option value="성폭력">성폭력</option><option value="휴가">휴가</option>
+                <option value="복무">복무</option><option value="기타">기타</option>
+              </select></div>
+            <div class="fg"><label>분류 색상</label>
+              <select id="dc-catClass">
+                <option value="cr">빨강(가혹·성희롱)</option><option value="">기본(파랑)</option>
+                <option value="cg2">금색(종교)</option><option value="cg">초록</option></select></div>
+            <div class="fg span3"><label>사건명 *</label><input type="text" id="dc-title" placeholder="사건명을 입력하세요"></div>
+            <div class="fg"><label>결정일 *</label><input type="text" id="dc-date" placeholder="2026.05.12"></div>
+            <div class="fg"><label>결정 결과</label>
+              <select id="dc-result"><option value="권고">권고</option><option value="각하">각하</option><option value="기각">기각</option><option value="합의">합의종결</option></select></div>
+            <div class="fg"><label>결과 색상</label>
+              <select id="dc-resultClass"><option value="cg">초록(권고)</option><option value="cn">파랑(각하)</option><option value="cr">빨강(기각)</option></select></div>
+            <div class="fg span3"><label>링크 URL</label><input type="text" id="dc-link" placeholder="https://www.humanrights.go.kr"></div>
+            <div class="fg span3"><label>사건 요약</label><textarea id="dc-summary" placeholder="사건 내용을 간단히 요약하세요"></textarea></div>
+          </div>
+          <input type="hidden" id="dc-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('decisions')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('decisions')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">결정례 목록 <span id="decisions-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="decisions-list"></div>
+        </div>
+      </div>
+
+      <!-- 병영고민 게시판 -->
+      <div class="sec-panel" id="sec-board">
+        <div class="page-hd"><h2>💬 병영고민 게시판 관리</h2><p>병영 속 고민사례 게시판에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 게시글 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('board')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg"><label>분류 *</label>
+              <select id="bd-cat">
+                <option value="휴가">휴가</option><option value="복무">복무</option><option value="종교">종교</option>
+                <option value="신고">신고</option><option value="폭력">폭력</option><option value="차별">차별</option>
+                <option value="성희롱">성희롱</option><option value="보직">보직</option><option value="기타">기타</option>
+              </select></div>
+            <div class="fg"><label>분류 색상</label>
+              <select id="bd-catClass"><option value="">기본(파랑)</option><option value="cr">빨강(신고·폭력)</option><option value="cg">초록(NEW)</option><option value="cg2">금색(종교)</option></select></div>
+            <div class="fg span2"><label>제목 *</label><input type="text" id="bd-title" placeholder="게시글 제목"></div>
+            <div class="fg"><label>날짜</label><input type="text" id="bd-date" placeholder="05.21"></div>
+            <div class="fg"><label>조회수</label><input type="number" id="bd-views" placeholder="0"></div>
+            <div class="fg"><label>공지 고정</label>
+              <select id="bd-isNotice"><option value="false">일반 글</option><option value="true">공지 고정</option></select></div>
+            <div class="fg span2"><label>내용 (선택)</label><textarea id="bd-content" placeholder="게시글 내용 (선택)"></textarea></div>
+          </div>
+          <input type="hidden" id="bd-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('board')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('board')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">게시글 목록 <span id="board-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="board-list"></div>
+        </div>
+      </div>
+
+      <!-- 교육자료 -->
+      <div class="sec-panel" id="sec-edumat">
+        <div class="page-hd"><h2>📚 교육자료 관리</h2><p>교육자료 탭에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 교육자료 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('edumat')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg"><label>아이콘 색상</label>
+              <select id="em-iconClass">
+                <option value="edu-ic1">파랑</option><option value="edu-ic2">초록</option>
+                <option value="edu-ic3">금색</option><option value="edu-ic4">빨강</option><option value="edu-ic5">진한파랑</option></select></div>
+            <div class="fg"><label>아이콘 이모지</label><input type="text" id="em-icon" placeholder="📋"></div>
+            <div class="fg span2"><label>자료명 *</label><input type="text" id="em-title" placeholder="2026 군 인권교관 표준 강의안"></div>
+            <div class="fg"><label>출처/기관</label><input type="text" id="em-source" placeholder="인권교육원"></div>
+            <div class="fg"><label>파일 형식</label><input type="text" id="em-format" placeholder="PDF"></div>
+            <div class="fg"><label>년월</label><input type="text" id="em-date" placeholder="2026.04"></div>
+            <div class="fg span2"><label>링크 URL</label><input type="text" id="em-link" placeholder="https://edu.humanrights.go.kr"></div>
+          </div>
+          <input type="hidden" id="em-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('edumat')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('edumat')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">교육자료 목록 <span id="edumat-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="edumat-list"></div>
+        </div>
+      </div>
+
+      <!-- 발간자료 -->
+      <div class="sec-panel" id="sec-publications">
+        <div class="page-hd"><h2>📗 발간자료 관리</h2><p>발간자료 탭에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 발간자료 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('publications')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg"><label>아이콘 색상</label>
+              <select id="pb-iconClass">
+                <option value="edu-ic1">파랑</option><option value="edu-ic2">초록</option>
+                <option value="edu-ic3">금색</option><option value="edu-ic4">빨강</option><option value="edu-ic5">진한파랑</option></select></div>
+            <div class="fg"><label>아이콘 이모지</label><input type="text" id="pb-icon" placeholder="📗"></div>
+            <div class="fg span2"><label>자료명 *</label><input type="text" id="pb-title" placeholder="2025 국가인권위원회 연간보고서"></div>
+            <div class="fg"><label>출처/기관</label><input type="text" id="pb-source" placeholder="국가인권위원회"></div>
+            <div class="fg"><label>년월</label><input type="text" id="pb-date" placeholder="2026.03"></div>
+            <div class="fg span2"><label>링크 URL</label><input type="text" id="pb-link" placeholder="https://library.humanrights.go.kr"></div>
+          </div>
+          <input type="hidden" id="pb-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('publications')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('publications')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">발간자료 목록 <span id="publications-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="publications-list"></div>
+        </div>
+      </div>
+
+      <!-- 영상자료 -->
+      <div class="sec-panel" id="sec-videos">
+        <div class="page-hd"><h2>▶️ 영상자료 관리</h2><p>영상자료 탭에 표시됩니다.</p></div>
+        <div class="card">
+          <div class="card-title">새 영상 추가 / 수정 <button class="btn btn-secondary btn-sm" onclick="clearForm('videos')">초기화</button></div>
+          <div class="form-grid">
+            <div class="fg span2"><label>영상 제목 *</label><input type="text" id="vd-title" placeholder="과잉금지원칙, 군 현장 적용"></div>
+            <div class="fg"><label>부제목</label><input type="text" id="vd-sub" placeholder="인권교관 심화과정"></div>
+            <div class="fg"><label>썸네일 색상1</label><input type="color" id="vd-color1" value="#1c3869"></div>
+            <div class="fg span2"><label>유튜브 링크</label><input type="text" id="vd-link" placeholder="https://www.youtube.com/@NHRCkr"></div>
+          </div>
+          <input type="hidden" id="vd-editId" value="">
+          <div class="form-actions">
+            <button class="btn btn-success" onclick="saveItem('videos')">💾 저장</button>
+            <button class="btn btn-secondary" onclick="clearForm('videos')">취소</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">영상자료 목록 <span id="videos-count" style="font-size:.75rem;color:var(--txt3);font-weight:400;"></span></div>
+          <div id="videos-list"></div>
+        </div>
+      </div>
+
+      <!-- 설정 -->
+      <div class="sec-panel" id="sec-settings">
+        <div class="page-hd"><h2>⚙️ 설정 · 데이터 관리</h2><p>비밀번호 변경 및 데이터 내보내기/가져오기</p></div>
+        <div class="card pw-form">
+          <div class="card-title">🔒 비밀번호 변경</div>
+          <div class="form-grid g1">
+            <div class="fg"><label>현재 비밀번호</label><input type="password" id="pw-current" placeholder="현재 비밀번호"></div>
+            <div class="fg"><label>새 비밀번호</label><input type="password" id="pw-new" placeholder="새 비밀번호 (6자 이상)"></div>
+            <div class="fg"><label>새 비밀번호 확인</label><input type="password" id="pw-confirm" placeholder="새 비밀번호 재입력"></div>
+          </div>
+          <div class="form-actions"><button class="btn btn-primary" onclick="changePw()">비밀번호 변경</button></div>
+          <div id="pw-msg" style="margin-top:.6rem;font-size:.75rem;"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">💾 데이터 백업 · 복원</div>
+          <p style="font-size:.78rem;color:var(--txt2);margin-bottom:1rem;">현재 게시판 데이터를 JSON 파일로 내보내거나, 이전 백업에서 복원할 수 있습니다.</p>
+          <div class="data-btns">
+            <button class="btn btn-gold" onclick="exportData()">📥 데이터 내보내기 (JSON)</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">📤 데이터 가져오기 (JSON)</button>
+            <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+            <button class="btn btn-danger" onclick="resetData()">🔄 초기 데이터로 리셋</button>
+          </div>
+        </div>
+      </div>
+
+    </main><!-- /admin-main -->
+  </div><!-- /layout -->
+</div><!-- /adminApp -->
+
+<script>
+// ===== DEFAULT DATA =====
+const DEFAULT_DATA = {
+  notices:[
+    {id:1,cat:'공지',catClass:'cr',title:'2026 군 인권교관 양성과정 모집 (7~8월)',date:'2026.05.20',isNotice:true,link:'',content:''},
+    {id:2,cat:'안내',catClass:'',title:'인권교육 표준 강의안 v3.0 업데이트',date:'2026.05.15',isNotice:false,link:'',content:''},
+    {id:3,cat:'NEW',catClass:'cg',title:'병영인권 온라인 특강 수강 신청 안내',date:'2026.05.10',isNotice:false,link:'',content:''},
+    {id:4,cat:'공지',catClass:'',title:'강사 연계 신청 절차 변경 안내 (6월~)',date:'2026.05.02',isNotice:false,link:'',content:''},
+    {id:5,cat:'안내',catClass:'',title:'2026년도 군 인권 결정례 DB 업데이트 완료',date:'2026.04.25',isNotice:false,link:'',content:''},
+    {id:6,cat:'공지',catClass:'',title:'개인정보처리방침 개정 안내',date:'2026.04.10',isNotice:false,link:'',content:''}
+  ],
+  news:[
+    {id:1,cat:'뉴스',catClass:'cg',title:'인권위, 군 내 성평등 실태조사 결과 발표',date:'2026.05.19',source:'국가인권위원회',link:'https://www.humanrights.go.kr'},
+    {id:2,cat:'뉴스',catClass:'',title:'국방부, 병사 인권보호관 제도 전면 개편',date:'2026.05.14',source:'국방부',link:'https://www.humanrights.go.kr'},
+    {id:3,cat:'HOT',catClass:'cr',title:'군사법원 개혁 후 1년, 군 인권 어떻게 달라졌나',date:'2026.05.08',source:'국가인권위원회',link:'https://www.humanrights.go.kr'},
+    {id:4,cat:'뉴스',catClass:'',title:'다문화 배경 병사 인권교육 표준안 마련',date:'2026.04.29',source:'국방부',link:'https://www.humanrights.go.kr'},
+    {id:5,cat:'뉴스',catClass:'',title:'UN 자유권위원회, 한국 군 인권 개선 권고',date:'2026.04.20',source:'UN',link:'https://www.humanrights.go.kr'},
+    {id:6,cat:'뉴스',catClass:'cg',title:'인권위, 군 복무 중 종교 자유 실태조사 착수',date:'2026.04.12',source:'국가인권위원회',link:'https://www.humanrights.go.kr'}
+  ],
+  press:[
+    {id:1,title:'인권위 "군 가혹행위 신고 40% 증가…교육 강화 시급"',date:'2026.05.18',source:'국가인권위원회',link:'https://www.humanrights.go.kr'},
+    {id:2,title:'국방부, 인권침해 사건 처리기간 평균 45일→28일 단축',date:'2026.05.11',source:'국방부',link:'https://www.humanrights.go.kr'},
+    {id:3,title:'인권위, 군 구타·가혹행위 결정례 해설서 발간',date:'2026.05.05',source:'국가인권위원회',link:'https://www.humanrights.go.kr'},
+    {id:4,title:'2026년 군인권 실태조사 결과 발표',date:'2026.04.28',source:'국가인권위원회',link:'https://www.humanrights.go.kr'},
+    {id:5,title:'인권교육센터, 군 특화 온라인 과정 신설',date:'2026.04.15',source:'국가인권교육원',link:'https://edu.humanrights.go.kr'},
+    {id:6,title:'헌병대 조사 과정 인권침해 시정 권고',date:'2026.04.05',source:'국가인권위원회',link:'https://www.humanrights.go.kr'}
+  ],
+  decisions:[
+    {id:'2026-1',cat:'가혹행위',catClass:'cr',title:'반복적 욕설·인격비하 — 인권위 시정 권고',date:'2026.05.12',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'중대장이 훈련 중 특정 병사에게 반복 욕설. 재발방지 교육 권고.'},
+    {id:'2026-2',cat:'표현자유',catClass:'',title:'개인 SNS 삭제 강요 — 표현의 자유 침해',date:'2026.04.30',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'SNS 게시물 삭제 강요가 표현의 자유를 침해한다고 판단.'},
+    {id:'2026-3',cat:'종교자유',catClass:'cg2',title:'종교 행사 강제 참여 — 신앙의 자유 위반',date:'2026.05.18',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'비신자 장병 종교 행사 참석 강요. 헌법 제20조 위반.'},
+    {id:'2026-4',cat:'성희롱',catClass:'cr',title:'군 내 성희롱 처리 지연 — 2차 피해 인정',date:'2026.04.15',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'피해자 신고 후 처리 지연으로 2차 피해 발생.'},
+    {id:'2026-5',cat:'가혹행위',catClass:'cr',title:'과도한 얼차려 — 신체의 자유 침해',date:'2026.03.28',result:'각하',resultClass:'cn',link:'https://www.humanrights.go.kr',summary:'규정 외 장시간 기합이 군형법 제62조 가혹행위에 해당.'},
+    {id:'2026-6',cat:'평등권',catClass:'',title:'다문화 병사 차별 — 평등권 침해',date:'2026.05.20',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'다문화 배경 병사에 대한 반복 언어 차별이 평등권을 침해.'},
+    {id:'2025-48',cat:'휴가',catClass:'',title:'청원 휴가 일방 취소 — 인권침해 인정',date:'2025.12.10',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'청원 휴가를 일방적으로 취소한 것이 인권침해에 해당.'},
+    {id:'2025-47',cat:'성폭력',catClass:'cr',title:'군 성폭력 피해자 신원 유출 — 2차 피해',date:'2025.11.25',result:'권고',resultClass:'cg',link:'https://www.humanrights.go.kr',summary:'성폭력 피해자 신원이 유출되어 2차 피해 발생.'}
+  ],
+  board:[
+    {id:1,cat:'공지',catClass:'cn',title:'📢 게시판 이용 안내 및 익명 보장 정책',date:'상시',views:0,isNotice:true,content:''},
+    {id:128,cat:'휴가',catClass:'',title:'휴가 중에도 업무 연락이 와서 너무 힘들어요',date:'05.21',views:342,isNotice:false,content:''},
+    {id:127,cat:'복무',catClass:'',title:'선임이 개인 업무를 자꾸 시키는데 어떻게 하나요?',date:'05.20',views:518,isNotice:false,content:''},
+    {id:126,cat:'종교',catClass:'cg2',title:'종교 행사 불참했다고 불이익 받는 것 같아요',date:'05.19',views:291,isNotice:false,content:''},
+    {id:125,cat:'신고',catClass:'cr',title:'고충 신고했는데 오히려 따돌림 당하고 있어요',date:'05.18',views:744,isNotice:false,content:''},
+    {id:124,cat:'폭력',catClass:'cr',title:'반복적인 언어 폭력, 어디에 신고하면 되나요?',date:'05.17',views:621,isNotice:false,content:''},
+    {id:123,cat:'차별',catClass:'cg',title:'여성 간부인데 보직 배치 차별을 받는 것 같아요',date:'05.16',views:389,isNotice:false,content:''}
+  ],
+  edumat:[
+    {id:1,iconClass:'edu-ic1',icon:'📋',title:'2026 군 인권교관 표준 강의안',source:'인권교육원',format:'PDF',date:'2026.04',link:'https://edu.humanrights.go.kr'},
+    {id:2,iconClass:'edu-ic2',icon:'📗',title:'과잉금지원칙과 군 현장 적용 사례집',source:'인권교육원',format:'PDF',date:'2026.03',link:'https://edu.humanrights.go.kr'},
+    {id:3,iconClass:'edu-ic3',icon:'📙',title:'병영 내 성희롱 예방 교육자료',source:'인권교육원',format:'PPT',date:'2026.02',link:'https://edu.humanrights.go.kr'},
+    {id:4,iconClass:'edu-ic4',icon:'📕',title:'다문화 배경 장병 인권교육 가이드',source:'인권교육원',format:'PDF',date:'2026.01',link:'https://edu.humanrights.go.kr'},
+    {id:5,iconClass:'edu-ic5',icon:'📘',title:'군인의 기본권 — 헌법과 판례 해설',source:'인권교육원',format:'PDF',date:'2025.12',link:'https://edu.humanrights.go.kr'}
+  ],
+  publications:[
+    {id:1,iconClass:'edu-ic1',icon:'📋',title:'2025 국가인권위원회 연간보고서',source:'국가인권위원회',date:'2026.03',link:'https://library.humanrights.go.kr'},
+    {id:2,iconClass:'edu-ic2',icon:'📗',title:'군 인권 결정례 해설집 제8호',source:'국가인권위원회',date:'2026.02',link:'https://library.humanrights.go.kr'},
+    {id:3,iconClass:'edu-ic3',icon:'📙',title:'2025 군인인권 실태조사 보고서',source:'국가인권위원회',date:'2026.01',link:'https://library.humanrights.go.kr'},
+    {id:4,iconClass:'edu-ic4',icon:'📕',title:'병영문화 혁신 정책 연구보고서',source:'국방부',date:'2025.11',link:'https://library.humanrights.go.kr'},
+    {id:5,iconClass:'edu-ic5',icon:'📘',title:'UN 자유권 규약과 군 인권 적용',source:'인권교육원',date:'2025.10',link:'https://library.humanrights.go.kr'}
+  ],
+  videos:[
+    {id:1,title:'과잉금지원칙, 군 현장 적용',sub:'인권교관 심화과정',color1:'#1c3869',color2:'#1a5dc8',link:'https://www.youtube.com/@NHRCkr'},
+    {id:2,title:'병사의 눈으로 본 인권침해',sub:'병영인권 기초',color1:'#1a0a3e',color2:'#6d28d9',link:'https://www.youtube.com/@NHRCkr'},
+    {id:3,title:'인권 친화적 리더십',sub:'지휘관 리더십',color1:'#064e3b',color2:'#0a7c52',link:'https://www.youtube.com/@NHRCkr'},
+    {id:4,title:'군 내 성희롱 예방 교육',sub:'성평등 교육',color1:'#78350f',color2:'#d97706',link:'https://www.youtube.com/@NHRCkr'}
+  ]
+};
+
+// ===== STORAGE =====
+const STORAGE_KEY = 'ahdata';
+const PW_KEY = 'ahpw';
+const DEFAULT_PW = 'amihuman2026!';
+
+function getData(){
+  try{ const d=localStorage.getItem(STORAGE_KEY); return d?JSON.parse(d):JSON.parse(JSON.stringify(DEFAULT_DATA)); }
+  catch(e){ return JSON.parse(JSON.stringify(DEFAULT_DATA)); }
+}
+function saveData(d){ localStorage.setItem(STORAGE_KEY,JSON.stringify(d)); showAlert('저장되었습니다.',true); renderDashboard(); }
+
+function getStoredPw(){ return localStorage.getItem(PW_KEY)||DEFAULT_PW; }
+function hashPw(pw){ return btoa(unescape(encodeURIComponent(pw+'_ahsalt'))); }
+
+// ===== LOGIN =====
+function doLogin(){
+  const pw=document.getElementById('pwInput').value;
+  const stored=localStorage.getItem(PW_KEY);
+  const ok=stored?hashPw(pw)===stored:pw===DEFAULT_PW;
+  if(ok){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('adminApp').style.display='block';
+    renderAll();
+  } else {
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+function doLogout(){
+  document.getElementById('adminApp').style.display='none';
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('pwInput').value='';
+}
+
+// ===== SECTION NAV =====
+function showSec(sec){
+  document.querySelectorAll('.sec-panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('on'));
+  document.getElementById('sec-'+sec).classList.add('on');
+  const links=document.querySelectorAll('.sb-link');
+  links.forEach(l=>{ if(l.getAttribute('onclick')&&l.getAttribute('onclick').includes("'"+sec+"'")) l.classList.add('on'); });
+  renderSection(sec);
+}
+
+// ===== ALERT =====
+function showAlert(msg,success=true){
+  const a=document.getElementById('alertBox');
+  a.className='alert '+(success?'alert-success':'alert-danger');
+  a.textContent=msg;
+  a.style.display='block';
+  setTimeout(()=>a.style.display='none',3000);
+}
+
+// ===== RENDER =====
+function renderAll(){ renderDashboard(); }
+
+function renderSection(sec){
+  switch(sec){
+    case 'notices': renderList('notices'); break;
+    case 'news': renderList('news'); break;
+    case 'press': renderList('press'); break;
+    case 'decisions': renderList('decisions'); break;
+    case 'board': renderList('board'); break;
+    case 'edumat': renderList('edumat'); break;
+    case 'publications': renderList('publications'); break;
+    case 'videos': renderList('videos'); break;
+    case 'dashboard': renderDashboard(); break;
+  }
+}
+
+function renderDashboard(){
+  const d=getData();
+  const sg=document.getElementById('statGrid');
+  if(!sg)return;
+  const stats=[
+    {n:d.notices.length,l:'공지사항',i:'📢'},
+    {n:d.decisions.length,l:'결정례',i:'⚖️'},
+    {n:d.board.length,l:'병영고민 게시글',i:'💬'},
+    {n:d.edumat.length+d.publications.length,l:'교육·발간자료',i:'📚'},
+    {n:d.news.length,l:'인권뉴스',i:'📰'},
+    {n:d.press.length,l:'보도자료',i:'📋'},
+    {n:d.videos.length,l:'영상자료',i:'▶️'},
+    {n:d.edumat.length+d.publications.length+d.videos.length+d.board.length+d.decisions.length+d.notices.length+d.news.length+d.press.length,l:'전체 게시물',i:'📊'}
+  ];
+  sg.style.gridTemplateColumns='repeat(4,1fr)';
+  sg.innerHTML=stats.map(s=>`
+    <div class="stat-card">
+      <div style="font-size:1.5rem;margin-bottom:.3rem;">${s.i}</div>
+      <div class="stat-n">${s.n}</div>
+      <div class="stat-l">${s.l}</div>
+    </div>`).join('');
+}
+
+function renderList(type){
+  const d=getData();
+  const items=d[type]||[];
+  const el=document.getElementById(type+'-list');
+  const ct=document.getElementById(type+'-count');
+  if(ct) ct.textContent=`(총 ${items.length}건)`;
+  if(!el) return;
+
+  if(items.length===0){el.innerHTML='<p style="color:var(--txt3);font-size:.8rem;padding:1rem 0;">등록된 항목이 없습니다.</p>';return;}
+
+  let html='<table class="at"><thead><tr>';
+  if(type==='notices')     html+='<th>ID</th><th>분류</th><th>제목</th><th>날짜</th><th>관리</th>';
+  else if(type==='news')   html+='<th>ID</th><th>분류</th><th>제목</th><th>날짜</th><th>관리</th>';
+  else if(type==='press')  html+='<th>ID</th><th>제목</th><th>날짜</th><th>출처</th><th>관리</th>';
+  else if(type==='decisions') html+='<th>사건번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th><th>관리</th>';
+  else if(type==='board')  html+='<th>번호</th><th>분류</th><th>제목</th><th>날짜</th><th>조회</th><th>관리</th>';
+  else if(type==='edumat'||type==='publications') html+='<th>아이콘</th><th>제목</th><th>출처</th><th>날짜</th><th>관리</th>';
+  else if(type==='videos') html+='<th>ID</th><th>제목</th><th>부제목</th><th>관리</th>';
+  html+='</tr></thead><tbody>';
+
+  items.forEach((item,idx)=>{
+    html+='<tr>';
+    if(type==='notices'){
+      html+=`<td class="td-no">${item.id||idx+1}</td>
+        <td><span class="badge badge-${item.catClass==='cr'?'r':item.catClass==='cg'?'g':item.catClass==='cn'?'n':'b'}">${item.cat}</span></td>
+        <td>${item.isNotice?'📌 ':''}<span style="font-weight:${item.isNotice?700:400}">${item.title}</span></td>
+        <td>${item.date}</td>`;
+    } else if(type==='news'){
+      html+=`<td class="td-no">${idx+1}</td>
+        <td><span class="badge badge-${item.catClass==='cr'?'r':item.catClass==='cg'?'g':'b'}">${item.cat}</span></td>
+        <td>${item.title}</td><td>${item.date}</td>`;
+    } else if(type==='press'){
+      html+=`<td class="td-no">${idx+1}</td>
+        <td>${item.title}</td><td>${item.date}</td><td>${item.source||''}</td>`;
+    } else if(type==='decisions'){
+      html+=`<td>${item.id}</td>
+        <td><span class="badge badge-${item.catClass==='cr'?'r':item.catClass==='cg2'?'gold':item.catClass==='cg'?'g':'b'}">${item.cat}</span></td>
+        <td>${item.title}</td><td>${item.date}</td>
+        <td><span class="badge badge-${item.resultClass==='cg'?'g':item.resultClass==='cn'?'n':'r'}">${item.result}</span></td>`;
+    } else if(type==='board'){
+      html+=`<td class="td-no">${item.isNotice?'공지':item.id}</td>
+        <td><span class="badge badge-${item.catClass==='cr'?'r':item.catClass==='cg'?'g':item.catClass==='cg2'?'gold':item.catClass==='cn'?'n':'b'}">${item.cat}</span></td>
+        <td>${item.isNotice?'📌 ':''}<span style="font-weight:${item.isNotice?700:400}">${item.title}</span></td>
+        <td>${item.date}</td><td>${item.views||0}</td>`;
+    } else if(type==='edumat'||type==='publications'){
+      html+=`<td><span class="${item.iconClass}" style="width:28px;height:28px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;">${item.icon}</span></td>
+        <td>${item.title}</td><td>${item.source||''}</td><td>${item.date}</td>`;
+    } else if(type==='videos'){
+      html+=`<td class="td-no">${idx+1}</td>
+        <td>${item.title}</td><td>${item.sub||''}</td>`;
+    }
+    html+=`<td><div class="td-actions">
+      <button class="btn btn-secondary btn-sm" onclick="editItem('${type}',${idx})">수정</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteItem('${type}',${idx})">삭제</button>
+      ${idx>0?`<button class="btn btn-secondary btn-sm" onclick="moveItem('${type}',${idx},-1)">↑</button>`:''}
+      ${idx<items.length-1?`<button class="btn btn-secondary btn-sm" onclick="moveItem('${type}',${idx},1)">↓</button>`:''}
+    </div></td></tr>`;
+  });
+  html+='</tbody></table>';
+  el.innerHTML=html;
+}
+
+// ===== EDIT ITEM =====
+function editItem(type,idx){
+  const d=getData();
+  const item=d[type][idx];
+  if(type==='notices'){
+    document.getElementById('n-cat').value=item.cat||'공지';
+    document.getElementById('n-catClass').value=item.catClass||'';
+    document.getElementById('n-title').value=item.title||'';
+    document.getElementById('n-date').value=item.date||'';
+    document.getElementById('n-link').value=item.link||'';
+    document.getElementById('n-content').value=item.content||'';
+    document.getElementById('n-isNotice').value=item.isNotice?'true':'false';
+    document.getElementById('n-editId').value=idx;
+  } else if(type==='news'){
+    document.getElementById('ne-cat').value=item.cat||'뉴스';
+    document.getElementById('ne-catClass').value=item.catClass||'cg';
+    document.getElementById('ne-title').value=item.title||'';
+    document.getElementById('ne-date').value=item.date||'';
+    document.getElementById('ne-source').value=item.source||'';
+    document.getElementById('ne-link').value=item.link||'';
+    document.getElementById('ne-editId').value=idx;
+  } else if(type==='press'){
+    document.getElementById('pr-title').value=item.title||'';
+    document.getElementById('pr-date').value=item.date||'';
+    document.getElementById('pr-source').value=item.source||'';
+    document.getElementById('pr-link').value=item.link||'';
+    document.getElementById('pr-editId').value=idx;
+  } else if(type==='decisions'){
+    document.getElementById('dc-id').value=item.id||'';
+    document.getElementById('dc-cat').value=item.cat||'기타';
+    document.getElementById('dc-catClass').value=item.catClass||'cr';
+    document.getElementById('dc-title').value=item.title||'';
+    document.getElementById('dc-date').value=item.date||'';
+    document.getElementById('dc-result').value=item.result||'권고';
+    document.getElementById('dc-resultClass').value=item.resultClass||'cg';
+    document.getElementById('dc-link').value=item.link||'';
+    document.getElementById('dc-summary').value=item.summary||'';
+    document.getElementById('dc-editId').value=idx;
+  } else if(type==='board'){
+    document.getElementById('bd-cat').value=item.cat||'기타';
+    document.getElementById('bd-catClass').value=item.catClass||'';
+    document.getElementById('bd-title').value=item.title||'';
+    document.getElementById('bd-date').value=item.date||'';
+    document.getElementById('bd-views').value=item.views||0;
+    document.getElementById('bd-isNotice').value=item.isNotice?'true':'false';
+    document.getElementById('bd-content').value=item.content||'';
+    document.getElementById('bd-editId').value=idx;
+  } else if(type==='edumat'){
+    document.getElementById('em-iconClass').value=item.iconClass||'edu-ic1';
+    document.getElementById('em-icon').value=item.icon||'📋';
+    document.getElementById('em-title').value=item.title||'';
+    document.getElementById('em-source').value=item.source||'';
+    document.getElementById('em-format').value=item.format||'';
+    document.getElementById('em-date').value=item.date||'';
+    document.getElementById('em-link').value=item.link||'';
+    document.getElementById('em-editId').value=idx;
+  } else if(type==='publications'){
+    document.getElementById('pb-iconClass').value=item.iconClass||'edu-ic1';
+    document.getElementById('pb-icon').value=item.icon||'📗';
+    document.getElementById('pb-title').value=item.title||'';
+    document.getElementById('pb-source').value=item.source||'';
+    document.getElementById('pb-date').value=item.date||'';
+    document.getElementById('pb-link').value=item.link||'';
+    document.getElementById('pb-editId').value=idx;
+  } else if(type==='videos'){
+    document.getElementById('vd-title').value=item.title||'';
+    document.getElementById('vd-sub').value=item.sub||'';
+    document.getElementById('vd-color1').value=item.color1||'#1c3869';
+    document.getElementById('vd-link').value=item.link||'';
+    document.getElementById('vd-editId').value=idx;
+  }
+  document.querySelector('.card').scrollIntoView({behavior:'smooth'});
+}
+
+// ===== SAVE ITEM =====
+function saveItem(type){
+  const d=getData();
+  let item={};
+
+  if(type==='notices'){
+    const title=document.getElementById('n-title').value.trim();
+    if(!title){showAlert('제목을 입력하세요.',false);return;}
+    item={id:Date.now(),cat:document.getElementById('n-cat').value,catClass:document.getElementById('n-catClass').value,title,date:document.getElementById('n-date').value||new Date().toLocaleDateString('ko-KR').replace(/ /g,''),link:document.getElementById('n-link').value,content:document.getElementById('n-content').value,isNotice:document.getElementById('n-isNotice').value==='true'};
+    const editId=document.getElementById('n-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  } else if(type==='news'){
+    const title=document.getElementById('ne-title').value.trim();
+    if(!title){showAlert('제목을 입력하세요.',false);return;}
+    item={id:Date.now(),cat:document.getElementById('ne-cat').value,catClass:document.getElementById('ne-catClass').value,title,date:document.getElementById('ne-date').value,source:document.getElementById('ne-source').value,link:document.getElementById('ne-link').value};
+    const editId=document.getElementById('ne-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  } else if(type==='press'){
+    const title=document.getElementById('pr-title').value.trim();
+    if(!title){showAlert('제목을 입력하세요.',false);return;}
+    item={id:Date.now(),title,date:document.getElementById('pr-date').value,source:document.getElementById('pr-source').value,link:document.getElementById('pr-link').value};
+    const editId=document.getElementById('pr-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  } else if(type==='decisions'){
+    const title=document.getElementById('dc-title').value.trim();
+    if(!title){showAlert('사건명을 입력하세요.',false);return;}
+    item={id:document.getElementById('dc-id').value||'2026-'+Date.now(),cat:document.getElementById('dc-cat').value,catClass:document.getElementById('dc-catClass').value,title,date:document.getElementById('dc-date').value,result:document.getElementById('dc-result').value,resultClass:document.getElementById('dc-resultClass').value,link:document.getElementById('dc-link').value,summary:document.getElementById('dc-summary').value};
+    const editId=document.getElementById('dc-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  } else if(type==='board'){
+    const title=document.getElementById('bd-title').value.trim();
+    if(!title){showAlert('제목을 입력하세요.',false);return;}
+    const maxId=d.board.reduce((m,i)=>Math.max(m,parseInt(i.id)||0),0);
+    item={id:maxId+1,cat:document.getElementById('bd-cat').value,catClass:document.getElementById('bd-catClass').value,title,date:document.getElementById('bd-date').value||new Date().toLocaleDateString('ko').slice(5).replace(' ','').replace('.','.').slice(0,5),views:parseInt(document.getElementById('bd-views').value)||0,isNotice:document.getElementById('bd-isNotice').value==='true',content:document.getElementById('bd-content').value};
+    const editId=document.getElementById('bd-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].splice(1,0,item);
+  } else if(type==='edumat'){
+    const title=document.getElementById('em-title').value.trim();
+    if(!title){showAlert('자료명을 입력하세요.',false);return;}
+    item={id:Date.now(),iconClass:document.getElementById('em-iconClass').value,icon:document.getElementById('em-icon').value||'📋',title,source:document.getElementById('em-source').value,format:document.getElementById('em-format').value,date:document.getElementById('em-date').value,link:document.getElementById('em-link').value};
+    const editId=document.getElementById('em-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  } else if(type==='publications'){
+    const title=document.getElementById('pb-title').value.trim();
+    if(!title){showAlert('자료명을 입력하세요.',false);return;}
+    item={id:Date.now(),iconClass:document.getElementById('pb-iconClass').value,icon:document.getElementById('pb-icon').value||'📗',title,source:document.getElementById('pb-source').value,date:document.getElementById('pb-date').value,link:document.getElementById('pb-link').value};
+    const editId=document.getElementById('pb-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  } else if(type==='videos'){
+    const title=document.getElementById('vd-title').value.trim();
+    if(!title){showAlert('제목을 입력하세요.',false);return;}
+    item={id:Date.now(),title,sub:document.getElementById('vd-sub').value,color1:document.getElementById('vd-color1').value,color2:'#1a5dc8',link:document.getElementById('vd-link').value||'https://www.youtube.com/@NHRCkr'};
+    const editId=document.getElementById('vd-editId').value;
+    if(editId!=='')d[type][parseInt(editId)]=item; else d[type].unshift(item);
+  }
+
+  saveData(d);
+  clearForm(type);
+  renderList(type);
+}
+
+// ===== DELETE =====
+function deleteItem(type,idx){
+  if(!confirm('삭제하시겠습니까?'))return;
+  const d=getData();
+  d[type].splice(idx,1);
+  saveData(d);
+  renderList(type);
+}
+
+// ===== MOVE =====
+function moveItem(type,idx,dir){
+  const d=getData();
+  const arr=d[type];
+  const newIdx=idx+dir;
+  if(newIdx<0||newIdx>=arr.length)return;
+  [arr[idx],arr[newIdx]]=[arr[newIdx],arr[idx]];
+  saveData(d);
+  renderList(type);
+}
+
+// ===== CLEAR FORM =====
+function clearForm(type){
+  const forms={
+    notices:['n-cat','n-catClass','n-title','n-date','n-link','n-content','n-isNotice','n-editId'],
+    news:['ne-cat','ne-catClass','ne-title','ne-date','ne-source','ne-link','ne-editId'],
+    press:['pr-title','pr-date','pr-source','pr-link','pr-editId'],
+    decisions:['dc-id','dc-cat','dc-catClass','dc-title','dc-date','dc-result','dc-resultClass','dc-link','dc-summary','dc-editId'],
+    board:['bd-cat','bd-catClass','bd-title','bd-date','bd-views','bd-isNotice','bd-content','bd-editId'],
+    edumat:['em-iconClass','em-icon','em-title','em-source','em-format','em-date','em-link','em-editId'],
+    publications:['pb-iconClass','pb-icon','pb-title','pb-source','pb-date','pb-link','pb-editId'],
+    videos:['vd-title','vd-sub','vd-link','vd-editId']
+  };
+  (forms[type]||[]).forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.value='';
+  });
+}
+
+// ===== PASSWORD CHANGE =====
+function changePw(){
+  const cur=document.getElementById('pw-current').value;
+  const nw=document.getElementById('pw-new').value;
+  const cf=document.getElementById('pw-confirm').value;
+  const msg=document.getElementById('pw-msg');
+  const stored=localStorage.getItem(PW_KEY);
+  const ok=stored?hashPw(cur)===stored:cur===DEFAULT_PW;
+  if(!ok){msg.style.color='var(--red)';msg.textContent='현재 비밀번호가 올바르지 않습니다.';return;}
+  if(nw.length<6){msg.style.color='var(--red)';msg.textContent='비밀번호는 6자 이상이어야 합니다.';return;}
+  if(nw!==cf){msg.style.color='var(--red)';msg.textContent='새 비밀번호가 일치하지 않습니다.';return;}
+  localStorage.setItem(PW_KEY,hashPw(nw));
+  msg.style.color='var(--green)';msg.textContent='비밀번호가 변경되었습니다.';
+  document.getElementById('pw-current').value='';
+  document.getElementById('pw-new').value='';
+  document.getElementById('pw-confirm').value='';
+}
+
+// ===== DATA EXPORT/IMPORT =====
+function exportData(){
+  const d=getData();
+  const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='ahdata_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+  URL.revokeObjectURL(url);
+}
+function importData(event){
+  const file=event.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const d=JSON.parse(e.target.result);
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(d));
+      showAlert('데이터를 성공적으로 가져왔습니다.',true);
+      renderAll();
+    }catch(err){showAlert('유효하지 않은 JSON 파일입니다.',false);}
+  };
+  reader.readAsText(file);
+}
+function resetData(){
+  if(!confirm('모든 데이터가 초기값으로 리셋됩니다. 계속하시겠습니까?'))return;
+  localStorage.removeItem(STORAGE_KEY);
+  showAlert('초기 데이터로 리셋되었습니다.',true);
+  renderAll();
+}
+
+// ===== ENTER KEY =====
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&document.getElementById('loginScreen').style.display!=='none') doLogin();
+});
+</script>
+</body>
+</html>

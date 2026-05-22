@@ -750,81 +750,37 @@
         <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">인권사례·결정례 게시판</span></div>
         <div class="sec-stxt">국가인권위원회 결정례 및 관련 판례 — 군 관련 사건 분류</div>
       </div>
-      <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more">인권위 결정례 전체 →</a>
+      <a href="https://case.humanrights.go.kr/dici/diciList.do" target="_blank" class="sec-more">인권위 결정례 전체 →</a>
     </div>
+
+    <!-- 자동 업데이트 안내 -->
+    <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem;padding:.55rem .9rem;background:var(--sky);border-radius:6px;border-left:3px solid var(--blue);font-size:.75rem;color:var(--txt2);">
+      <span style="color:var(--blue);font-size:.9rem;">🔄</span>
+      <span>국가인권위원회 결정례 DB와 <strong>매일 자동 연동</strong>됩니다.</span>
+      <span id="dec-updated" style="margin-left:auto;color:var(--txt3);"></span>
+    </div>
+
     <div class="sa">
       <div class="tab-wrap">
-        <button class="tab-btn on" onclick="switchTab('case','c1',this)">전체</button>
-        <button class="tab-btn"    onclick="switchTab('case','c2',this)">신체자유·가혹행위</button>
-        <button class="tab-btn"    onclick="switchTab('case','c3',this)">표현·종교의 자유</button>
-        <button class="tab-btn"    onclick="switchTab('case','c4',this)">평등권·차별</button>
-        <button class="tab-btn"    onclick="switchTab('case','c5',this)">성희롱·성폭력</button>
+        <button class="tab-btn on" onclick="filterDecisions('전체',this)">전체</button>
+        <button class="tab-btn"    onclick="filterDecisions('가혹행위',this)">신체자유·가혹행위</button>
+        <button class="tab-btn"    onclick="filterDecisions('표현·종교의 자유',this)">표현·종교의 자유</button>
+        <button class="tab-btn"    onclick="filterDecisions('평등권·차별',this)">평등권·차별</button>
+        <button class="tab-btn"    onclick="filterDecisions('성희롱·성폭력',this)">성희롱·성폭력</button>
       </div>
 
-      <div class="tab-pane on" id="case-c1">
+      <div id="decisions-wrap">
         <table class="btable">
           <thead>
             <tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr>
           </thead>
-          <tbody>
-            <tr><td class="td-no">2026-1</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">반복적 욕설·인격비하 — 시정 권고</a></td><td class="td-date">2026.05.12</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2026-2</td><td><span class="bcat">표현자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">개인 SNS 삭제 강요 — 표현의 자유 침해</a></td><td class="td-date">2026.04.30</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2026-3</td><td><span class="bcat cg2">종교자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">종교 행사 강제 참여 — 신앙의 자유 위반</a></td><td class="td-date">2026.05.18</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2026-4</td><td><span class="bcat cr">성희롱</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 내 성희롱 처리 지연 — 2차 피해 인정</a></td><td class="td-date">2026.04.15</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2026-5</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">과도한 얼차려 — 신체의 자유 침해</a></td><td class="td-date">2026.03.28</td><td><span class="bcat cn">각하</span></td></tr>
-            <tr><td class="td-no">2026-6</td><td><span class="bcat">평등권</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">다문화 병사 차별 — 평등권 침해</a></td><td class="td-date">2026.05.20</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-48</td><td><span class="bcat">휴가</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">청원 휴가 일방 취소 — 인권침해 인정</a></td><td class="td-date">2025.12.10</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-47</td><td><span class="bcat cr">성폭력</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 성폭력 피해자 신원 유출 — 2차 피해</a></td><td class="td-date">2025.11.25</td><td><span class="bcat cg">권고</span></td></tr>
+          <tbody id="decisions-tbody">
+            <tr><td colspan="5" style="text-align:center;padding:1.5rem;color:var(--txt3);">데이터를 불러오는 중...</td></tr>
           </tbody>
         </table>
-        <div class="board-pager" style="margin-top:.8rem;">
-          <div class="bp on">1</div><div class="bp">2</div><div class="bp">3</div><div class="bp">4</div><div class="bp">5</div><div class="bp">›</div>
+        <div id="dec-source-note" style="font-size:.7rem;color:var(--txt3);margin-top:.4rem;text-align:right;">
+          출처: <a href="https://case.humanrights.go.kr/dici/diciList.do" target="_blank" style="color:var(--blue);">국가인권위원회 결정례 DB</a>
         </div>
-      </div>
-
-      <div class="tab-pane" id="case-c2">
-        <table class="btable">
-          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
-          <tbody>
-            <tr><td class="td-no">2026-1</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">반복적 욕설·인격비하 — 시정 권고</a></td><td class="td-date">2026.05.12</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2026-5</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">과도한 얼차려 — 신체의 자유 침해</a></td><td class="td-date">2026.03.28</td><td><span class="bcat cn">각하</span></td></tr>
-            <tr><td class="td-no">2025-41</td><td><span class="bcat cr">구타</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">상급자 폭행 — 군형법 가혹행위 해당</a></td><td class="td-date">2025.10.15</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-35</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">장시간 기합·얼차려 강요 사건</a></td><td class="td-date">2025.08.20</td><td><span class="bcat cg">권고</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="tab-pane" id="case-c3">
-        <table class="btable">
-          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
-          <tbody>
-            <tr><td class="td-no">2026-2</td><td><span class="bcat">표현자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">개인 SNS 삭제 강요 — 표현의 자유 침해</a></td><td class="td-date">2026.04.30</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2026-3</td><td><span class="bcat cg2">종교자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">종교 행사 강제 참여 — 신앙의 자유 위반</a></td><td class="td-date">2026.05.18</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-39</td><td><span class="bcat">표현자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">집회·결사의 자유 제한 — 군인 기본권</a></td><td class="td-date">2025.09.10</td><td><span class="bcat cn">각하</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="tab-pane" id="case-c4">
-        <table class="btable">
-          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
-          <tbody>
-            <tr><td class="td-no">2026-6</td><td><span class="bcat">평등권</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">다문화 병사 차별 — 평등권 침해</a></td><td class="td-date">2026.05.20</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-43</td><td><span class="bcat">차별</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">여성 간부 보직 배치 차별 사건</a></td><td class="td-date">2025.11.05</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-36</td><td><span class="bcat">평등권</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">종교 이유 진급 탈락 — 차별 인정</a></td><td class="td-date">2025.08.30</td><td><span class="bcat cg">권고</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="tab-pane" id="case-c5">
-        <table class="btable">
-          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
-          <tbody>
-            <tr><td class="td-no">2026-4</td><td><span class="bcat cr">성희롱</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 내 성희롱 처리 지연 — 2차 피해 인정</a></td><td class="td-date">2026.04.15</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-47</td><td><span class="bcat cr">성폭력</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 성폭력 피해자 신원 유출 — 2차 피해</a></td><td class="td-date">2025.11.25</td><td><span class="bcat cg">권고</span></td></tr>
-            <tr><td class="td-no">2025-32</td><td><span class="bcat cr">성희롱</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">상급자 성희롱·불이익 처우 — 2차 피해</a></td><td class="td-date">2025.07.15</td><td><span class="bcat cg">권고</span></td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
@@ -1017,6 +973,56 @@
       if(p.id===group+'-'+paneId) p.classList.add('on');
     });
   }
+
+  // ===== 결정례 자동 연동 =====
+  const CAT_CLASS = {
+    '가혹행위':'cr','성희롱·성폭력':'cr','표현·종교의 자유':'cg2','평등권·차별':'','기타':''
+  };
+  const RES_CLASS = {'권고':'cg','각하':'cn','기각':'cn','인용':'cg'};
+  let _decisions = [];
+  let _decFilter = '전체';
+
+  function renderDecisions(items){
+    const tbody = document.getElementById('decisions-tbody');
+    if(!tbody) return;
+    if(!items || items.length===0){
+      tbody.innerHTML='<tr><td colspan="5" style="text-align:center;padding:1.5rem;color:var(--txt3);">해당 분류의 결정례가 없습니다.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = items.map(d=>`
+      <tr>
+        <td class="td-no">${d.id||'-'}</td>
+        <td><span class="bcat ${CAT_CLASS[d.category]||''}">${d.category||'-'}</span></td>
+        <td class="td-tit"><a href="${d.url||'#'}" target="_blank">${d.title}</a></td>
+        <td class="td-date">${d.date||'-'}</td>
+        <td><span class="bcat ${RES_CLASS[d.result]||''}">${d.result||'-'}</span></td>
+      </tr>`).join('');
+  }
+
+  function filterDecisions(cat, btn){
+    _decFilter = cat;
+    document.querySelectorAll('#decisions-wrap').forEach(()=>{});
+    const wrap = btn.closest('.sa');
+    if(wrap) wrap.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const filtered = cat==='전체' ? _decisions : _decisions.filter(d=>d.category===cat);
+    renderDecisions(filtered);
+  }
+
+  (async function loadDecisions(){
+    try{
+      const r = await fetch('data/decisions.json?v='+Date.now());
+      if(!r.ok) throw new Error('fetch failed');
+      const json = await r.json();
+      _decisions = json.items || [];
+      const upEl = document.getElementById('dec-updated');
+      if(upEl && json.updated) upEl.textContent = '업데이트: '+json.updated;
+      renderDecisions(_decisions);
+    }catch(e){
+      const tbody = document.getElementById('decisions-tbody');
+      if(tbody) tbody.innerHTML='<tr><td colspan="5" style="text-align:center;padding:1.5rem;color:var(--txt3);">데이터를 불러오지 못했습니다. <a href="https://case.humanrights.go.kr/dici/diciList.do" target="_blank" style="color:var(--blue);">인권위 바로가기</a></td></tr>';
+    }
+  })();
 
   // quote
   const QS=[
