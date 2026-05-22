@@ -763,16 +763,17 @@
     <div class="sa">
       <div class="tab-wrap">
         <button class="tab-btn on" onclick="filterDecisions('전체',this)">전체</button>
-        <button class="tab-btn"    onclick="filterDecisions('가혹행위',this)">신체자유·가혹행위</button>
+        <button class="tab-btn"    onclick="filterDecisions('가혹행위',this)">가혹행위</button>
         <button class="tab-btn"    onclick="filterDecisions('표현·종교의 자유',this)">표현·종교의 자유</button>
         <button class="tab-btn"    onclick="filterDecisions('평등권·차별',this)">평등권·차별</button>
         <button class="tab-btn"    onclick="filterDecisions('성희롱·성폭력',this)">성희롱·성폭력</button>
+        <button class="tab-btn"    onclick="filterDecisions('인사·처우',this)">인사·처우</button>
       </div>
 
       <div id="decisions-wrap">
         <table class="btable">
           <thead>
-            <tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr>
+            <tr><th>사건번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>담당</th></tr>
           </thead>
           <tbody id="decisions-tbody">
             <tr><td colspan="5" style="text-align:center;padding:1.5rem;color:var(--txt3);">데이터를 불러오는 중...</td></tr>
@@ -991,11 +992,11 @@
     }
     tbody.innerHTML = items.map(d=>`
       <tr>
-        <td class="td-no">${d.id||'-'}</td>
+        <td class="td-no" style="font-size:.7rem">${d.id||'-'}</td>
         <td><span class="bcat ${CAT_CLASS[d.category]||''}">${d.category||'-'}</span></td>
         <td class="td-tit"><a href="${d.url||'#'}" target="_blank">${d.title}</a></td>
         <td class="td-date">${d.date||'-'}</td>
-        <td><span class="bcat ${RES_CLASS[d.result]||''}">${d.result||'-'}</span></td>
+        <td style="font-size:.72rem;color:var(--txt2)">${d.team||d.committee||'-'}</td>
       </tr>`).join('');
   }
 
