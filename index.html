@@ -8,360 +8,370 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy:   #1c3869;
-      --navy2:  #152d56;
-      --blue:   #1a5dc8;
-      --blue2:  #2563eb;
-      --sky:    #e8f0fb;
-      --white:  #ffffff;
-      --bg:     #f4f6fb;
-      --bg2:    #eef1f8;
-      --border: #dde3ef;
-      --txt:    #1a2340;
-      --txt2:   #4a5568;
-      --txt3:   #8898aa;
-      --red:    #d93025;
-      --green:  #0a7c52;
-      --gold:   #c9960e;
+    :root{
+      --navy:#1c3869;--navy2:#152d56;--blue:#1a5dc8;--blue2:#2563eb;
+      --sky:#e8f0fb;--white:#fff;--bg:#f4f6fb;--bg2:#eef1f8;
+      --border:#dde3ef;--txt:#1a2340;--txt2:#4a5568;--txt3:#8898aa;
+      --red:#d93025;--green:#0a7c52;--gold:#c9960e;
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{font-family:'Noto Sans KR',sans-serif;color:var(--txt);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
     a{text-decoration:none;color:inherit;}
-    img{max-width:100%;display:block;}
     ul{list-style:none;}
-    .inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;}
+    .inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
 
-    /* ===== TOP BAR ===== */
-    .top-bar{background:var(--navy2);padding:.38rem 0;}
-    .top-bar-inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;}
-    .top-sites{display:flex;}
-    .top-sites a{color:rgba(255,255,255,.55);padding:.18rem .85rem;border-right:1px solid rgba(255,255,255,.1);font-size:.7rem;transition:color .18s;}
+    /* TOP BAR */
+    .top-bar{background:var(--navy2);padding:.4rem 0;}
+    .tbi{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+    .top-sites a{color:rgba(255,255,255,.52);padding:.18rem .85rem;border-right:1px solid rgba(255,255,255,.1);font-size:.69rem;transition:color .15s;}
     .top-sites a:first-child{padding-left:0;}
     .top-sites a:hover{color:#fff;}
-    .top-right{display:flex;align-items:center;gap:.9rem;}
-    .top-right a{color:rgba(255,255,255,.5);font-size:.7rem;transition:color .18s;}
+    .top-right a{color:rgba(255,255,255,.48);font-size:.69rem;margin-left:.9rem;transition:color .15s;}
     .top-right a:hover{color:#fff;}
 
-    /* ===== HEADER ===== */
-    header{background:#fff;border-bottom:2px solid var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(28,56,105,.09);}
-    .header-inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:70px;gap:1.5rem;}
-    .logo{display:flex;align-items:center;gap:11px;flex-shrink:0;}
-    .logo-emblem{width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900;color:#fff;}
-    .logo-text .main{font-size:1.1rem;font-weight:800;color:var(--navy);letter-spacing:-.3px;line-height:1.2;}
-    .logo-text .main em{color:var(--blue);font-style:normal;}
-    .logo-text .sub{font-size:.62rem;color:var(--txt3);}
-
-    .main-nav{display:flex;align-items:center;gap:.1rem;flex:1;justify-content:center;}
-    .main-nav li a{display:block;padding:.55rem .85rem;font-size:.83rem;font-weight:600;color:var(--txt);border-radius:5px;transition:all .18s;white-space:nowrap;}
-    .main-nav li a:hover{color:var(--blue);background:var(--sky);}
-    .nav-report{background:var(--red)!important;color:#fff!important;border-radius:20px!important;padding:.5rem 1.1rem!important;font-weight:700!important;box-shadow:0 2px 12px rgba(217,48,37,.3);animation:rpulse 2.5s ease-in-out infinite;}
+    /* HEADER */
+    header{background:#fff;border-bottom:2px solid var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(28,56,105,.08);}
+    .hi{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:68px;gap:1.2rem;}
+    .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+    .logo-em{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:900;color:#fff;}
+    .logo-txt .main{font-size:1.08rem;font-weight:800;color:var(--navy);letter-spacing:-.3px;line-height:1.2;}
+    .logo-txt .main em{color:var(--blue);font-style:normal;}
+    .logo-txt .sub{font-size:.6rem;color:var(--txt3);}
+    .gnb{display:flex;align-items:center;gap:.1rem;flex:1;justify-content:center;}
+    .gnb li a{display:block;padding:.52rem .82rem;font-size:.82rem;font-weight:600;color:var(--txt);border-radius:4px;transition:all .15s;white-space:nowrap;}
+    .gnb li a:hover{color:var(--blue);background:var(--sky);}
+    .gnb .gr{background:var(--red)!important;color:#fff!important;border-radius:20px!important;padding:.5rem 1.1rem!important;font-weight:700!important;animation:rpulse 2.5s ease-in-out infinite;}
     @keyframes rpulse{0%,100%{box-shadow:0 2px 12px rgba(217,48,37,.3)}50%{box-shadow:0 2px 22px rgba(217,48,37,.6)}}
-
-    .header-search{display:flex;align-items:center;flex-shrink:0;}
-    .search-box{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:5px;overflow:hidden;transition:border-color .2s;}
-    .search-box:focus-within{border-color:var(--blue);}
-    .search-box input{border:none;outline:none;padding:.42rem .75rem;font-size:.8rem;color:var(--txt);background:transparent;font-family:inherit;width:160px;}
-    .search-box button{background:var(--navy);border:none;cursor:pointer;padding:.42rem .65rem;color:#fff;font-size:.85rem;transition:background .2s;}
-    .search-box button:hover{background:var(--blue);}
-
-    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;}
+    .hsearch{display:flex;align-items:center;}
+    .sbox{display:flex;border:1.5px solid var(--border);border-radius:4px;overflow:hidden;transition:border-color .2s;}
+    .sbox:focus-within{border-color:var(--blue);}
+    .sbox input{border:none;outline:none;padding:.4rem .7rem;font-size:.78rem;color:var(--txt);background:transparent;font-family:inherit;width:150px;}
+    .sbox button{background:var(--navy);border:none;cursor:pointer;padding:.4rem .62rem;color:#fff;font-size:.82rem;transition:background .2s;}
+    .sbox button:hover{background:var(--blue);}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;}
     .ham span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;}
     .mob{display:none;position:fixed;inset:0;z-index:9999;background:rgba(255,255,255,.98);flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;}
     .mob.on{display:flex;}
     .mob-x{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--txt2);font-size:1.6rem;cursor:pointer;}
-    .mob a{font-size:1.3rem;font-weight:700;color:var(--navy);}
+    .mob a{font-size:1.25rem;font-weight:700;color:var(--navy);}
     .mob a:hover{color:var(--blue);}
 
-    /* ===== HERO ===== */
-    .hero{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 55%,#1e4a8c 100%);padding:4rem 0 3rem;position:relative;overflow:hidden;}
-    .hero::after{content:'';position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(125,211,252,.07) 0%,transparent 65%);pointer-events:none;}
-    .hero-inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center;position:relative;z-index:1;}
-    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.82);font-size:.7rem;font-weight:700;padding:.28rem .8rem;border-radius:20px;letter-spacing:.5px;margin-bottom:1.1rem;}
-    .live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:ldot 1.5s ease-in-out infinite;}
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 55%,#1e4a8c 100%);padding:3.5rem 0 2.8rem;position:relative;overflow:hidden;}
+    .hero::after{content:'';position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(125,211,252,.06) 0%,transparent 65%);pointer-events:none;}
+    .hri{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;position:relative;z-index:1;}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8);font-size:.68rem;font-weight:700;padding:.27rem .78rem;border-radius:20px;letter-spacing:.5px;margin-bottom:1rem;}
+    .ldot{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:ldot 1.5s ease-in-out infinite;}
     @keyframes ldot{0%,100%{opacity:1}50%{opacity:.3}}
-    .hero h1{font-size:clamp(2rem,3.8vw,3rem);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.15;margin-bottom:1.1rem;}
+    .hero h1{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.15;margin-bottom:1rem;}
     .hero h1 em{color:#7dd3fc;font-style:normal;}
-    .hero-desc{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.85;margin-bottom:1.8rem;max-width:460px;}
-    .hero-btns{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.2rem;}
-    .btn-w{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--navy);font-weight:700;font-size:.85rem;padding:.7rem 1.5rem;border-radius:5px;transition:all .2s;}
-    .btn-w:hover{background:var(--sky);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.15);}
-    .btn-ol{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#fff;font-weight:600;font-size:.85rem;padding:.7rem 1.5rem;border-radius:5px;border:1.5px solid rgba(255,255,255,.35);transition:all .2s;}
+    .hero-desc{color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.85;margin-bottom:1.7rem;max-width:460px;}
+    .hero-btns{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:2rem;}
+    .btn-w{display:inline-flex;align-items:center;gap:5px;background:#fff;color:var(--navy);font-weight:700;font-size:.83rem;padding:.65rem 1.4rem;border-radius:4px;transition:all .2s;}
+    .btn-w:hover{background:var(--sky);transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.14);}
+    .btn-ol{display:inline-flex;align-items:center;gap:5px;background:transparent;color:#fff;font-weight:600;font-size:.83rem;padding:.65rem 1.4rem;border-radius:4px;border:1.5px solid rgba(255,255,255,.32);transition:all .2s;}
     .btn-ol:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);}
-    .btn-red{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-weight:700;font-size:.85rem;padding:.7rem 1.5rem;border-radius:5px;transition:all .2s;}
-    .btn-red:hover{background:#c0271e;transform:translateY(-1px);}
-
-    .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;overflow:hidden;}
-    .hst{padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,.1);}
+    .btn-r{display:inline-flex;align-items:center;gap:5px;background:var(--red);color:#fff;font-weight:700;font-size:.83rem;padding:.65rem 1.4rem;border-radius:4px;transition:all .2s;}
+    .btn-r:hover{background:#c0271e;transform:translateY(-1px);}
+    .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:7px;overflow:hidden;}
+    .hst{padding:.9rem 1rem;border-right:1px solid rgba(255,255,255,.09);}
     .hst:last-child{border-right:none;}
-    .hst-n{font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;}
-    .hst-l{font-size:.65rem;color:rgba(255,255,255,.45);margin-top:.22rem;}
-
-    .qcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:1.8rem;position:relative;overflow:hidden;}
+    .hst-n{font-size:1.3rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;}
+    .hst-l{font-size:.63rem;color:rgba(255,255,255,.42);margin-top:.2rem;}
+    .qcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:1.6rem;position:relative;overflow:hidden;}
     .qcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7dd3fc,#38bdf8,transparent);}
-    .q-lbl{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd3fc;margin-bottom:1rem;}
-    .q-mark{font-size:4.5rem;line-height:.8;color:#7dd3fc;opacity:.18;font-family:Georgia,serif;position:absolute;top:1.2rem;right:1.4rem;}
-    .q-body{font-size:.9rem;line-height:1.9;font-weight:500;color:rgba(255,255,255,.88);border-left:3px solid #7dd3fc;padding-left:.9rem;margin-bottom:.9rem;}
-    .q-src{font-size:.72rem;color:rgba(255,255,255,.42);}
-    .q-next{display:inline-flex;align-items:center;gap:5px;margin-top:1rem;font-size:.73rem;color:#7dd3fc;cursor:pointer;transition:opacity .2s;}
-    .q-next:hover{opacity:.7;}
+    .qlbl{font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd3fc;margin-bottom:.9rem;}
+    .qmark{font-size:4rem;line-height:.8;color:#7dd3fc;opacity:.18;font-family:Georgia,serif;position:absolute;top:1rem;right:1.2rem;}
+    .qbody{font-size:.88rem;line-height:1.9;font-weight:500;color:rgba(255,255,255,.88);border-left:3px solid #7dd3fc;padding-left:.85rem;margin-bottom:.8rem;}
+    .qsrc{font-size:.7rem;color:rgba(255,255,255,.4);}
+    .qnext{display:inline-flex;align-items:center;gap:4px;margin-top:.9rem;font-size:.7rem;color:#7dd3fc;cursor:pointer;transition:opacity .2s;}
+    .qnext:hover{opacity:.7;}
 
-    /* ===== QUICK ACCESS ===== */
-    .quick-access{background:#fff;border-bottom:2px solid var(--border);}
-    .qa-inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:repeat(6,1fr);}
-    .qa-item{display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1.4rem .6rem;border-right:1px solid var(--border);transition:all .18s;cursor:pointer;}
+    /* QUICK ACCESS */
+    .qa{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 1px 0 var(--border);}
+    .qai{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:repeat(6,1fr);}
+    .qa-item{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:1.2rem .5rem;border-right:1px solid var(--border);transition:all .15s;cursor:pointer;}
     .qa-item:last-child{border-right:none;}
     .qa-item:hover{background:var(--sky);}
-    .qa-item:hover .qa-icon{background:var(--blue);color:#fff;}
-    .qa-icon{width:46px;height:46px;border-radius:9px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.25rem;transition:all .2s;}
-    .qa-name{font-size:.72rem;font-weight:700;color:var(--txt);text-align:center;line-height:1.3;}
+    .qa-item:hover .qa-ic{background:var(--blue);color:#fff;}
+    .qa-ic{width:44px;height:44px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all .18s;}
+    .qa-nm{font-size:.68rem;font-weight:700;color:var(--txt);text-align:center;line-height:1.3;}
 
-    /* ===== SECTION ===== */
-    .sec{padding:3rem 0;}
+    /* SECTION WRAPPER */
+    .sec{padding:2.5rem 0;}
     .sec-bg{background:var(--bg);}
     .sec-navy{background:var(--navy2);}
     .sec-white{background:#fff;}
-
-    .sec-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.2rem;padding-bottom:.9rem;border-bottom:2px solid var(--navy);}
-    .sec-title-row{display:flex;align-items:center;gap:.55rem;}
-    .sec-bar{width:4px;height:1.2rem;background:var(--blue);border-radius:2px;flex-shrink:0;}
-    .sec-title{font-size:1.1rem;font-weight:800;color:var(--navy);}
-    .sec-sub{font-size:.75rem;color:var(--txt2);margin-top:.2rem;padding-left:.65rem;}
-    .sec-more{font-size:.75rem;font-weight:600;color:var(--txt2);display:inline-flex;align-items:center;gap:3px;border:1px solid var(--border);padding:.3rem .8rem;border-radius:3px;transition:all .18s;white-space:nowrap;}
+    .sec-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:2px solid var(--navy);}
+    .sec-trow{display:flex;align-items:center;gap:.5rem;}
+    .sec-bar{width:4px;height:1.1rem;background:var(--blue);border-radius:2px;flex-shrink:0;}
+    .sec-ttl{font-size:1.05rem;font-weight:800;color:var(--navy);}
+    .sec-stxt{font-size:.72rem;color:var(--txt2);margin-top:.18rem;padding-left:.6rem;}
+    .sec-more{font-size:.72rem;font-weight:600;color:var(--txt2);display:inline-flex;align-items:center;gap:3px;border:1px solid var(--border);padding:.28rem .75rem;border-radius:3px;transition:all .15s;white-space:nowrap;}
     .sec-more:hover{border-color:var(--blue);color:var(--blue);background:var(--sky);}
 
-    /* ===== MAIN 2-GRID ===== */
-    .mg{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-    .mg3{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:1.5rem;}
+    /* TAB */
+    .tab-wrap{display:flex;border-bottom:2px solid var(--navy);margin-bottom:1rem;}
+    .tab-btn{padding:.55rem 1rem;font-size:.78rem;font-weight:700;color:var(--txt2);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s;}
+    .tab-btn.on{color:var(--navy);border-bottom-color:var(--blue);background:var(--sky);}
+    .tab-btn:hover:not(.on){color:var(--navy);}
+    .tab-pane{display:none;}
+    .tab-pane.on{display:block;}
 
-    /* ===== NEWS LIST ===== */
-    .news-item{display:flex;gap:.85rem;align-items:flex-start;padding:.82rem 0;border-bottom:1px solid var(--border);transition:background .15s;}
-    .news-item:last-child{border-bottom:none;}
-    .news-item:hover .n-title{color:var(--blue);}
-    .n-cat{flex-shrink:0;font-size:.63rem;font-weight:700;padding:.2rem .55rem;border-radius:3px;background:var(--sky);color:var(--blue);white-space:nowrap;margin-top:.12rem;}
-    .n-cat.cr{background:rgba(217,48,37,.08);color:var(--red);}
-    .n-cat.cg{background:rgba(10,124,82,.08);color:var(--green);}
-    .n-title{font-size:.83rem;font-weight:500;color:var(--txt);line-height:1.5;transition:color .18s;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-    .n-title.notice{font-weight:700;color:var(--navy);}
-    .n-date{font-size:.7rem;color:var(--txt3);margin-top:.28rem;flex-shrink:0;}
+    /* NEWS LIST */
+    .nitem{display:flex;gap:.75rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border);transition:background .12s;cursor:pointer;}
+    .nitem:last-child{border-bottom:none;}
+    .nitem:hover .ntit{color:var(--blue);}
+    .ncat{flex-shrink:0;font-size:.6rem;font-weight:700;padding:.18rem .52rem;border-radius:2px;background:var(--sky);color:var(--blue);white-space:nowrap;margin-top:.1rem;}
+    .ncat.cr{background:rgba(217,48,37,.08);color:var(--red);}
+    .ncat.cg{background:rgba(10,124,82,.08);color:var(--green);}
+    .ncat.cn{background:rgba(28,56,105,.08);color:var(--navy);}
+    .ntit{font-size:.8rem;font-weight:500;color:var(--txt);line-height:1.5;transition:color .15s;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .ntit.notice{font-weight:700;color:var(--navy);}
+    .ndate{font-size:.68rem;color:var(--txt3);margin-top:.25rem;flex-shrink:0;}
 
-    /* ===== CASES GRID ===== */
-    .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-    .case-card{background:#fff;border:1px solid var(--border);border-radius:7px;overflow:hidden;transition:all .22s;cursor:pointer;}
-    .case-card:hover{border-color:var(--blue);box-shadow:0 6px 22px rgba(28,56,105,.12);transform:translateY(-3px);}
-    .case-thumb{height:110px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;position:relative;}
-    .ct-1{background:linear-gradient(135deg,#1c3869,#1a5dc8);}
-    .ct-2{background:linear-gradient(135deg,#1a0a3e,#6d28d9);}
-    .ct-3{background:linear-gradient(135deg,#064e3b,#0a7c52);}
-    .ct-4{background:linear-gradient(135deg,#7f1d1d,#dc2626);}
-    .ct-5{background:linear-gradient(135deg,#78350f,#d97706);}
-    .ct-6{background:linear-gradient(135deg,#0c4a6e,#0284c7);}
-    .case-badge{position:absolute;top:.55rem;left:.55rem;font-size:.6rem;font-weight:700;padding:.16rem .5rem;border-radius:3px;}
+    /* BOARD TABLE */
+    .btable{width:100%;border-collapse:collapse;}
+    .btable thead tr{background:var(--navy);}
+    .btable thead th{padding:.65rem .9rem;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.8);text-align:left;white-space:nowrap;}
+    .btable tbody tr{border-bottom:1px solid var(--border);transition:background .12s;cursor:pointer;}
+    .btable tbody tr:hover{background:var(--bg);}
+    .btable td{padding:.8rem .9rem;font-size:.78rem;color:var(--txt);}
+    .td-no{color:var(--txt3);font-size:.72rem;width:45px;}
+    .td-tit{font-weight:500;}
+    .td-tit.notice{color:var(--blue);font-weight:700;}
+    .td-cat{width:70px;}
+    .td-date,.td-views{color:var(--txt3);font-size:.7rem;width:70px;}
+    .bcat{font-size:.6rem;font-weight:700;padding:.15rem .48rem;border-radius:2px;background:var(--sky);color:var(--blue);}
+    .bcat.cr{background:rgba(217,48,37,.08);color:var(--red);}
+    .bcat.cg{background:rgba(10,124,82,.08);color:var(--green);}
+    .bcat.cn{background:rgba(28,56,105,.08);color:var(--navy);}
+    .bcat.cg2{background:rgba(201,150,14,.08);color:var(--gold);}
+    .board-write-btn{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:.7rem;padding:.68rem;background:var(--navy);color:#fff;border-radius:3px;font-weight:700;font-size:.78rem;transition:background .18s;}
+    .board-write-btn:hover{background:var(--blue);}
+    .board-pager{display:flex;justify-content:center;align-items:center;gap:.3rem;margin-top:.8rem;}
+    .bp{width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.72rem;border:1px solid var(--border);border-radius:3px;cursor:pointer;color:var(--txt2);transition:all .15s;}
+    .bp:hover,.bp.on{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+    /* CASES GRID */
+    .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+    .ccard{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .2s;cursor:pointer;}
+    .ccard:hover{border-color:var(--blue);box-shadow:0 5px 20px rgba(28,56,105,.11);transform:translateY(-3px);}
+    .cthumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;position:relative;}
+    .ct1{background:linear-gradient(135deg,#1c3869,#1a5dc8);}
+    .ct2{background:linear-gradient(135deg,#1a0a3e,#6d28d9);}
+    .ct3{background:linear-gradient(135deg,#064e3b,#0a7c52);}
+    .ct4{background:linear-gradient(135deg,#7f1d1d,#dc2626);}
+    .ct5{background:linear-gradient(135deg,#78350f,#d97706);}
+    .ct6{background:linear-gradient(135deg,#0c4a6e,#0284c7);}
+    .cbadge{position:absolute;top:.5rem;left:.5rem;font-size:.58rem;font-weight:700;padding:.14rem .48rem;border-radius:2px;}
     .cb-hot{background:rgba(220,38,38,.18);color:#fca5a5;border:1px solid rgba(220,38,38,.3);}
     .cb-new{background:rgba(16,185,129,.18);color:#6ee7b7;border:1px solid rgba(16,185,129,.3);}
     .cb-dec{background:rgba(59,130,246,.18);color:#93c5fd;border:1px solid rgba(59,130,246,.3);}
-    .case-body{padding:.9rem .9rem 1rem;}
-    .case-body h3{font-size:.8rem;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:.35rem;}
-    .case-body p{font-size:.73rem;color:var(--txt2);line-height:1.6;}
-    .case-meta{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;font-size:.68rem;color:var(--txt3);padding-top:.7rem;border-top:1px solid var(--border);}
-    .case-meta a{color:var(--blue);font-weight:700;}
+    .cbody{padding:.8rem .85rem .95rem;}
+    .cbody h3{font-size:.78rem;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:.3rem;}
+    .cbody p{font-size:.7rem;color:var(--txt2);line-height:1.6;}
+    .cmeta{display:flex;justify-content:space-between;align-items:center;margin-top:.65rem;font-size:.66rem;color:var(--txt3);padding-top:.65rem;border-top:1px solid var(--border);}
+    .cmeta a{color:var(--blue);font-weight:700;}
 
-    /* ===== BOARD TABLE ===== */
-    .board-wrap{border:1px solid var(--border);border-radius:6px;overflow:hidden;}
-    .board-head{display:grid;grid-template-columns:50px 1fr 80px 60px;padding:.65rem 1rem;background:var(--navy);}
-    .board-head span{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.78);letter-spacing:.3px;}
-    .b-row{display:grid;grid-template-columns:50px 1fr 80px 60px;padding:.85rem 1rem;border-bottom:1px solid var(--border);font-size:.8rem;align-items:center;transition:background .15s;cursor:pointer;}
-    .b-row:last-child{border-bottom:none;}
-    .b-row:hover{background:var(--bg);}
-    .b-row .num{color:var(--txt3);font-size:.73rem;}
-    .b-row .btit{color:var(--txt);font-weight:500;}
-    .b-row .btit.notice{color:var(--blue);font-weight:700;}
-    .b-row .date,.b-row .views{color:var(--txt3);font-size:.72rem;}
-    .board-write{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:.7rem;padding:.72rem;background:var(--navy);color:#fff;border-radius:4px;font-weight:700;font-size:.8rem;transition:background .2s;}
-    .board-write:hover{background:var(--blue);}
-
-    /* ===== VIDEO SIDE ===== */
-    .v-list{display:flex;flex-direction:column;gap:.7rem;}
-    .v-card{display:flex;gap:.8rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:7px;overflow:hidden;transition:all .2s;}
-    .v-card:hover{border-color:var(--blue);box-shadow:0 4px 14px rgba(28,56,105,.1);}
-    .v-thumb{width:96px;flex-shrink:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#fff;}
-    .v-info{padding:.7rem .8rem .7rem 0;}
-    .v-info h4{font-size:.78rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:.22rem;}
-    .v-info p{font-size:.68rem;color:var(--txt3);}
-    .v-dur{display:inline-block;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;padding:.08rem .32rem;border-radius:3px;margin-top:.3rem;}
-    .yt-badge{display:inline-flex;align-items:center;gap:4px;font-size:.63rem;font-weight:700;color:#ff0000;background:rgba(255,0,0,.06);border:1px solid rgba(255,0,0,.15);padding:.15rem .5rem;border-radius:3px;margin-top:.3rem;}
-
-    /* ===== STATS BAR ===== */
-    .stats-bar{background:var(--navy2);padding:2.2rem 0;border-top:3px solid var(--blue);}
-    .stats-inner{display:grid;grid-template-columns:repeat(5,1fr);}
-    .st{text-align:center;padding:1rem;border-right:1px solid rgba(255,255,255,.1);}
+    /* STATS */
+    .stats-bar{background:var(--navy2);padding:2rem 0;border-top:3px solid var(--blue);}
+    .si{display:grid;grid-template-columns:repeat(5,1fr);}
+    .st{text-align:center;padding:.9rem .8rem;border-right:1px solid rgba(255,255,255,.09);}
     .st:last-child{border-right:none;}
-    .st-icon{font-size:1.4rem;margin-bottom:.4rem;}
-    .st-n{font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;}
-    .st-n span{font-size:1.1rem;color:#7dd3fc;}
-    .st-l{font-size:.7rem;color:rgba(255,255,255,.45);margin-top:.25rem;}
+    .st-icon{font-size:1.3rem;margin-bottom:.35rem;}
+    .st-n{font-size:1.75rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;}
+    .st-n span{font-size:1rem;color:#7dd3fc;}
+    .st-l{font-size:.67rem;color:rgba(255,255,255,.43);margin-top:.22rem;}
 
-    /* ===== LOGO SCROLL ===== */
-    .logo-strip{background:var(--bg);padding:1.8rem 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    /* LOGO SCROLL */
+    .logo-strip{background:var(--bg);padding:1.6rem 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
     .logo-track{display:flex;width:max-content;animation:slide 30s linear infinite;}
     .logo-track:hover{animation-play-state:paused;}
-    .logo-item{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:0 1.8rem;font-size:.76rem;font-weight:600;color:var(--txt2);border-right:1px solid var(--border);transition:color .18s;}
+    .logo-item{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;padding:0 1.6rem;font-size:.74rem;font-weight:600;color:var(--txt2);border-right:1px solid var(--border);transition:color .15s;}
     .logo-item:hover{color:var(--navy);}
     @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    /* ===== CITIZEN ===== */
-    .citizen-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
-    .citizen-left h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.2;margin-bottom:.9rem;}
-    .citizen-left h2 em{color:#7dd3fc;font-style:normal;}
-    .citizen-left p{color:rgba(255,255,255,.6);line-height:1.85;font-size:.88rem;margin-bottom:1.5rem;}
-    .pillars{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
-    .pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:1.1rem;transition:all .22s;}
+    /* VIDEO CARD */
+    .vcard{display:flex;gap:.75rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .18s;margin-bottom:.65rem;}
+    .vcard:hover{border-color:var(--blue);box-shadow:0 3px 12px rgba(28,56,105,.09);}
+    .vthumb{width:90px;flex-shrink:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;}
+    .vinfo{padding:.65rem .75rem .65rem 0;}
+    .vinfo h4{font-size:.76rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:.2rem;}
+    .vinfo p{font-size:.66rem;color:var(--txt3);}
+    .yt-badge{display:inline-flex;align-items:center;gap:3px;font-size:.6rem;font-weight:700;color:#ff0000;background:rgba(255,0,0,.06);border:1px solid rgba(255,0,0,.14);padding:.1rem .42rem;border-radius:2px;margin-top:.28rem;}
+
+    /* CITIZEN */
+    .cit-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.8rem;align-items:center;}
+    .cit-left h2{font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.2;margin-bottom:.8rem;}
+    .cit-left h2 em{color:#7dd3fc;font-style:normal;}
+    .cit-left p{color:rgba(255,255,255,.58);line-height:1.85;font-size:.86rem;margin-bottom:1.4rem;}
+    .pillars{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;}
+    .pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:1rem;transition:all .2s;}
     .pillar:hover{background:rgba(255,255,255,.1);}
-    .pillar .ico{font-size:1.2rem;margin-bottom:.35rem;}
-    .pillar h4{font-size:.8rem;font-weight:700;color:#7dd3fc;margin-bottom:.22rem;}
-    .pillar p{font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.5;}
+    .pillar .ico{font-size:1.15rem;margin-bottom:.32rem;}
+    .pillar h4{font-size:.77rem;font-weight:700;color:#7dd3fc;margin-bottom:.2rem;}
+    .pillar p{font-size:.68rem;color:rgba(255,255,255,.48);line-height:1.5;}
 
-    /* ===== REPORT ===== */
-    .rep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.8rem 0 1.3rem;}
-    .rep-card{background:#fff;border:1px solid var(--border);border-radius:7px;padding:1.6rem 1.1rem;text-align:center;transition:all .22s;cursor:pointer;}
-    .rep-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 7px 22px rgba(217,48,37,.1);}
-    .rep-ico{width:50px;height:50px;border-radius:9px;background:rgba(217,48,37,.07);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin:0 auto .8rem;transition:all .22s;}
+    /* REPORT */
+    .rep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin:1.5rem 0 1.2rem;}
+    .rep-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.5rem 1rem;text-align:center;transition:all .2s;cursor:pointer;}
+    .rep-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 6px 20px rgba(217,48,37,.1);}
+    .rep-ico{width:48px;height:48px;border-radius:8px;background:rgba(217,48,37,.07);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .75rem;transition:all .2s;}
     .rep-card:hover .rep-ico{background:rgba(217,48,37,.13);}
-    .rep-card h4{font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:.32rem;}
-    .rep-card p{font-size:.73rem;color:var(--txt2);line-height:1.6;}
-    .rep-cta{background:linear-gradient(135deg,var(--navy2),var(--navy));border-radius:7px;padding:1.8rem 2.2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;}
-    .rep-cta-txt h3{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:.28rem;}
-    .rep-cta-txt p{font-size:.8rem;color:rgba(255,255,255,.5);}
-    .rep-cta-btns{display:flex;gap:.6rem;flex-shrink:0;}
+    .rep-card h4{font-size:.83rem;font-weight:800;color:var(--navy);margin-bottom:.3rem;}
+    .rep-card p{font-size:.71rem;color:var(--txt2);line-height:1.6;}
+    .rep-cta{background:linear-gradient(135deg,var(--navy2),var(--navy));border-radius:6px;padding:1.6rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;}
+    .rep-cta-txt h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:.25rem;}
+    .rep-cta-txt p{font-size:.78rem;color:rgba(255,255,255,.48);}
+    .rep-btns{display:flex;gap:.6rem;flex-shrink:0;}
 
-    /* ===== INSTRUCTORS ===== */
-    .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
-    .ins-card{background:#fff;border:1px solid var(--border);border-radius:7px;padding:1.8rem 1.3rem;text-align:center;transition:all .28s;}
-    .ins-card:hover{border-color:var(--blue);box-shadow:0 8px 26px rgba(28,56,105,.12);transform:translateY(-4px);}
-    .ins-av{width:68px;height:68px;border-radius:50%;margin:0 auto .9rem;display:flex;align-items:center;justify-content:center;font-size:1.7rem;background:var(--sky);border:2px solid var(--border);transition:all .28s;}
+    /* INSTRUCTORS */
+    .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+    .ins-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.7rem 1.2rem;text-align:center;transition:all .26s;}
+    .ins-card:hover{border-color:var(--blue);box-shadow:0 7px 24px rgba(28,56,105,.11);transform:translateY(-4px);}
+    .ins-av{width:65px;height:65px;border-radius:50%;margin:0 auto .85rem;display:flex;align-items:center;justify-content:center;font-size:1.65rem;background:var(--sky);border:2px solid var(--border);transition:all .26s;}
     .ins-card:hover .ins-av{border-color:var(--blue);background:rgba(26,93,200,.08);}
-    .ins-card h4{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:.18rem;}
-    .ins-spec{font-size:.7rem;color:var(--blue);font-weight:600;margin-bottom:.55rem;}
-    .ins-card p{font-size:.75rem;color:var(--txt2);line-height:1.7;margin-bottom:.9rem;}
-    .ins-tags{display:flex;flex-wrap:wrap;gap:.3rem;justify-content:center;margin-bottom:.9rem;}
-    .itag{font-size:.63rem;padding:.16rem .5rem;border-radius:3px;background:var(--bg);border:1px solid var(--border);color:var(--txt2);}
-    .ins-btn{display:block;width:100%;padding:.62rem;border-radius:4px;background:var(--sky);color:var(--blue);border:1px solid rgba(26,93,200,.2);font-size:.78rem;font-weight:700;text-align:center;transition:all .2s;}
+    .ins-card h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:.16rem;}
+    .ins-spec{font-size:.68rem;color:var(--blue);font-weight:600;margin-bottom:.5rem;}
+    .ins-card p{font-size:.73rem;color:var(--txt2);line-height:1.7;margin-bottom:.85rem;}
+    .ins-tags{display:flex;flex-wrap:wrap;gap:.28rem;justify-content:center;margin-bottom:.85rem;}
+    .itag{font-size:.61rem;padding:.14rem .48rem;border-radius:2px;background:var(--bg);border:1px solid var(--border);color:var(--txt2);}
+    .ins-btn{display:block;width:100%;padding:.58rem;border-radius:3px;background:var(--sky);color:var(--blue);border:1px solid rgba(26,93,200,.18);font-size:.76rem;font-weight:700;text-align:center;transition:all .18s;}
     .ins-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
 
-    /* ===== QUICK LINKS (관련기관) ===== */
-    .ql-section{background:#fff;padding:2.5rem 0;border-top:1px solid var(--border);}
-    .ql-bar{display:flex;align-items:center;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
-    .ql-label{flex-shrink:0;background:var(--navy);color:#fff;font-size:.75rem;font-weight:700;padding:.9rem 1.2rem;white-space:nowrap;}
+    /* EDU MATERIAL LIST */
+    .edu-item{display:flex;gap:.7rem;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s;}
+    .edu-item:last-child{border-bottom:none;}
+    .edu-item:hover .edu-ttl{color:var(--blue);}
+    .edu-ico{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .edu-ic1{background:rgba(26,93,200,.08);}
+    .edu-ic2{background:rgba(10,124,82,.08);}
+    .edu-ic3{background:rgba(201,150,14,.08);}
+    .edu-ic4{background:rgba(217,48,37,.08);}
+    .edu-ic5{background:rgba(28,56,105,.08);}
+    .edu-ttl{font-size:.79rem;font-weight:600;color:var(--txt);line-height:1.4;transition:color .15s;}
+    .edu-meta{font-size:.65rem;color:var(--txt3);margin-top:.15rem;}
+
+    /* RELATED LINKS BAR */
+    .ql-sec{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;}
+    .ql-bar{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:stretch;}
+    .ql-label{flex-shrink:0;background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;padding:.75rem 1.1rem;white-space:nowrap;display:flex;align-items:center;}
     .ql-items{display:flex;flex:1;flex-wrap:wrap;}
-    .ql-item{display:flex;align-items:center;gap:6px;padding:.75rem 1.3rem;border-right:1px solid var(--border);font-size:.78rem;color:var(--txt2);font-weight:500;transition:all .18s;white-space:nowrap;}
+    .ql-item{display:flex;align-items:center;gap:5px;padding:.75rem 1.15rem;border-right:1px solid var(--border);font-size:.75rem;color:var(--txt2);font-weight:500;transition:all .15s;white-space:nowrap;}
     .ql-item:last-child{border-right:none;}
     .ql-item:hover{color:var(--blue);background:var(--sky);}
-    .ql-item .qi{font-size:.95rem;}
 
-    /* ===== FOOTER ===== */
-    footer{background:var(--navy2);padding:3rem 0 0;}
-    .ft-grid{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.2rem;}
-    .ft-logo{font-size:1.05rem;font-weight:900;color:#fff;margin-bottom:.65rem;}
+    /* FOOTER */
+    footer{background:var(--navy2);padding:2.8rem 0 0;}
+    .ftg{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.2rem;margin-bottom:2rem;}
+    .ft-logo{font-size:1rem;font-weight:900;color:#fff;margin-bottom:.6rem;}
     .ft-logo em{color:#7dd3fc;font-style:normal;}
-    .ft-desc{font-size:.73rem;color:rgba(255,255,255,.38);line-height:1.85;max-width:260px;}
-    .ft-contact{margin-top:.8rem;font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.9;}
-    footer h5{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:.75rem;letter-spacing:.5px;text-transform:uppercase;padding-bottom:.45rem;border-bottom:1px solid rgba(255,255,255,.09);}
-    footer li{margin-bottom:.38rem;}
-    footer a{font-size:.75rem;color:rgba(255,255,255,.42);transition:color .18s;}
+    .ft-desc{font-size:.71rem;color:rgba(255,255,255,.36);line-height:1.85;max-width:250px;}
+    .ft-contact{margin-top:.75rem;font-size:.7rem;color:rgba(255,255,255,.42);line-height:1.9;}
+    footer h5{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.62);margin-bottom:.7rem;letter-spacing:.5px;text-transform:uppercase;padding-bottom:.42rem;border-bottom:1px solid rgba(255,255,255,.09);}
+    footer li{margin-bottom:.35rem;}
+    footer a{font-size:.73rem;color:rgba(255,255,255,.4);transition:color .15s;}
     footer a:hover{color:#7dd3fc;}
-    .ft-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.1rem 1.5rem;max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:rgba(255,255,255,.28);}
+    .ft-btm{border-top:1px solid rgba(255,255,255,.08);padding:1rem 1.5rem;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:rgba(255,255,255,.26);}
 
-    /* ===== FLOAT ===== */
-    .float-btn{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-weight:700;font-size:.78rem;padding:.8rem 1.3rem;border-radius:50px;box-shadow:0 5px 22px rgba(217,48,37,.4);animation:fbounce 3s ease-in-out infinite;transition:all .2s;}
+    /* FLOAT */
+    .float-btn{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;align-items:center;gap:5px;background:var(--red);color:#fff;font-weight:700;font-size:.76rem;padding:.78rem 1.25rem;border-radius:50px;box-shadow:0 4px 20px rgba(217,48,37,.4);animation:fbounce 3s ease-in-out infinite;transition:all .2s;}
     .float-btn:hover{transform:scale(1.04) translateY(-2px);}
-    @keyframes fbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes fbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
-    /* ===== SCROLL ANIM ===== */
-    .sa{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+    /* ANIM */
+    .sa{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
     .sa.show{opacity:1;transform:none;}
-    .sd1{transition-delay:.07s}.sd2{transition-delay:.14s}.sd3{transition-delay:.21s}.sd4{transition-delay:.28s}
+    .sd1{transition-delay:.06s}.sd2{transition-delay:.12s}.sd3{transition-delay:.18s}.sd4{transition-delay:.24s}
 
-    /* ===== RESPONSIVE ===== */
+    /* 2-COL GRID */
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+    .g3{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1.5rem;}
+
+    /* RESPONSIVE */
     @media(max-width:1024px){
-      .qa-inner{grid-template-columns:repeat(3,1fr);}
+      .qai{grid-template-columns:repeat(3,1fr);}
       .qa-item:nth-child(4),.qa-item:nth-child(5),.qa-item:nth-child(6){border-top:1px solid var(--border);}
       .qa-item:nth-child(3),.qa-item:nth-child(6){border-right:none;}
-      .stats-inner{grid-template-columns:repeat(3,1fr);}
+      .si{grid-template-columns:repeat(3,1fr);}
       .st:nth-child(4),.st:nth-child(5){border-top:1px solid rgba(255,255,255,.08);}
       .rep-grid{grid-template-columns:repeat(2,1fr);}
-      .ft-grid{grid-template-columns:1fr 1fr;}
+      .ftg{grid-template-columns:1fr 1fr;}
     }
     @media(max-width:900px){
-      .main-nav,.search-box,.top-bar{display:none;}
+      .gnb,.hsearch,.top-bar{display:none;}
       .ham{display:flex;}
-      .hero-inner,.mg,.mg3,.citizen-grid{grid-template-columns:1fr;}
-      .cases-grid,.ins-grid{grid-template-columns:repeat(2,1fr);}
+      .hri,.g2,.g3,.cit-grid{grid-template-columns:1fr;}
+      .cgrid,.ins-grid{grid-template-columns:repeat(2,1fr);}
       .rep-cta{flex-direction:column;text-align:center;}
-      .rep-cta-btns{justify-content:center;flex-wrap:wrap;}
+      .rep-btns{justify-content:center;flex-wrap:wrap;}
       .ql-items{flex-wrap:wrap;}
       .hero-stats{grid-template-columns:repeat(2,1fr);}
     }
     @media(max-width:600px){
-      .cases-grid,.ins-grid,.rep-grid{grid-template-columns:1fr;}
-      .stats-inner{grid-template-columns:repeat(2,1fr);}
-      .st:nth-child(5){border-top:1px solid rgba(255,255,255,.08);}
+      .cgrid,.ins-grid,.rep-grid{grid-template-columns:1fr;}
+      .si{grid-template-columns:repeat(2,1fr);}
       .pillars{grid-template-columns:1fr;}
-      .ft-grid{grid-template-columns:1fr;}
-      .hero h1{font-size:2rem;}
+      .ftg{grid-template-columns:1fr;}
+      .hero h1{font-size:1.85rem;}
     }
   </style>
 </head>
 <body>
 
-<!-- MOBILE OVERLAY -->
+<!-- MOBILE -->
 <div class="mob" id="mob">
   <button class="mob-x" onclick="closeMob()">✕</button>
-  <a href="#cases"       onclick="closeMob()">인권사례</a>
-  <a href="#board"       onclick="closeMob()">병영고민</a>
+  <a href="#cases"       onclick="closeMob()">인권사례·결정례</a>
+  <a href="#board"       onclick="closeMob()">병영고민 게시판</a>
+  <a href="#edumat"      onclick="closeMob()">교육자료실</a>
   <a href="#videos"      onclick="closeMob()">영상자료</a>
-  <a href="#citizen"     onclick="closeMob()">제복입은시민</a>
-  <a href="#instructors" onclick="closeMob()">강사연계</a>
+  <a href="#citizen"     onclick="closeMob()">제복입은 시민</a>
+  <a href="#instructors" onclick="closeMob()">강사 연계</a>
   <a href="#report" style="color:var(--red);font-weight:900;" onclick="closeMob()">🚨 신고하기</a>
 </div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="top-bar-inner">
+  <div class="tbi">
     <div class="top-sites">
       <a href="https://www.humanrights.go.kr" target="_blank">국가인권위원회</a>
       <a href="https://edu.humanrights.go.kr" target="_blank">국가인권교육원</a>
       <a href="https://library.humanrights.go.kr" target="_blank">인권도서관</a>
       <a href="https://case.humanrights.go.kr" target="_blank">인권e(온라인신고)</a>
-      <a href="https://www.youtube.com/@NHRCkr" target="_blank">▶ 유튜브</a>
+      <a href="https://uhr.humanrights.go.kr" target="_blank">국제인권정보</a>
+      <a href="https://www.youtube.com/@NHRCkr" target="_blank">▶ 유튜브채널</a>
     </div>
     <div class="top-right">
-      <a href="tel:1331">☎ 1331 (인권위)</a>
-      <a href="tel:1337">☎ 1337 (국방부)</a>
+      <a href="tel:1331">☎ 1331 인권위</a>
+      <a href="tel:1337">☎ 1337 국방부</a>
     </div>
   </div>
 </div>
 
 <!-- HEADER -->
-<header id="header">
-  <div class="header-inner">
+<header id="hdr">
+  <div class="hi">
     <a href="#" class="logo">
-      <div class="logo-emblem">⚖</div>
-      <div class="logo-text">
+      <div class="logo-em">⚖</div>
+      <div class="logo-txt">
         <div class="main"><em>아미</em>휴먼라이트</div>
         <div class="sub">군 인권교육 전문 플랫폼</div>
       </div>
     </a>
-    <ul class="main-nav">
+    <ul class="gnb">
       <li><a href="#cases">인권사례·결정례</a></li>
       <li><a href="#board">병영고민 게시판</a></li>
-      <li><a href="#videos">교육영상자료</a></li>
+      <li><a href="#edumat">교육자료실</a></li>
+      <li><a href="#videos">영상자료</a></li>
       <li><a href="#citizen">제복입은 시민</a></li>
       <li><a href="#instructors">강사 연계</a></li>
-      <li><a href="#report" class="nav-report">🚨 인권침해 신고</a></li>
+      <li><a href="#report" class="gr">🚨 인권침해 신고</a></li>
     </ul>
-    <div class="header-search">
-      <div class="search-box">
+    <div class="hsearch">
+      <div class="sbox">
         <input type="text" placeholder="결정례, 교육자료 검색...">
         <button>🔍</button>
       </div>
@@ -372,118 +382,256 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hri">
     <div class="sa">
-      <div class="hero-badge"><span class="live-dot"></span> 매일 업데이트 · 최신 결정례 반영</div>
+      <div class="hero-badge"><span class="ldot"></span> 매일 업데이트 · 국가인권위원회 연계</div>
       <h1>제복을 입어도<br><em>인권</em>은 살아있다</h1>
-      <p class="hero-desc">군 인권교관 및 군 인권에 관심있는 모든 분을 위한 교육자료·결정례·강사연계·신고채널을 한곳에서 만나보세요.</p>
+      <p class="hero-desc">군 인권교관 및 군 인권에 관심있는 모든 분을 위한 결정례·교육자료·강사연계·신고채널을 한곳에서 만나보세요.</p>
       <div class="hero-btns">
-        <a href="#cases" class="btn-w">결정례 검색 →</a>
-        <a href="https://edu.humanrights.go.kr" target="_blank" class="btn-ol">교육자료실</a>
-        <a href="#report" class="btn-red">🚨 신고하기</a>
+        <a href="https://www.humanrights.go.kr" target="_blank" class="btn-w">결정례 검색 →</a>
+        <a href="https://edu.humanrights.go.kr" target="_blank" class="btn-ol">인권교육자료실</a>
+        <a href="#report" class="btn-r">🚨 신고하기</a>
       </div>
       <div class="hero-stats">
-        <div class="hst"><div class="hst-n">1,240<sup style="font-size:.85rem">+</sup></div><div class="hst-l">교육자료</div></div>
+        <div class="hst"><div class="hst-n">1,240<sup style="font-size:.8rem">+</sup></div><div class="hst-l">교육자료</div></div>
         <div class="hst"><div class="hst-n">86</div><div class="hst-l">이달 결정례</div></div>
         <div class="hst"><div class="hst-n">312</div><div class="hst-l">등록 강사</div></div>
         <div class="hst"><div class="hst-n">24h</div><div class="hst-l">신고채널</div></div>
       </div>
     </div>
     <div class="qcard sa sd2">
-      <div class="q-lbl">TODAY'S QUOTE · 오늘의 인권문장</div>
-      <div class="q-mark">"</div>
-      <blockquote class="q-body" id="qText">"군인은 국가의 명령에 복종하는 사람이기 이전에, 헌법이 보장하는 기본권의 주체인 시민이다."</blockquote>
-      <div class="q-src" id="qSrc">— 헌법재판소, 2010헌마418</div>
-      <div class="q-next" onclick="nextQ()">↻ 다음 문장 보기</div>
+      <div class="qlbl">TODAY'S QUOTE · 오늘의 인권문장</div>
+      <div class="qmark">"</div>
+      <blockquote class="qbody" id="qText">"군인은 국가의 명령에 복종하는 사람이기 이전에, 헌법이 보장하는 기본권의 주체인 시민이다."</blockquote>
+      <div class="qsrc" id="qSrc">— 헌법재판소, 2010헌마418</div>
+      <div class="qnext" onclick="nextQ()">↻ 다음 문장 보기</div>
     </div>
   </div>
 </section>
 
 <!-- QUICK ACCESS -->
-<div class="quick-access">
-  <div class="qa-inner">
+<div class="qa">
+  <div class="qai">
     <a href="https://edu.humanrights.go.kr" target="_blank" class="qa-item">
-      <div class="qa-icon">📚</div>
-      <div class="qa-name">인권교육<br>자료실</div>
+      <div class="qa-ic">📚</div><div class="qa-nm">인권교육<br>자료실</div>
     </a>
     <a href="https://www.humanrights.go.kr" target="_blank" class="qa-item">
-      <div class="qa-icon">⚖️</div>
-      <div class="qa-name">결정례<br>검색</div>
+      <div class="qa-ic">⚖️</div><div class="qa-nm">결정례<br>검색</div>
     </a>
     <a href="#board" class="qa-item">
-      <div class="qa-icon">💬</div>
-      <div class="qa-name">병영고민<br>게시판</div>
+      <div class="qa-ic">💬</div><div class="qa-nm">병영고민<br>게시판</div>
     </a>
     <a href="https://case.humanrights.go.kr" target="_blank" class="qa-item">
-      <div class="qa-icon">🚨</div>
-      <div class="qa-name">인권침해<br>신고(인권e)</div>
+      <div class="qa-ic">🚨</div><div class="qa-nm">인권침해<br>신고(인권e)</div>
     </a>
     <a href="#instructors" class="qa-item">
-      <div class="qa-icon">👨‍🏫</div>
-      <div class="qa-name">강사<br>연계</div>
+      <div class="qa-ic">👨‍🏫</div><div class="qa-nm">강사<br>연계</div>
     </a>
     <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="qa-item">
-      <div class="qa-icon">▶️</div>
-      <div class="qa-name">인권위<br>유튜브</div>
+      <div class="qa-ic">▶️</div><div class="qa-nm">인권위<br>유튜브</div>
     </a>
   </div>
 </div>
 
-<!-- SECTION: 인권사례 + 병영고민 -->
-<section class="sec sec-bg" id="cases">
+<!-- 메인 콘텐츠: 공지/뉴스 탭 + 결정례 + 영상 -->
+<section class="sec sec-bg">
   <div class="inner">
-    <div class="mg">
-      <!-- 최근 인권사례 -->
+    <div class="g3">
+
+      <!-- 좌: 공지·뉴스 탭 -->
       <div class="sa">
-        <div class="sec-hd">
-          <div class="sec-hd-left">
-            <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">최근 인권사례 · 결정례</span></div>
-            <div class="sec-sub">국가인권위원회 최신 결정례</div>
-          </div>
-          <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more">더보기 +</a>
+        <div class="tab-wrap">
+          <button class="tab-btn on" onclick="switchTab('main','t1',this)">공지사항</button>
+          <button class="tab-btn"    onclick="switchTab('main','t2',this)">인권뉴스</button>
+          <button class="tab-btn"    onclick="switchTab('main','t3',this)">보도자료</button>
         </div>
-        <div>
-          <div class="news-item"><span class="n-cat cr">🔥 HOT</span><div><div class="n-title">반복적 욕설·인격비하 — 인권위 시정 권고</div><div class="n-date">2026.05.12</div></div></div>
-          <div class="news-item"><span class="n-cat">결정례</span><div><div class="n-title">개인 SNS 삭제 강요 — 표현의 자유 침해</div><div class="n-date">2026.04.30</div></div></div>
-          <div class="news-item"><span class="n-cat cg">NEW</span><div><div class="n-title">종교 행사 강제 참여 — 신앙의 자유 위반</div><div class="n-date">2026.05.18</div></div></div>
-          <div class="news-item"><span class="n-cat cr">🔥</span><div><div class="n-title">군 내 성희롱 처리 지연 — 2차 피해 인정</div><div class="n-date">2026.04.15</div></div></div>
-          <div class="news-item"><span class="n-cat">대법원</span><div><div class="n-title">과도한 얼차려 — 신체의 자유 침해</div><div class="n-date">2026.03.28</div></div></div>
-          <div class="news-item"><span class="n-cat cg">NEW</span><div><div class="n-title">다문화 병사 차별 — 평등권 침해</div><div class="n-date">2026.05.20</div></div></div>
+
+        <!-- 공지사항 -->
+        <div class="tab-pane on" id="main-t1">
+          <div class="nitem"><span class="ncat cr">공지</span><div><div class="ntit notice">2026 군 인권교관 양성과정 모집 (7~8월)</div><div class="ndate">2026.05.20</div></div></div>
+          <div class="nitem"><span class="ncat">안내</span><div><div class="ntit">인권교육 표준 강의안 v3.0 업데이트</div><div class="ndate">2026.05.15</div></div></div>
+          <div class="nitem"><span class="ncat cg">NEW</span><div><div class="ntit">병영인권 온라인 특강 수강 신청 안내</div><div class="ndate">2026.05.10</div></div></div>
+          <div class="nitem"><span class="ncat">공지</span><div><div class="ntit">강사 연계 신청 절차 변경 안내 (6월~)</div><div class="ndate">2026.05.02</div></div></div>
+          <div class="nitem"><span class="ncat">안내</span><div><div class="ntit">2026년도 군 인권 결정례 DB 업데이트 완료</div><div class="ndate">2026.04.25</div></div></div>
+          <div class="nitem"><span class="ncat">공지</span><div><div class="ntit">개인정보처리방침 개정 안내</div><div class="ndate">2026.04.10</div></div></div>
         </div>
+
+        <!-- 인권뉴스 -->
+        <div class="tab-pane" id="main-t2">
+          <div class="nitem"><span class="ncat cg">뉴스</span><div><div class="ntit">인권위, 군 내 성평등 실태조사 결과 발표</div><div class="ndate">2026.05.19</div></div></div>
+          <div class="nitem"><span class="ncat">뉴스</span><div><div class="ntit">국방부, 병사 인권보호관 제도 전면 개편</div><div class="ndate">2026.05.14</div></div></div>
+          <div class="nitem"><span class="ncat cr">HOT</span><div><div class="ntit">군사법원 개혁 후 1년, 군 인권 어떻게 달라졌나</div><div class="ndate">2026.05.08</div></div></div>
+          <div class="nitem"><span class="ncat">뉴스</span><div><div class="ntit">다문화 배경 병사 인권교육 표준안 마련</div><div class="ndate">2026.04.29</div></div></div>
+          <div class="nitem"><span class="ncat">뉴스</span><div><div class="ntit">UN 자유권위원회, 한국 군 인권 개선 권고</div><div class="ndate">2026.04.20</div></div></div>
+          <div class="nitem"><span class="ncat cg">뉴스</span><div><div class="ntit">인권위, 군 복무 중 종교 자유 실태조사 착수</div><div class="ndate">2026.04.12</div></div></div>
+        </div>
+
+        <!-- 보도자료 -->
+        <div class="tab-pane" id="main-t3">
+          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">인권위 "군 가혹행위 신고 40% 증가…교육 강화 시급"</div><div class="ndate">2026.05.18</div></div></div>
+          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">국방부, 인권침해 사건 처리기간 평균 45일→28일 단축</div><div class="ndate">2026.05.11</div></div></div>
+          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">인권위, 군 구타·가혹행위 결정례 해설서 발간</div><div class="ndate">2026.05.05</div></div></div>
+          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">2026년 군인권 실태조사 결과 발표</div><div class="ndate">2026.04.28</div></div></div>
+          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">인권교육센터, 군 특화 온라인 과정 신설</div><div class="ndate">2026.04.15</div></div></div>
+          <div class="nitem"><span class="ncat cn">보도</span><div><div class="ntit">헌병대 조사 과정 인권침해 시정 권고</div><div class="ndate">2026.04.05</div></div></div>
+        </div>
+        <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more" style="margin-top:.7rem;display:inline-flex;">더보기 +</a>
       </div>
-      <!-- 병영고민 게시판 -->
-      <div class="sa sd2" id="board">
-        <div class="sec-hd">
-          <div class="sec-hd-left">
-            <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">병영 속 고민사례</span></div>
-            <div class="sec-sub">익명 게시판 · 전문가 답변</div>
+
+      <!-- 중: 인권교육 자료 -->
+      <div class="sa sd2" id="edumat">
+        <div class="tab-wrap">
+          <button class="tab-btn on" onclick="switchTab('edu','e1',this)">교육자료</button>
+          <button class="tab-btn"    onclick="switchTab('edu','e2',this)">발간자료</button>
+        </div>
+
+        <!-- 교육자료 -->
+        <div class="tab-pane on" id="edu-e1">
+          <div class="edu-item">
+            <div class="edu-ico edu-ic1">📋</div>
+            <div>
+              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">2026 군 인권교관 표준 강의안</div></a>
+              <div class="edu-meta">인권교육원 · PDF · 2026.04</div>
+            </div>
           </div>
-          <a href="#" class="sec-more">더보기 +</a>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic2">📗</div>
+            <div>
+              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">과잉금지원칙과 군 현장 적용 사례집</div></a>
+              <div class="edu-meta">인권교육원 · PDF · 2026.03</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic3">📙</div>
+            <div>
+              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">병영 내 성희롱 예방 교육자료</div></a>
+              <div class="edu-meta">인권교육원 · PPT · 2026.02</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic4">📕</div>
+            <div>
+              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">다문화 배경 장병 인권교육 가이드</div></a>
+              <div class="edu-meta">인권교육원 · PDF · 2026.01</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic5">📘</div>
+            <div>
+              <a href="https://edu.humanrights.go.kr" target="_blank"><div class="edu-ttl">군인의 기본권 — 헌법과 판례 해설</div></a>
+              <div class="edu-meta">인권교육원 · PDF · 2025.12</div>
+            </div>
+          </div>
         </div>
-        <div class="board-wrap">
-          <div class="board-head"><span>번호</span><span>제목</span><span>날짜</span><span>조회</span></div>
-          <div class="b-row"><span class="num">공지</span><span class="btit notice">📢 게시판 이용 안내 및 익명 보장 정책</span><span class="date">상시</span><span class="views">—</span></div>
-          <div class="b-row"><span class="num">128</span><span class="btit">휴가 중에도 업무 연락이 와서 힘들어요</span><span class="date">05.21</span><span class="views">342</span></div>
-          <div class="b-row"><span class="num">127</span><span class="btit">선임이 개인 업무를 자꾸 시키는데...</span><span class="date">05.20</span><span class="views">518</span></div>
-          <div class="b-row"><span class="num">126</span><span class="btit">종교 행사 불참했다고 불이익 받아요</span><span class="date">05.19</span><span class="views">291</span></div>
-          <div class="b-row"><span class="num">125</span><span class="btit">고충 신고했는데 오히려 따돌림 당해요</span><span class="date">05.18</span><span class="views">744</span></div>
-          <div class="b-row"><span class="num">124</span><span class="btit">반복적인 언어 폭력, 어디에 신고하나요?</span><span class="date">05.17</span><span class="views">621</span></div>
+
+        <!-- 발간자료 -->
+        <div class="tab-pane" id="edu-e2">
+          <div class="edu-item">
+            <div class="edu-ico edu-ic1">📋</div>
+            <div>
+              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">2025 국가인권위원회 연간보고서</div></a>
+              <div class="edu-meta">국가인권위원회 · 2026.03</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic2">📗</div>
+            <div>
+              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">군 인권 결정례 해설집 제8호</div></a>
+              <div class="edu-meta">국가인권위원회 · 2026.02</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic3">📙</div>
+            <div>
+              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">2025 군인인권 실태조사 보고서</div></a>
+              <div class="edu-meta">국가인권위원회 · 2026.01</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic4">📕</div>
+            <div>
+              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">병영문화 혁신 정책 연구보고서</div></a>
+              <div class="edu-meta">국방부 · 2025.11</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-ico edu-ic5">📘</div>
+            <div>
+              <a href="https://library.humanrights.go.kr" target="_blank"><div class="edu-ttl">UN 자유권 규약과 군 인권 적용</div></a>
+              <div class="edu-meta">인권교육원 · 2025.10</div>
+            </div>
+          </div>
         </div>
-        <a href="#" class="board-write">✏️ 익명으로 고민 올리기</a>
+        <a href="https://edu.humanrights.go.kr" target="_blank" class="sec-more" style="margin-top:.7rem;display:inline-flex;">전체 자료실 →</a>
       </div>
-    </div>
+
+      <!-- 우: 영상자료 -->
+      <div class="sa sd3" id="videos">
+        <div class="tab-wrap">
+          <button class="tab-btn on" onclick="switchTab('vid','v1',this)">영상자료</button>
+          <button class="tab-btn"    onclick="switchTab('vid','v2',this)">유튜브 채널</button>
+        </div>
+        <div class="tab-pane on" id="vid-v1">
+          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="vcard">
+            <div class="vthumb" style="background:linear-gradient(135deg,#1c3869,#1a5dc8);">▶</div>
+            <div class="vinfo">
+              <h4>과잉금지원칙, 군 현장 적용</h4>
+              <p>인권교관 심화과정</p>
+              <span class="yt-badge">▶ YouTube</span>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="vcard">
+            <div class="vthumb" style="background:linear-gradient(135deg,#1a0a3e,#6d28d9);">▶</div>
+            <div class="vinfo">
+              <h4>병사의 눈으로 본 인권침해</h4>
+              <p>병영인권 기초</p>
+              <span class="yt-badge">▶ YouTube</span>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="vcard">
+            <div class="vthumb" style="background:linear-gradient(135deg,#064e3b,#0a7c52);">▶</div>
+            <div class="vinfo">
+              <h4>인권 친화적 리더십</h4>
+              <p>지휘관 리더십</p>
+              <span class="yt-badge">▶ YouTube</span>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="vcard">
+            <div class="vthumb" style="background:linear-gradient(135deg,#78350f,#d97706);">▶</div>
+            <div class="vinfo">
+              <h4>군 내 성희롱 예방 교육</h4>
+              <p>성평등 교육</p>
+              <span class="yt-badge">▶ YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="tab-pane" id="vid-v2">
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:1.2rem;text-align:center;margin-bottom:.8rem;">
+            <div style="font-size:2rem;margin-bottom:.5rem;">▶️</div>
+            <div style="font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:.3rem;">국가인권위원회 유튜브</div>
+            <div style="font-size:.72rem;color:var(--txt2);margin-bottom:.9rem;">인권교육 영상·홍보자료·캠페인 영상</div>
+            <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="sec-more" style="justify-content:center;">채널 구독하기 →</a>
+          </div>
+          <div class="nitem"><span class="ncat">영상</span><div><div class="ntit">2026 군 인권 캠페인 영상</div><div class="ndate">2026.05</div></div></div>
+          <div class="nitem"><span class="ncat cg">NEW</span><div><div class="ntit">인권위 창립 25주년 기념 영상</div><div class="ndate">2026.04</div></div></div>
+          <div class="nitem"><span class="ncat">영상</span><div><div class="ntit">군 인권보호관 제도 안내 영상</div><div class="ndate">2026.03</div></div></div>
+        </div>
+        <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="sec-more" style="margin-top:.7rem;display:inline-flex;">유튜브 채널 →</a>
+      </div>
+
+    </div><!-- /g3 -->
   </div>
 </section>
 
-<!-- STATS BAR -->
+<!-- STATS -->
 <div class="stats-bar">
   <div class="inner">
-    <div class="stats-inner">
+    <div class="si">
       <div class="st sa sd1"><div class="st-icon">📂</div><div class="st-n">1,240<span>+</span></div><div class="st-l">등록 교육자료</div></div>
       <div class="st sa sd2"><div class="st-icon">⚖️</div><div class="st-n">86</div><div class="st-l">이달 결정례</div></div>
       <div class="st sa sd3"><div class="st-icon">👨‍🏫</div><div class="st-n">312</div><div class="st-l">등록 강사</div></div>
       <div class="st sa sd4"><div class="st-icon">🛡️</div><div class="st-n">99<span>%</span></div><div class="st-l">자료 정확도</div></div>
-      <div class="st sa" style="transition-delay:.35s"><div class="st-icon">📞</div><div class="st-n">24<span>h</span></div><div class="st-l">신고채널 운영</div></div>
+      <div class="st sa" style="transition-delay:.3s"><div class="st-icon">📞</div><div class="st-n">24<span>h</span></div><div class="st-l">신고채널 운영</div></div>
     </div>
   </div>
 </div>
@@ -516,105 +664,177 @@
   </div>
 </div>
 
-<!-- SECTION: 결정례 카드 + 영상 -->
-<section class="sec sec-white" id="videos">
+<!-- 결정례 + 병영고민 -->
+<section class="sec sec-white" id="cases">
   <div class="inner">
-    <div class="mg3">
-      <!-- 결정례 카드 -->
+    <div class="g2">
+
+      <!-- 이달의 결정례 카드 -->
       <div class="sa">
         <div class="sec-hd">
           <div class="sec-hd-left">
-            <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">이달의 주요 결정례</span></div>
+            <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">이달의 주요 결정례</span></div>
+            <div class="sec-stxt">국가인권위원회 최신 결정례 — 군 관련 사건 중심</div>
           </div>
-          <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more">전체보기 +</a>
+          <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more">인권위 전체보기 +</a>
         </div>
-        <div class="cases-grid">
-          <div class="case-card sa sd1">
-            <div class="case-thumb ct-1"><div class="case-badge cb-hot">🔥 이달의 결정</div></div>
-            <div class="case-body">
+        <div class="cgrid">
+          <div class="ccard sa sd1">
+            <div class="cthumb ct1"><div class="cbadge cb-hot">🔥 이달의 결정</div></div>
+            <div class="cbody">
               <h3>반복적 욕설·인격비하 — 인권위 시정 권고</h3>
               <p>중대장이 훈련 중 특정 병사에게 반복 욕설. 재발방지 교육 권고.</p>
-              <div class="case-meta"><span>2026.05.12</span><a href="https://www.humanrights.go.kr" target="_blank">보기 →</a></div>
+              <div class="cmeta"><span>2026.05.12</span><a href="https://www.humanrights.go.kr" target="_blank">결정례 보기 →</a></div>
             </div>
           </div>
-          <div class="case-card sa sd2">
-            <div class="case-thumb ct-2"><div class="case-badge cb-dec">📋 결정례</div></div>
-            <div class="case-body">
+          <div class="ccard sa sd2">
+            <div class="cthumb ct2"><div class="cbadge cb-dec">📋 결정례</div></div>
+            <div class="cbody">
               <h3>개인 SNS 삭제 강요 — 표현의 자유 침해</h3>
               <p>SNS 게시물 삭제 강요가 표현의 자유를 침해한다고 판단.</p>
-              <div class="case-meta"><span>2026.04.30</span><a href="https://www.humanrights.go.kr" target="_blank">보기 →</a></div>
+              <div class="cmeta"><span>2026.04.30</span><a href="https://www.humanrights.go.kr" target="_blank">결정례 보기 →</a></div>
             </div>
           </div>
-          <div class="case-card sa sd3">
-            <div class="case-thumb ct-3"><div class="case-badge cb-new">🆕 NEW</div></div>
-            <div class="case-body">
+          <div class="ccard sa sd3">
+            <div class="cthumb ct3"><div class="cbadge cb-new">🆕 NEW</div></div>
+            <div class="cbody">
               <h3>종교 행사 강제 참여 — 신앙의 자유 위반</h3>
               <p>비신자 장병 종교 행사 참석 강요. 헌법 제20조 위반.</p>
-              <div class="case-meta"><span>2026.05.18</span><a href="https://www.humanrights.go.kr" target="_blank">보기 →</a></div>
+              <div class="cmeta"><span>2026.05.18</span><a href="https://www.humanrights.go.kr" target="_blank">결정례 보기 →</a></div>
             </div>
           </div>
         </div>
       </div>
-      <!-- 교육 영상 -->
-      <div class="sa sd2">
+
+      <!-- 병영고민 게시판 -->
+      <div class="sa sd2" id="board">
         <div class="sec-hd">
-          <div class="sec-hd-left">
-            <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">교육영상자료</span></div>
+          <div>
+            <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">병영 속 고민사례 게시판</span></div>
+            <div class="sec-stxt">익명 게시판 · 전문가 답변 · 인권위 연계 상담</div>
           </div>
-          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="sec-more">유튜브 →</a>
+          <a href="#" class="sec-more">전체 보기 +</a>
         </div>
-        <div class="v-list">
-          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="v-card">
-            <div class="v-thumb" style="background:linear-gradient(135deg,#1c3869,#1a5dc8);">▶</div>
-            <div class="v-info">
-              <h4>과잉금지원칙, 군 현장 적용</h4>
-              <p>인권교관 심화과정</p>
-              <span class="yt-badge">▶ YouTube</span>
-            </div>
-          </a>
-          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="v-card">
-            <div class="v-thumb" style="background:linear-gradient(135deg,#1a0a3e,#6d28d9);">▶</div>
-            <div class="v-info">
-              <h4>병사의 눈으로 본 인권침해 사례</h4>
-              <p>병영인권 기초</p>
-              <span class="yt-badge">▶ YouTube</span>
-            </div>
-          </a>
-          <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="v-card">
-            <div class="v-thumb" style="background:linear-gradient(135deg,#064e3b,#0a7c52);">▶</div>
-            <div class="v-info">
-              <h4>인권 친화적 리더십</h4>
-              <p>지휘관 리더십</p>
-              <span class="yt-badge">▶ YouTube</span>
-            </div>
-          </a>
+        <table class="btable">
+          <thead>
+            <tr><th>번호</th><th>분류</th><th>제목</th><th>날짜</th><th>조회</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="td-no">공지</td><td class="td-cat"><span class="bcat cn">공지</span></td><td class="td-tit notice">📢 게시판 이용 안내 및 익명 보장 정책</td><td class="td-date">상시</td><td class="td-views">—</td></tr>
+            <tr><td class="td-no">128</td><td class="td-cat"><span class="bcat">휴가</span></td><td class="td-tit">휴가 중에도 업무 연락이 와서 너무 힘들어요</td><td class="td-date">05.21</td><td class="td-views">342</td></tr>
+            <tr><td class="td-no">127</td><td class="td-cat"><span class="bcat">복무</span></td><td class="td-tit">선임이 개인 업무를 자꾸 시키는데 어떻게 하나요?</td><td class="td-date">05.20</td><td class="td-views">518</td></tr>
+            <tr><td class="td-no">126</td><td class="td-cat"><span class="bcat cg2">종교</span></td><td class="td-tit">종교 행사 불참했다고 불이익 받는 것 같아요</td><td class="td-date">05.19</td><td class="td-views">291</td></tr>
+            <tr><td class="td-no">125</td><td class="td-cat"><span class="bcat cr">신고</span></td><td class="td-tit">고충 신고했는데 오히려 따돌림 당하고 있어요</td><td class="td-date">05.18</td><td class="td-views">744</td></tr>
+            <tr><td class="td-no">124</td><td class="td-cat"><span class="bcat cr">폭력</span></td><td class="td-tit">반복적인 언어 폭력, 어디에 신고하면 되나요?</td><td class="td-date">05.17</td><td class="td-views">621</td></tr>
+            <tr><td class="td-no">123</td><td class="td-cat"><span class="bcat cg">차별</span></td><td class="td-tit">여성 간부인데 보직 배치 차별을 받는 것 같아요</td><td class="td-date">05.16</td><td class="td-views">389</td></tr>
+          </tbody>
+        </table>
+        <div style="display:flex;gap:.5rem;margin-top:.7rem;">
+          <a href="#" class="board-write-btn" style="flex:1;">✏️ 익명으로 고민 올리기</a>
+          <a href="https://case.humanrights.go.kr" target="_blank" class="board-write-btn" style="flex:1;background:var(--red);">🚨 인권위 신고(인권e)</a>
+        </div>
+        <div class="board-pager">
+          <div class="bp on">1</div><div class="bp">2</div><div class="bp">3</div><div class="bp">4</div><div class="bp">5</div><div class="bp">›</div>
         </div>
       </div>
-      <!-- 공지사항 -->
-      <div class="sa sd3">
-        <div class="sec-hd">
-          <div class="sec-hd-left">
-            <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">알림·공지</span></div>
-          </div>
-          <a href="#" class="sec-more">더보기 +</a>
+
+    </div><!-- /g2 -->
+  </div>
+</section>
+
+<!-- 결정례 전체 게시판 -->
+<section class="sec sec-bg">
+  <div class="inner">
+    <div class="sec-hd sa">
+      <div>
+        <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">인권사례·결정례 게시판</span></div>
+        <div class="sec-stxt">국가인권위원회 결정례 및 관련 판례 — 군 관련 사건 분류</div>
+      </div>
+      <a href="https://www.humanrights.go.kr" target="_blank" class="sec-more">인권위 결정례 전체 →</a>
+    </div>
+    <div class="sa">
+      <div class="tab-wrap">
+        <button class="tab-btn on" onclick="switchTab('case','c1',this)">전체</button>
+        <button class="tab-btn"    onclick="switchTab('case','c2',this)">신체자유·가혹행위</button>
+        <button class="tab-btn"    onclick="switchTab('case','c3',this)">표현·종교의 자유</button>
+        <button class="tab-btn"    onclick="switchTab('case','c4',this)">평등권·차별</button>
+        <button class="tab-btn"    onclick="switchTab('case','c5',this)">성희롱·성폭력</button>
+      </div>
+
+      <div class="tab-pane on" id="case-c1">
+        <table class="btable">
+          <thead>
+            <tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="td-no">2026-1</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">반복적 욕설·인격비하 — 시정 권고</a></td><td class="td-date">2026.05.12</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2026-2</td><td><span class="bcat">표현자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">개인 SNS 삭제 강요 — 표현의 자유 침해</a></td><td class="td-date">2026.04.30</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2026-3</td><td><span class="bcat cg2">종교자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">종교 행사 강제 참여 — 신앙의 자유 위반</a></td><td class="td-date">2026.05.18</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2026-4</td><td><span class="bcat cr">성희롱</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 내 성희롱 처리 지연 — 2차 피해 인정</a></td><td class="td-date">2026.04.15</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2026-5</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">과도한 얼차려 — 신체의 자유 침해</a></td><td class="td-date">2026.03.28</td><td><span class="bcat cn">각하</span></td></tr>
+            <tr><td class="td-no">2026-6</td><td><span class="bcat">평등권</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">다문화 병사 차별 — 평등권 침해</a></td><td class="td-date">2026.05.20</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-48</td><td><span class="bcat">휴가</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">청원 휴가 일방 취소 — 인권침해 인정</a></td><td class="td-date">2025.12.10</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-47</td><td><span class="bcat cr">성폭력</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 성폭력 피해자 신원 유출 — 2차 피해</a></td><td class="td-date">2025.11.25</td><td><span class="bcat cg">권고</span></td></tr>
+          </tbody>
+        </table>
+        <div class="board-pager" style="margin-top:.8rem;">
+          <div class="bp on">1</div><div class="bp">2</div><div class="bp">3</div><div class="bp">4</div><div class="bp">5</div><div class="bp">›</div>
         </div>
-        <div>
-          <div class="news-item"><span class="n-cat cr">공지</span><div><div class="n-title notice">2026 군 인권교관 양성과정 모집</div><div class="n-date">2026.05.20</div></div></div>
-          <div class="news-item"><span class="n-cat">안내</span><div><div class="n-title">인권교육 자료 업데이트 안내</div><div class="n-date">2026.05.15</div></div></div>
-          <div class="news-item"><span class="n-cat cg">NEW</span><div><div class="n-title">병영인권 온라인 특강 신청 안내</div><div class="n-date">2026.05.10</div></div></div>
-          <div class="news-item"><span class="n-cat">공지</span><div><div class="n-title">강사 연계 신청 절차 변경 안내</div><div class="n-date">2026.05.02</div></div></div>
-          <div class="news-item"><span class="n-cat">안내</span><div><div class="n-title">2026년 군 인권 결정례 DB 업데이트</div><div class="n-date">2026.04.25</div></div></div>
-        </div>
+      </div>
+
+      <div class="tab-pane" id="case-c2">
+        <table class="btable">
+          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
+          <tbody>
+            <tr><td class="td-no">2026-1</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">반복적 욕설·인격비하 — 시정 권고</a></td><td class="td-date">2026.05.12</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2026-5</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">과도한 얼차려 — 신체의 자유 침해</a></td><td class="td-date">2026.03.28</td><td><span class="bcat cn">각하</span></td></tr>
+            <tr><td class="td-no">2025-41</td><td><span class="bcat cr">구타</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">상급자 폭행 — 군형법 가혹행위 해당</a></td><td class="td-date">2025.10.15</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-35</td><td><span class="bcat cr">가혹행위</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">장시간 기합·얼차려 강요 사건</a></td><td class="td-date">2025.08.20</td><td><span class="bcat cg">권고</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane" id="case-c3">
+        <table class="btable">
+          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
+          <tbody>
+            <tr><td class="td-no">2026-2</td><td><span class="bcat">표현자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">개인 SNS 삭제 강요 — 표현의 자유 침해</a></td><td class="td-date">2026.04.30</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2026-3</td><td><span class="bcat cg2">종교자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">종교 행사 강제 참여 — 신앙의 자유 위반</a></td><td class="td-date">2026.05.18</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-39</td><td><span class="bcat">표현자유</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">집회·결사의 자유 제한 — 군인 기본권</a></td><td class="td-date">2025.09.10</td><td><span class="bcat cn">각하</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane" id="case-c4">
+        <table class="btable">
+          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
+          <tbody>
+            <tr><td class="td-no">2026-6</td><td><span class="bcat">평등권</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">다문화 병사 차별 — 평등권 침해</a></td><td class="td-date">2026.05.20</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-43</td><td><span class="bcat">차별</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">여성 간부 보직 배치 차별 사건</a></td><td class="td-date">2025.11.05</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-36</td><td><span class="bcat">평등권</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">종교 이유 진급 탈락 — 차별 인정</a></td><td class="td-date">2025.08.30</td><td><span class="bcat cg">권고</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane" id="case-c5">
+        <table class="btable">
+          <thead><tr><th>번호</th><th>분류</th><th>사건명</th><th>결정일</th><th>결과</th></tr></thead>
+          <tbody>
+            <tr><td class="td-no">2026-4</td><td><span class="bcat cr">성희롱</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 내 성희롱 처리 지연 — 2차 피해 인정</a></td><td class="td-date">2026.04.15</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-47</td><td><span class="bcat cr">성폭력</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">군 성폭력 피해자 신원 유출 — 2차 피해</a></td><td class="td-date">2025.11.25</td><td><span class="bcat cg">권고</span></td></tr>
+            <tr><td class="td-no">2025-32</td><td><span class="bcat cr">성희롱</span></td><td class="td-tit"><a href="https://www.humanrights.go.kr" target="_blank">상급자 성희롱·불이익 처우 — 2차 피해</a></td><td class="td-date">2025.07.15</td><td><span class="bcat cg">권고</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CITIZEN SECTION -->
+<!-- CITIZEN -->
 <section class="sec sec-navy" id="citizen">
   <div class="inner">
-    <div class="citizen-grid">
-      <div class="citizen-left sa">
+    <div class="cit-grid">
+      <div class="cit-left sa">
         <h2>제복을 입어도<br><em>시민</em>입니다</h2>
         <p>헌법이 보장하는 기본권은 군복을 입는다고 사라지지 않습니다. 아미휴먼라이트는 군 인권교관 양성부터 결정례 제공, 병영고민 상담, 강사연계까지 군 인권교육의 전 과정을 지원합니다.</p>
         <a href="https://www.humanrights.go.kr" target="_blank" class="btn-ol">국가인권위원회 바로가기 →</a>
@@ -629,31 +849,31 @@
   </div>
 </section>
 
-<!-- REPORT SECTION -->
+<!-- REPORT -->
 <section class="sec sec-bg" id="report">
   <div class="inner">
     <div class="sec-hd sa">
-      <div class="sec-hd-left">
-        <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">인권침해 신고·구제 채널</span></div>
-        <div class="sec-sub">인권침해를 당했거나 목격했다면 즉시 신고하세요</div>
+      <div>
+        <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">인권침해 신고·구제 채널</span></div>
+        <div class="sec-stxt">인권침해를 당했거나 목격했다면 즉시 신고하세요 · 24시간 운영</div>
       </div>
     </div>
     <div class="rep-grid">
-      <div class="rep-card sa sd1">
+      <a href="https://case.humanrights.go.kr" target="_blank" class="rep-card sa sd1">
         <div class="rep-ico">🏛️</div>
         <h4>국가인권위원회</h4>
-        <p>☎ 1331<br>온라인 진정 가능<br>24시간 접수</p>
-      </div>
+        <p>☎ 1331<br>온라인 진정 가능<br>24시간 접수 (인권e)</p>
+      </a>
       <div class="rep-card sa sd2">
         <div class="rep-ico">🪖</div>
         <h4>군 인권보호관</h4>
         <p>각 부대 인권보호관<br>직접 상담 가능<br>익명 보장</p>
       </div>
-      <div class="rep-card sa sd3">
+      <a href="tel:1337" class="rep-card sa sd3">
         <div class="rep-ico">📞</div>
         <h4>국방부 신고센터</h4>
         <p>☎ 1337<br>온라인 신고<br>군사망 사고 포함</p>
-      </div>
+      </a>
       <div class="rep-card sa sd4">
         <div class="rep-ico">⚖️</div>
         <h4>군검찰·헌병대</h4>
@@ -665,8 +885,8 @@
         <h3>🚨 지금 즉시 신고가 필요하신가요?</h3>
         <p>24시간 운영 · 익명 보장 · 2차 피해 방지 시스템 운영</p>
       </div>
-      <div class="rep-cta-btns">
-        <a href="tel:1331" class="btn-red">☎ 1331 전화 신고</a>
+      <div class="rep-btns">
+        <a href="tel:1331" class="btn-r">☎ 1331 전화 신고</a>
         <a href="https://case.humanrights.go.kr" target="_blank" class="btn-ol">온라인 신고 (인권e) →</a>
       </div>
     </div>
@@ -677,9 +897,9 @@
 <section class="sec sec-white" id="instructors">
   <div class="inner">
     <div class="sec-hd sa">
-      <div class="sec-hd-left">
-        <div class="sec-title-row"><div class="sec-bar"></div><span class="sec-title">인권교육 강사 연계</span></div>
-        <div class="sec-sub">부대·기관 인권교육에 필요한 전문 강사를 연계해 드립니다</div>
+      <div>
+        <div class="sec-trow"><div class="sec-bar"></div><span class="sec-ttl">인권교육 강사 연계</span></div>
+        <div class="sec-stxt">부대·기관 인권교육에 필요한 전문 강사를 연계해 드립니다</div>
       </div>
       <a href="#" class="sec-more">전체 강사 보기 +</a>
     </div>
@@ -713,39 +933,36 @@
 </section>
 
 <!-- 관련 기관 바로가기 -->
-<div class="ql-section">
-  <div class="inner">
-    <div class="ql-bar sa">
-      <div class="ql-label">관련 기관 바로가기</div>
-      <div class="ql-items">
-        <a href="https://www.humanrights.go.kr" target="_blank" class="ql-item"><span class="qi">🏛️</span> 국가인권위원회</a>
-        <a href="https://edu.humanrights.go.kr" target="_blank" class="ql-item"><span class="qi">🎓</span> 국가인권교육원</a>
-        <a href="https://library.humanrights.go.kr" target="_blank" class="ql-item"><span class="qi">📚</span> 인권도서관</a>
-        <a href="https://case.humanrights.go.kr" target="_blank" class="ql-item"><span class="qi">📋</span> 인권e (온라인신고)</a>
-        <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="ql-item"><span class="qi">▶️</span> 인권위 유튜브</a>
-        <a href="https://uhr.humanrights.go.kr" target="_blank" class="ql-item"><span class="qi">🌐</span> 국제인권정보</a>
-      </div>
+<div class="ql-sec">
+  <div class="ql-bar">
+    <div class="ql-label">관련 기관 바로가기</div>
+    <div class="ql-items">
+      <a href="https://www.humanrights.go.kr" target="_blank" class="ql-item">🏛️ 국가인권위원회</a>
+      <a href="https://edu.humanrights.go.kr" target="_blank" class="ql-item">🎓 국가인권교육원</a>
+      <a href="https://library.humanrights.go.kr" target="_blank" class="ql-item">📚 인권도서관</a>
+      <a href="https://case.humanrights.go.kr" target="_blank" class="ql-item">📋 인권e (온라인신고)</a>
+      <a href="https://uhr.humanrights.go.kr" target="_blank" class="ql-item">🌐 국제인권정보</a>
+      <a href="https://www.youtube.com/@NHRCkr" target="_blank" class="ql-item">▶️ 인권위 유튜브</a>
     </div>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-grid">
+  <div class="ftg">
     <div>
       <div class="ft-logo"><em>아미</em>휴먼라이트</div>
       <p class="ft-desc">군 인권교관 및 군 인권에 관심있는 모든 분을 위한 전문 플랫폼. 보편적 인권 가치와 군 현장을 잇습니다.</p>
-      <div class="ft-contact">
-        신고전화: ☎ 1331 (국가인권위원회) · ☎ 1337 (국방부)
-      </div>
+      <div class="ft-contact">신고전화: ☎ 1331 (국가인권위원회) · ☎ 1337 (국방부 신고센터)</div>
     </div>
     <div>
       <h5>주요 메뉴</h5>
       <ul>
-        <li><a href="#cases">최근 인권사례</a></li>
-        <li><a href="#board">병영 고민 게시판</a></li>
+        <li><a href="#cases">인권사례·결정례</a></li>
+        <li><a href="#board">병영고민 게시판</a></li>
+        <li><a href="#edumat">인권교육자료실</a></li>
         <li><a href="#videos">인권교육 영상</a></li>
-        <li><a href="https://edu.humanrights.go.kr" target="_blank">인권교육자료실</a></li>
+        <li><a href="#instructors">강사 연계</a></li>
       </ul>
     </div>
     <div>
@@ -754,6 +971,7 @@
         <li><a href="https://www.humanrights.go.kr" target="_blank">국가인권위원회</a></li>
         <li><a href="https://edu.humanrights.go.kr" target="_blank">국가인권교육원</a></li>
         <li><a href="https://library.humanrights.go.kr" target="_blank">인권도서관</a></li>
+        <li><a href="https://case.humanrights.go.kr" target="_blank">인권e (온라인신고)</a></li>
         <li><a href="https://www.youtube.com/@NHRCkr" target="_blank">인권위 유튜브</a></li>
       </ul>
     </div>
@@ -763,11 +981,11 @@
         <li><a href="tel:1331">국가인권위원회 ☎ 1331</a></li>
         <li><a href="tel:1337">국방부 신고센터 ☎ 1337</a></li>
         <li><a href="https://case.humanrights.go.kr" target="_blank">온라인 신고 (인권e)</a></li>
-        <li><a href="#instructors">강사 연계 신청</a></li>
+        <li><a href="#report">신고 채널 안내</a></li>
       </ul>
     </div>
   </div>
-  <div class="ft-bottom">
+  <div class="ft-btm">
     <span>© 2026 아미휴먼라이트. All rights reserved.</span>
     <span>인권침해 신고: ☎ 1331 | ☎ 1337</span>
   </div>
@@ -776,36 +994,48 @@
 <a href="#report" class="float-btn">🚨 인권침해 신고</a>
 
 <script>
-  // scroll animation
-  const obs = new IntersectionObserver(e => {
-    e.forEach(x => { if(x.isIntersecting) x.target.classList.add('show'); });
-  }, {threshold: 0.08});
-  document.querySelectorAll('.sa').forEach(el => obs.observe(el));
+  // scroll anim
+  const obs = new IntersectionObserver(e=>{
+    e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add('show'); });
+  },{threshold:0.07});
+  document.querySelectorAll('.sa').forEach(el=>obs.observe(el));
 
   // mobile
-  function openMob()  { document.getElementById('mob').classList.add('on'); }
-  function closeMob() { document.getElementById('mob').classList.remove('on'); }
+  function openMob(){document.getElementById('mob').classList.add('on');}
+  function closeMob(){document.getElementById('mob').classList.remove('on');}
+
+  // tab switcher
+  function switchTab(group,paneId,btn){
+    document.querySelectorAll('#'+group+'-'+paneId).forEach(()=>{});
+    const wrap = btn.closest('.sec')||btn.closest('.sa')||btn.parentElement.parentElement;
+    wrap.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    // find all panes with matching group prefix
+    const panes = document.querySelectorAll('[id^="'+group+'-"]');
+    panes.forEach(p=>{
+      p.classList.remove('on');
+      if(p.id===group+'-'+paneId) p.classList.add('on');
+    });
+  }
 
   // quote
-  const QS = [
-    {t:'"군인은 국가의 명령에 복종하는 사람이기 이전에, 헌법이 보장하는 기본권의 주체인 시민이다."', s:'— 헌법재판소, 2010헌마418'},
-    {t:'"인권은 보편적이고 불가분하며 상호의존적이고 상호연관된 것이다."', s:'— 비엔나선언 및 행동계획, 1993'},
-    {t:'"강한 군대는 규율과 인권이 함께 살아있는 군대입니다."', s:'— 국방부 인권정책 기본계획, 2023'},
-    {t:'"고문 및 잔혹한 처우는 어떤 상황에서도 정당화될 수 없다."', s:'— 고문방지협약(CAT) 제2조'},
-    {t:'"인권교육은 인권에 관한, 인권을 통한, 인권을 위한 교육이다."', s:'— UN 인권교육선언 제2조, 2011'}
+  const QS=[
+    {t:'"군인은 국가의 명령에 복종하는 사람이기 이전에, 헌법이 보장하는 기본권의 주체인 시민이다."',s:'— 헌법재판소, 2010헌마418'},
+    {t:'"인권은 보편적이고 불가분하며 상호의존적이고 상호연관된 것이다."',s:'— 비엔나선언 및 행동계획, 1993'},
+    {t:'"강한 군대는 규율과 인권이 함께 살아있는 군대입니다."',s:'— 국방부 인권정책 기본계획, 2023'},
+    {t:'"고문 및 잔혹한 처우는 어떤 상황에서도 정당화될 수 없다."',s:'— 고문방지협약(CAT) 제2조'},
+    {t:'"인권교육은 인권에 관한, 인권을 통한, 인권을 위한 교육이다."',s:'— UN 인권교육선언 제2조, 2011'}
   ];
-  let qi = 0;
-  function nextQ() {
-    qi = (qi + 1) % QS.length;
-    const t = document.getElementById('qText');
-    const s = document.getElementById('qSrc');
-    t.style.opacity = s.style.opacity = '0';
-    setTimeout(() => {
-      t.textContent = QS[qi].t;
-      s.textContent = QS[qi].s;
-      t.style.transition = s.style.transition = 'opacity .4s';
-      t.style.opacity = s.style.opacity = '1';
-    }, 280);
+  let qi=0;
+  function nextQ(){
+    qi=(qi+1)%QS.length;
+    const t=document.getElementById('qText'),s=document.getElementById('qSrc');
+    t.style.opacity=s.style.opacity='0';
+    setTimeout(()=>{
+      t.textContent=QS[qi].t;s.textContent=QS[qi].s;
+      t.style.transition=s.style.transition='opacity .4s';
+      t.style.opacity=s.style.opacity='1';
+    },280);
   }
 </script>
 </body>
