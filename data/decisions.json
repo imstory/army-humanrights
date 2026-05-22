@@ -1,71 +1,307 @@
 {
-  "updated": "2026-05-21 수동 입력",
+  "updated": "2026-05-22 11:50 UTC",
   "source": "https://case.humanrights.go.kr/dici/diciList.do",
-  "count": 8,
+  "count": 30,
   "items": [
     {
-      "id": "2026-군-001",
-      "title": "반복적 욕설·인격비하 행위에 대한 시정 권고",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "가혹행위",
-      "date": "2026.05.12",
-      "result": "권고"
-    },
-    {
-      "id": "2026-군-002",
-      "title": "개인 SNS 게시물 삭제 강요 — 표현의 자유 침해",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "표현·종교의 자유",
-      "date": "2026.04.30",
-      "result": "권고"
-    },
-    {
-      "id": "2026-군-003",
-      "title": "종교 행사 강제 참여 지시 — 신앙의 자유 위반",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "표현·종교의 자유",
-      "date": "2026.05.18",
-      "result": "권고"
-    },
-    {
-      "id": "2026-군-004",
-      "title": "군 내 성희롱 처리 지연으로 인한 2차 피해 인정",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "성희롱·성폭력",
-      "date": "2026.04.15",
-      "result": "권고"
-    },
-    {
-      "id": "2026-군-005",
-      "title": "과도한 얼차려 부과 — 신체의 자유 침해",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "가혹행위",
-      "date": "2026.03.28",
-      "result": "각하"
-    },
-    {
-      "id": "2026-군-006",
-      "title": "다문화 출신 병사에 대한 차별적 처우 — 평등권 침해",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "평등권·차별",
-      "date": "2026.05.20",
-      "result": "권고"
-    },
-    {
-      "id": "2025-군-048",
-      "title": "청원 휴가 일방 취소 — 인권침해 인정",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
+      "id": "25-진재-0002400",
+      "title": "특정 군사학교 출신을 이유로 한 부당한 처우 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진재-0002400",
       "category": "기타",
-      "date": "2025.12.10",
-      "result": "권고"
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
     },
     {
-      "id": "2025-군-047",
-      "title": "군 성폭력 피해자 신원 유출 — 2차 피해",
-      "url": "https://case.humanrights.go.kr/dici/diciList.do",
-      "category": "성희롱·성폭력",
-      "date": "2025.11.25",
-      "result": "권고"
+      "id": "25-진정-0481500",
+      "title": "군의 무죄확정 복귀자에 대한 구제 소홀 부당",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0481500",
+      "category": "인사·처우",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0493700",
+      "title": "군무원 선발 시 비전투병과 출신 등에 대한 차별",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0493700",
+      "category": "평등권·차별",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-방문-0001500",
+      "title": "2025년 여성 간호장교 인권 및 처우 관련 국군병원 방문조사",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-방문-0001500",
+      "category": "평등권·차별",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권협력지원과",
+      "result": ""
+    },
+    {
+      "id": "25-방문-0001700",
+      "title": "후반기 교육기관 도움·배려병사 관리 체계 관련 군부대 방문조사 결과보고",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-방문-0001700",
+      "category": "기타",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권보호총괄과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0930600",
+      "title": "군의 병영 내 부조리 입증 자료 비공개 부당",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0930600",
+      "category": "기타",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0035300",
+      "title": "정신의료기관의 부당한 통신 제한 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0035300",
+      "category": "기타",
+      "date": "2026.03.09",
+      "committee": "장애인차별시정위원회",
+      "team": "광주인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0809400",
+      "title": "정신의료기관의 부당한 강제입원",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0809400",
+      "category": "기타",
+      "date": "2026.03.09",
+      "committee": "장애인차별시정위원회",
+      "team": "부산인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0017700",
+      "title": "공직유관단체의 장애인 접근성 미흡",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0017700",
+      "category": "평등권·차별",
+      "date": "2026.01.30",
+      "committee": "장애인차별시정위원회",
+      "team": "부산인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0693500",
+      "title": "군대 내 상급자의 폭언 등으로 인한 인권침해",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0693500",
+      "category": "가혹행위",
+      "date": "2025.12.30",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진재-0002400",
+      "title": "특정 군사학교 출신을 이유로 한 부당한 처우 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진재-0002400",
+      "category": "기타",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0481500",
+      "title": "군의 무죄확정 복귀자에 대한 구제 소홀 부당",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0481500",
+      "category": "인사·처우",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0493700",
+      "title": "군무원 선발 시 비전투병과 출신 등에 대한 차별",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0493700",
+      "category": "평등권·차별",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-방문-0001500",
+      "title": "2025년 여성 간호장교 인권 및 처우 관련 국군병원 방문조사",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-방문-0001500",
+      "category": "평등권·차별",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권협력지원과",
+      "result": ""
+    },
+    {
+      "id": "25-방문-0001700",
+      "title": "후반기 교육기관 도움·배려병사 관리 체계 관련 군부대 방문조사 결과보고",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-방문-0001700",
+      "category": "기타",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권보호총괄과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0930600",
+      "title": "군의 병영 내 부조리 입증 자료 비공개 부당",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0930600",
+      "category": "기타",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0035300",
+      "title": "정신의료기관의 부당한 통신 제한 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0035300",
+      "category": "기타",
+      "date": "2026.03.09",
+      "committee": "장애인차별시정위원회",
+      "team": "광주인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0809400",
+      "title": "정신의료기관의 부당한 강제입원",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0809400",
+      "category": "기타",
+      "date": "2026.03.09",
+      "committee": "장애인차별시정위원회",
+      "team": "부산인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0017700",
+      "title": "공직유관단체의 장애인 접근성 미흡",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0017700",
+      "category": "평등권·차별",
+      "date": "2026.01.30",
+      "committee": "장애인차별시정위원회",
+      "team": "부산인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0693500",
+      "title": "군대 내 상급자의 폭언 등으로 인한 인권침해",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0693500",
+      "category": "가혹행위",
+      "date": "2025.12.30",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진재-0002400",
+      "title": "특정 군사학교 출신을 이유로 한 부당한 처우 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진재-0002400",
+      "category": "기타",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0481500",
+      "title": "군의 무죄확정 복귀자에 대한 구제 소홀 부당",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0481500",
+      "category": "인사·처우",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0493700",
+      "title": "군무원 선발 시 비전투병과 출신 등에 대한 차별",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0493700",
+      "category": "평등권·차별",
+      "date": "2026.04.08",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-방문-0001500",
+      "title": "2025년 여성 간호장교 인권 및 처우 관련 국군병원 방문조사",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-방문-0001500",
+      "category": "평등권·차별",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권협력지원과",
+      "result": ""
+    },
+    {
+      "id": "25-방문-0001700",
+      "title": "후반기 교육기관 도움·배려병사 관리 체계 관련 군부대 방문조사 결과보고",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-방문-0001700",
+      "category": "기타",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권보호총괄과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0930600",
+      "title": "군의 병영 내 부조리 입증 자료 비공개 부당",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0930600",
+      "category": "기타",
+      "date": "2026.03.12",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0035300",
+      "title": "정신의료기관의 부당한 통신 제한 등",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0035300",
+      "category": "기타",
+      "date": "2026.03.09",
+      "committee": "장애인차별시정위원회",
+      "team": "광주인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0809400",
+      "title": "정신의료기관의 부당한 강제입원",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0809400",
+      "category": "기타",
+      "date": "2026.03.09",
+      "committee": "장애인차별시정위원회",
+      "team": "부산인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0017700",
+      "title": "공직유관단체의 장애인 접근성 미흡",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0017700",
+      "category": "평등권·차별",
+      "date": "2026.01.30",
+      "committee": "장애인차별시정위원회",
+      "team": "부산인권사무소",
+      "result": ""
+    },
+    {
+      "id": "25-진정-0693500",
+      "title": "군대 내 상급자의 폭언 등으로 인한 인권침해",
+      "url": "https://case.humanrights.go.kr/dici/diciView.do?docId=25-진정-0693500",
+      "category": "가혹행위",
+      "date": "2025.12.30",
+      "committee": "군인권보호위원회",
+      "team": "군인권조사과",
+      "result": ""
     }
   ]
 }
