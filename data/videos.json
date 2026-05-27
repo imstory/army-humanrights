@@ -1,8 +1,15 @@
 {
-  "updated": "2026-05-26 17:53 UTC",
+  "updated": "2026-05-27 17:55 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "B1Kku14AicA",
+      "title": "[별별기자단 차준호] 국가인권교육원 개원식",
+      "url": "https://www.youtube.com/watch?v=B1Kku14AicA",
+      "thumbnail": "https://img.youtube.com/vi/B1Kku14AicA/mqdefault.jpg",
+      "date": "2026-05-27"
+    },
     {
       "id": "QaT4f9AcFJY",
       "title": "[별별기자단 이종진] 국가인권위원회 05월 별별기자단 발대식",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=csTULrKKvx8",
       "thumbnail": "https://img.youtube.com/vi/csTULrKKvx8/mqdefault.jpg",
       "date": "2026-03-19"
-    },
-    {
-      "id": "VDkf9SI9h6E",
-      "title": "[별별튠] 우리도 당당한 장애인 보조견입니다!",
-      "url": "https://www.youtube.com/watch?v=VDkf9SI9h6E",
-      "thumbnail": "https://img.youtube.com/vi/VDkf9SI9h6E/mqdefault.jpg",
-      "date": "2025-12-31"
     }
   ]
 }
