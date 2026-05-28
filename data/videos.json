@@ -1,8 +1,15 @@
 {
-  "updated": "2026-05-27 17:55 UTC",
+  "updated": "2026-05-28 18:00 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "YegjYWeEpc4",
+      "title": "「2026 인권공모전」개최✨",
+      "url": "https://www.youtube.com/watch?v=YegjYWeEpc4",
+      "thumbnail": "https://img.youtube.com/vi/YegjYWeEpc4/mqdefault.jpg",
+      "date": "2026-05-28"
+    },
     {
       "id": "B1Kku14AicA",
       "title": "[별별기자단 차준호] 국가인권교육원 개원식",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=YaqCxjQp6QM",
       "thumbnail": "https://img.youtube.com/vi/YaqCxjQp6QM/mqdefault.jpg",
       "date": "2026-03-26"
-    },
-    {
-      "id": "csTULrKKvx8",
-      "title": "흑인 인권 운동가 ㅣ 마틴 루터 킹",
-      "url": "https://www.youtube.com/watch?v=csTULrKKvx8",
-      "thumbnail": "https://img.youtube.com/vi/csTULrKKvx8/mqdefault.jpg",
-      "date": "2026-03-19"
     }
   ]
 }
