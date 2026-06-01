@@ -1,8 +1,15 @@
 {
-  "updated": "2026-05-31 16:01 UTC",
+  "updated": "2026-06-01 19:53 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "MQSXwMnn7Cw",
+      "title": "[별별기자단 차준호] 차별하지않는다는 착각 책리뷰",
+      "url": "https://www.youtube.com/watch?v=MQSXwMnn7Cw",
+      "thumbnail": "https://img.youtube.com/vi/MQSXwMnn7Cw/mqdefault.jpg",
+      "date": "2026-06-01"
+    },
     {
       "id": "ia2UMvdH8M0",
       "title": "[슬기로운 인권생활5] 사람들이 기대하는 새로운 인권교육의 공간",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=DML37-vSlAY",
       "thumbnail": "https://img.youtube.com/vi/DML37-vSlAY/mqdefault.jpg",
       "date": "2026-04-28"
-    },
-    {
-      "id": "0aqBvMblYFw",
-      "title": "혐오차별반대챌린지 2차 EVENT💝",
-      "url": "https://www.youtube.com/watch?v=0aqBvMblYFw",
-      "thumbnail": "https://img.youtube.com/vi/0aqBvMblYFw/mqdefault.jpg",
-      "date": "2026-04-27"
     }
   ]
 }
