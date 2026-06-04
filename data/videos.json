@@ -1,8 +1,15 @@
 {
-  "updated": "2026-06-03 18:41 UTC",
+  "updated": "2026-06-04 17:40 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "HthDn4hnRbY",
+      "title": "[별별기자단 휴먼프레임] 인권적 관점으로 해석하는 트렌드 코리아 2026",
+      "url": "https://www.youtube.com/watch?v=HthDn4hnRbY",
+      "thumbnail": "https://img.youtube.com/vi/HthDn4hnRbY/mqdefault.jpg",
+      "date": "2026-06-04"
+    },
     {
       "id": "MQSXwMnn7Cw",
       "title": "[별별기자단 차준호] 차별하지않는다는 착각 책리뷰",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=nNCHDQDHANg",
       "thumbnail": "https://img.youtube.com/vi/nNCHDQDHANg/mqdefault.jpg",
       "date": "2026-05-08"
-    },
-    {
-      "id": "DML37-vSlAY",
-      "title": "유엔 인권이사회 권고(UPR)에 부합하는 장기감축경로 설정 및 탄소중립기본법 개정 방향 토론회",
-      "url": "https://www.youtube.com/watch?v=DML37-vSlAY",
-      "thumbnail": "https://img.youtube.com/vi/DML37-vSlAY/mqdefault.jpg",
-      "date": "2026-04-28"
     }
   ]
 }
