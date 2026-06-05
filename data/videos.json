@@ -1,8 +1,15 @@
 {
-  "updated": "2026-06-04 17:40 UTC",
+  "updated": "2026-06-05 17:10 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "8ci1-3bgxy0",
+      "title": "[Vlog]국가인권위원회 제네바 출장기✈️ 우리가 국경을 넘어 연결되는 이유",
+      "url": "https://www.youtube.com/watch?v=8ci1-3bgxy0",
+      "thumbnail": "https://img.youtube.com/vi/8ci1-3bgxy0/mqdefault.jpg",
+      "date": "2026-06-05"
+    },
     {
       "id": "HthDn4hnRbY",
       "title": "[별별기자단 휴먼프레임] 인권적 관점으로 해석하는 트렌드 코리아 2026",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=RSbzxnV8m8Y",
       "thumbnail": "https://img.youtube.com/vi/RSbzxnV8m8Y/mqdefault.jpg",
       "date": "2026-05-14"
-    },
-    {
-      "id": "nNCHDQDHANg",
-      "title": "[인권을 심다, 미래를 열다! 🌱국가인권교육원 개원식]",
-      "url": "https://www.youtube.com/watch?v=nNCHDQDHANg",
-      "thumbnail": "https://img.youtube.com/vi/nNCHDQDHANg/mqdefault.jpg",
-      "date": "2026-05-08"
     }
   ]
 }
