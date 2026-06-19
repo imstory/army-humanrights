@@ -1,8 +1,15 @@
 {
-  "updated": "2026-06-18 17:57 UTC",
+  "updated": "2026-06-19 17:13 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "fnLOtz2BQVM",
+      "title": "제2차 세계 대전 2,500여 명의 아이들을 구하다.ㅣ이레나 센들러",
+      "url": "https://www.youtube.com/watch?v=fnLOtz2BQVM",
+      "thumbnail": "https://img.youtube.com/vi/fnLOtz2BQVM/mqdefault.jpg",
+      "date": "2026-06-19"
+    },
     {
       "id": "SO0msS7nHg8",
       "title": "[별별기자단 휴먼프레임] 국제 혐오표현 반대의 날",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=fa3Dxxkn3l4",
       "thumbnail": "https://img.youtube.com/vi/fa3Dxxkn3l4/mqdefault.jpg",
       "date": "2026-05-21"
-    },
-    {
-      "id": "HFt3o2T5wYA",
-      "title": "[별별기자단 심재덕] 개교 6주년, 서진학교(특수학교) 사건 재조명",
-      "url": "https://www.youtube.com/watch?v=HFt3o2T5wYA",
-      "thumbnail": "https://img.youtube.com/vi/HFt3o2T5wYA/mqdefault.jpg",
-      "date": "2026-05-18"
     }
   ]
 }
