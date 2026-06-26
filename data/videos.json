@@ -1,8 +1,15 @@
 {
-  "updated": "2026-06-25 17:07 UTC",
+  "updated": "2026-06-26 16:57 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "WAITn6RKf-Y",
+      "title": "[별별기자단 이종진] 국가인권위원회 인권도서관",
+      "url": "https://www.youtube.com/watch?v=WAITn6RKf-Y",
+      "thumbnail": "https://img.youtube.com/vi/WAITn6RKf-Y/mqdefault.jpg",
+      "date": "2026-06-26"
+    },
     {
       "id": "a4V1NbAWPwU",
       "title": "[슬기로운 인권생활5] 공감은, 공간이 된다｜‘인권전시관 공감+’ 비하인드",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=MX4h74SQPdM",
       "thumbnail": "https://img.youtube.com/vi/MX4h74SQPdM/mqdefault.jpg",
       "date": "2026-05-29"
-    },
-    {
-      "id": "YegjYWeEpc4",
-      "title": "「2026 인권공모전」개최✨",
-      "url": "https://www.youtube.com/watch?v=YegjYWeEpc4",
-      "thumbnail": "https://img.youtube.com/vi/YegjYWeEpc4/mqdefault.jpg",
-      "date": "2026-05-28"
     }
   ]
 }
