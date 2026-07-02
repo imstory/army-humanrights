@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-01 17:09 UTC",
+  "updated": "2026-07-02 16:46 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "dBkS4T70enk",
+      "title": "[별별기자단 심재덕] 장애인 참정권의 현실과 개선책",
+      "url": "https://www.youtube.com/watch?v=dBkS4T70enk",
+      "thumbnail": "https://img.youtube.com/vi/dBkS4T70enk/mqdefault.jpg",
+      "date": "2026-07-02"
+    },
     {
       "id": "WAITn6RKf-Y",
       "title": "[별별기자단 이종진] 국가인권위원회 인권도서관",
@@ -78,13 +85,6 @@
       "title": "[슬기로운 인권생활5] 사람들이 기대하는 새로운 인권교육의 공간",
       "url": "https://www.youtube.com/watch?v=ia2UMvdH8M0",
       "thumbnail": "https://img.youtube.com/vi/ia2UMvdH8M0/mqdefault.jpg",
-      "date": "2026-05-29"
-    },
-    {
-      "id": "MX4h74SQPdM",
-      "title": "[슬기로운 인권생활5] 인권의 질문은 어디로 향할까? 국가인권교육원의 시작",
-      "url": "https://www.youtube.com/watch?v=MX4h74SQPdM",
-      "thumbnail": "https://img.youtube.com/vi/MX4h74SQPdM/mqdefault.jpg",
       "date": "2026-05-29"
     }
   ]
