@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-20 16:20 UTC",
+  "updated": "2026-07-21 16:18 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "kNDInthS0qY",
+      "title": "[군인권보호관 업무 일지] 사건이 들어오면 가장 먼저 하는 일",
+      "url": "https://www.youtube.com/watch?v=kNDInthS0qY",
+      "thumbnail": "https://img.youtube.com/vi/kNDInthS0qY/mqdefault.jpg",
+      "date": "2026-07-21"
+    },
     {
       "id": "dBkS4T70enk",
       "title": "[별별기자단 심재덕] 장애인 참정권의 현실과 개선책",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=MQSXwMnn7Cw",
       "thumbnail": "https://img.youtube.com/vi/MQSXwMnn7Cw/mqdefault.jpg",
       "date": "2026-06-01"
-    },
-    {
-      "id": "ia2UMvdH8M0",
-      "title": "[슬기로운 인권생활5] 사람들이 기대하는 새로운 인권교육의 공간",
-      "url": "https://www.youtube.com/watch?v=ia2UMvdH8M0",
-      "thumbnail": "https://img.youtube.com/vi/ia2UMvdH8M0/mqdefault.jpg",
-      "date": "2026-05-29"
     }
   ]
 }
