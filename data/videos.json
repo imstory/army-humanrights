@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-27 16:54 UTC",
+  "updated": "2026-07-28 16:29 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "g2i4PkVKSmI",
+      "title": "[군인권, 보호관이 챙겼군!] 사관생도! 주말 외출 보장 완료!",
+      "url": "https://www.youtube.com/watch?v=g2i4PkVKSmI",
+      "thumbnail": "https://img.youtube.com/vi/g2i4PkVKSmI/mqdefault.jpg",
+      "date": "2026-07-28"
+    },
     {
       "id": "q6X12NN709o",
       "title": "[별별기자단 심재덕] 수차례 폐기된 시청각장애인 지원법안, 현실문제 증폭",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=ukcCbZVYjf8",
       "thumbnail": "https://img.youtube.com/vi/ukcCbZVYjf8/mqdefault.jpg",
       "date": "2026-06-18"
-    },
-    {
-      "id": "8ci1-3bgxy0",
-      "title": "[Vlog]국가인권위원회 제네바 출장기✈️ 우리가 국경을 넘어 연결되는 이유",
-      "url": "https://www.youtube.com/watch?v=8ci1-3bgxy0",
-      "thumbnail": "https://img.youtube.com/vi/8ci1-3bgxy0/mqdefault.jpg",
-      "date": "2026-06-05"
     }
   ]
 }
