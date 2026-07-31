@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-30 16:22 UTC",
+  "updated": "2026-07-31 16:41 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "IPmoa7LDn6I",
+      "title": "[별별기자단 이종진] 배리어프리 청계천과 충혼탑에서 만나다",
+      "url": "https://www.youtube.com/watch?v=IPmoa7LDn6I",
+      "thumbnail": "https://img.youtube.com/vi/IPmoa7LDn6I/mqdefault.jpg",
+      "date": "2026-07-31"
+    },
     {
       "id": "RIHUG9qF71Q",
       "title": "[별별기자단 결이솔] 7월_오티즘엑스포 현장 스케치",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=fnLOtz2BQVM",
       "thumbnail": "https://img.youtube.com/vi/fnLOtz2BQVM/mqdefault.jpg",
       "date": "2026-06-19"
-    },
-    {
-      "id": "SO0msS7nHg8",
-      "title": "[별별기자단 휴먼프레임] 국제 혐오표현 반대의 날",
-      "url": "https://www.youtube.com/watch?v=SO0msS7nHg8",
-      "thumbnail": "https://img.youtube.com/vi/SO0msS7nHg8/mqdefault.jpg",
-      "date": "2026-06-18"
     }
   ]
 }
