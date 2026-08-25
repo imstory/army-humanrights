@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-24 15:32 UTC",
+  "updated": "2026-08-25 15:36 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "6RuXU6PDJ2E",
+      "title": "[군인권, 보호관이 챙겼군] 해군 간부 수당이 ‘월 100시간’까지 늘어난 사연!",
+      "url": "https://www.youtube.com/watch?v=6RuXU6PDJ2E",
+      "thumbnail": "https://img.youtube.com/vi/6RuXU6PDJ2E/mqdefault.jpg",
+      "date": "2026-08-25"
+    },
     {
       "id": "G64G6ZznyhE",
       "title": "(아동(돌봄)인권교육 북토크) 아동,정책 그리고 아동권리협약 2",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=Waymcw-hxzk",
       "thumbnail": "https://img.youtube.com/vi/Waymcw-hxzk/mqdefault.jpg",
       "date": "2026-07-22"
-    },
-    {
-      "id": "kNDInthS0qY",
-      "title": "[군인권보호관 업무 일지] 사건이 들어오면 가장 먼저 하는 일",
-      "url": "https://www.youtube.com/watch?v=kNDInthS0qY",
-      "thumbnail": "https://img.youtube.com/vi/kNDInthS0qY/mqdefault.jpg",
-      "date": "2026-07-21"
     }
   ]
 }
