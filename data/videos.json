@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25 15:36 UTC",
+  "updated": "2026-08-26 16:12 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
@@ -9,6 +9,13 @@
       "url": "https://www.youtube.com/watch?v=6RuXU6PDJ2E",
       "thumbnail": "https://img.youtube.com/vi/6RuXU6PDJ2E/mqdefault.jpg",
       "date": "2026-08-25"
+    },
+    {
+      "id": "cswsp6vlW2Y",
+      "title": "👤 인물소개 – 김복동 할머니",
+      "url": "https://www.youtube.com/watch?v=cswsp6vlW2Y",
+      "thumbnail": "https://img.youtube.com/vi/cswsp6vlW2Y/mqdefault.jpg",
+      "date": "2026-08-21"
     },
     {
       "id": "G64G6ZznyhE",
@@ -78,13 +85,6 @@
       "title": "[별별기자단 심재덕] 수차례 폐기된 시청각장애인 지원법안, 현실문제 증폭",
       "url": "https://www.youtube.com/watch?v=q6X12NN709o",
       "thumbnail": "https://img.youtube.com/vi/q6X12NN709o/mqdefault.jpg",
-      "date": "2026-07-22"
-    },
-    {
-      "id": "Waymcw-hxzk",
-      "title": "피의 복수 대신 화해와 용서를 택하다ㅣ넬슨 만델라",
-      "url": "https://www.youtube.com/watch?v=Waymcw-hxzk",
-      "thumbnail": "https://img.youtube.com/vi/Waymcw-hxzk/mqdefault.jpg",
       "date": "2026-07-22"
     }
   ]
