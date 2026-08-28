@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-28 00:11 UTC",
+  "updated": "2026-08-28 23:48 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "XhQWgX-HSCI",
+      "title": "[별별기자단 결이솔] 8월 30일, 영화 속 이야기가 아닌, 지금도 일어나는 비극 '강제실종'",
+      "url": "https://www.youtube.com/watch?v=XhQWgX-HSCI",
+      "thumbnail": "https://img.youtube.com/vi/XhQWgX-HSCI/mqdefault.jpg",
+      "date": "2026-08-28"
+    },
     {
       "id": "6RuXU6PDJ2E",
       "title": "[군인권, 보호관이 챙겼군] 해군 간부 수당이 ‘월 100시간’까지 늘어난 사연!",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=g2i4PkVKSmI",
       "thumbnail": "https://img.youtube.com/vi/g2i4PkVKSmI/mqdefault.jpg",
       "date": "2026-07-28"
-    },
-    {
-      "id": "q6X12NN709o",
-      "title": "[별별기자단 심재덕] 수차례 폐기된 시청각장애인 지원법안, 현실문제 증폭",
-      "url": "https://www.youtube.com/watch?v=q6X12NN709o",
-      "thumbnail": "https://img.youtube.com/vi/q6X12NN709o/mqdefault.jpg",
-      "date": "2026-07-22"
     }
   ]
 }
