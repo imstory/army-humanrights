@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-30 18:21 UTC",
+  "updated": "2026-08-31 20:34 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "PAfS71actE0",
+      "title": "[별별기자단 이종진] 무장애탐방로 청송",
+      "url": "https://www.youtube.com/watch?v=PAfS71actE0",
+      "thumbnail": "https://img.youtube.com/vi/PAfS71actE0/mqdefault.jpg",
+      "date": "2026-08-31"
+    },
     {
       "id": "XhQWgX-HSCI",
       "title": "[별별기자단 결이솔] 8월 30일, 영화 속 이야기가 아닌, 지금도 일어나는 비극 '강제실종'",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=RIHUG9qF71Q",
       "thumbnail": "https://img.youtube.com/vi/RIHUG9qF71Q/mqdefault.jpg",
       "date": "2026-07-30"
-    },
-    {
-      "id": "g2i4PkVKSmI",
-      "title": "[군인권, 보호관이 챙겼군!] 사관생도! 주말 외출 보장 완료!",
-      "url": "https://www.youtube.com/watch?v=g2i4PkVKSmI",
-      "thumbnail": "https://img.youtube.com/vi/g2i4PkVKSmI/mqdefault.jpg",
-      "date": "2026-07-28"
     }
   ]
 }
