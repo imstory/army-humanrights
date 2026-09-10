@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09 18:14 UTC",
+  "updated": "2026-09-10 17:59 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
@@ -9,6 +9,13 @@
       "url": "https://www.youtube.com/watch?v=1FvGPY1KypU",
       "thumbnail": "https://img.youtube.com/vi/1FvGPY1KypU/mqdefault.jpg",
       "date": "2026-09-09"
+    },
+    {
+      "id": "LiGHiJ4yiKY",
+      "title": "[별별기자단 휴먼프레임] 혼자 사는 사회 — 어느 빈 방의 기록 | 고독사는 개인의 비극이 아닙니다",
+      "url": "https://www.youtube.com/watch?v=LiGHiJ4yiKY",
+      "thumbnail": "https://img.youtube.com/vi/LiGHiJ4yiKY/mqdefault.jpg",
+      "date": "2026-09-10"
     },
     {
       "id": "D8tGPaNBU5Q",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=_DUob-61I3M",
       "thumbnail": "https://img.youtube.com/vi/_DUob-61I3M/mqdefault.jpg",
       "date": "2026-08-05"
-    },
-    {
-      "id": "H9_FWS_g7U8",
-      "title": "[별별기자단 차준호] 영화보다 재미있는 인권 이야기, 「불편해도 괜찮아」책리뷰",
-      "url": "https://www.youtube.com/watch?v=H9_FWS_g7U8",
-      "thumbnail": "https://img.youtube.com/vi/H9_FWS_g7U8/mqdefault.jpg",
-      "date": "2026-08-04"
     }
   ]
 }
