@@ -1,14 +1,21 @@
 {
-  "updated": "2026-09-10 17:59 UTC",
+  "updated": "2026-09-11 18:05 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "jmu42WUgjp8",
+      "title": "국가인권교육원 비전",
+      "url": "https://www.youtube.com/watch?v=jmu42WUgjp8",
+      "thumbnail": "https://img.youtube.com/vi/jmu42WUgjp8/mqdefault.jpg",
+      "date": "2026-09-11"
+    },
     {
       "id": "1FvGPY1KypU",
       "title": "혐오표현 판단기준 관련 3차 토론회",
       "url": "https://www.youtube.com/watch?v=1FvGPY1KypU",
       "thumbnail": "https://img.youtube.com/vi/1FvGPY1KypU/mqdefault.jpg",
-      "date": "2026-09-09"
+      "date": "2026-09-10"
     },
     {
       "id": "LiGHiJ4yiKY",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=qCbKG1MinC4",
       "thumbnail": "https://img.youtube.com/vi/qCbKG1MinC4/mqdefault.jpg",
       "date": "2026-08-18"
-    },
-    {
-      "id": "_DUob-61I3M",
-      "title": "[별별기자단 휴먼프레임] 변호사들과 함께하는 넷플릭스 [참교육] 리뷰",
-      "url": "https://www.youtube.com/watch?v=_DUob-61I3M",
-      "thumbnail": "https://img.youtube.com/vi/_DUob-61I3M/mqdefault.jpg",
-      "date": "2026-08-05"
     }
   ]
 }
