@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-16 18:36 UTC",
+  "updated": "2026-09-17 18:43 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "tmsA5XR2T_U",
+      "title": "인물소개 – 말랄라 유사프자이",
+      "url": "https://www.youtube.com/watch?v=tmsA5XR2T_U",
+      "thumbnail": "https://img.youtube.com/vi/tmsA5XR2T_U/mqdefault.jpg",
+      "date": "2026-09-17"
+    },
     {
       "id": "QWHLXmbAM-E",
       "title": "[별별기자단 차준호] 불타는 지구에서 다르게 살 용기: 새로운 전환의 서사를 위하여 리뷰영상",
@@ -78,13 +85,6 @@
       "title": "(아동(돌봄)인권교육 북토크) 아동,정책 그리고 아동권리협약 1",
       "url": "https://www.youtube.com/watch?v=_bjdZx-n9BE",
       "thumbnail": "https://img.youtube.com/vi/_bjdZx-n9BE/mqdefault.jpg",
-      "date": "2026-08-18"
-    },
-    {
-      "id": "Lq41l2tldUs",
-      "title": "(아동(돌봄)인권교육 북토크)  아동정책영향평가",
-      "url": "https://www.youtube.com/watch?v=Lq41l2tldUs",
-      "thumbnail": "https://img.youtube.com/vi/Lq41l2tldUs/mqdefault.jpg",
       "date": "2026-08-18"
     }
   ]
