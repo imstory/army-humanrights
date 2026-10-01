@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-30 19:45 UTC",
+  "updated": "2026-10-01 20:02 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "7GpoIZDUBtU",
+      "title": "[별별기자단 차준호] 10월 2일 노인의 날",
+      "url": "https://www.youtube.com/watch?v=7GpoIZDUBtU",
+      "thumbnail": "https://img.youtube.com/vi/7GpoIZDUBtU/mqdefault.jpg",
+      "date": "2026-10-01"
+    },
     {
       "id": "reN5kKk_r5E",
       "title": "[현장스케치] 2026 인권옹호자회의 현장 속으로! 🕊️",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=LiGHiJ4yiKY",
       "thumbnail": "https://img.youtube.com/vi/LiGHiJ4yiKY/mqdefault.jpg",
       "date": "2026-09-10"
-    },
-    {
-      "id": "D8tGPaNBU5Q",
-      "title": "[별별기자단 심재덕] 장애인성폭력, 인화학교, 색동원, 농아인협회 시설 구조적 문제 해결 시급",
-      "url": "https://www.youtube.com/watch?v=D8tGPaNBU5Q",
-      "thumbnail": "https://img.youtube.com/vi/D8tGPaNBU5Q/mqdefault.jpg",
-      "date": "2026-09-07"
     }
   ]
 }
