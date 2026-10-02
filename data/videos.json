@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-01 20:02 UTC",
+  "updated": "2026-10-02 19:42 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "2ni0Fs7cRNY",
+      "title": "[별별기자단 이종진] 대구 나드리콜, 교통약자의 이동권을 지키는 현장",
+      "url": "https://www.youtube.com/watch?v=2ni0Fs7cRNY",
+      "thumbnail": "https://img.youtube.com/vi/2ni0Fs7cRNY/mqdefault.jpg",
+      "date": "2026-10-02"
+    },
     {
       "id": "7GpoIZDUBtU",
       "title": "[별별기자단 차준호] 10월 2일 노인의 날",
@@ -78,13 +85,6 @@
       "title": "혐오표현 판단기준 관련 3차 토론회",
       "url": "https://www.youtube.com/watch?v=1FvGPY1KypU",
       "thumbnail": "https://img.youtube.com/vi/1FvGPY1KypU/mqdefault.jpg",
-      "date": "2026-09-10"
-    },
-    {
-      "id": "LiGHiJ4yiKY",
-      "title": "[별별기자단 휴먼프레임] 혼자 사는 사회 — 어느 빈 방의 기록 | 고독사는 개인의 비극이 아닙니다",
-      "url": "https://www.youtube.com/watch?v=LiGHiJ4yiKY",
-      "thumbnail": "https://img.youtube.com/vi/LiGHiJ4yiKY/mqdefault.jpg",
       "date": "2026-09-10"
     }
   ]
