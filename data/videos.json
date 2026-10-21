@@ -1,8 +1,22 @@
 {
-  "updated": "2026-10-20 18:51 UTC",
+  "updated": "2026-10-21 19:03 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "Qqp4f2YPn3g",
+      "title": "2026 International Human Rights Conference",
+      "url": "https://www.youtube.com/watch?v=Qqp4f2YPn3g",
+      "thumbnail": "https://img.youtube.com/vi/Qqp4f2YPn3g/mqdefault.jpg",
+      "date": "2026-10-21"
+    },
+    {
+      "id": "lSuYBXp_TmM",
+      "title": "2026 국제 인권 콘퍼런스",
+      "url": "https://www.youtube.com/watch?v=lSuYBXp_TmM",
+      "thumbnail": "https://img.youtube.com/vi/lSuYBXp_TmM/mqdefault.jpg",
+      "date": "2026-10-21"
+    },
     {
       "id": "jFRRNwAnpOI",
       "title": "[별별기자단 결이솔] 왜 동물은 아직도 '물건'일까요? | 세계 동물권 선언의 날",
@@ -11,18 +25,11 @@
       "date": "2026-10-20"
     },
     {
-      "id": "Qqp4f2YPn3g",
-      "title": "2026 International Human Rights Conference",
-      "url": "https://www.youtube.com/watch?v=Qqp4f2YPn3g",
-      "thumbnail": "https://img.youtube.com/vi/Qqp4f2YPn3g/mqdefault.jpg",
-      "date": "2026-10-19"
-    },
-    {
-      "id": "lSuYBXp_TmM",
-      "title": "2026 국제 인권 콘퍼런스",
-      "url": "https://www.youtube.com/watch?v=lSuYBXp_TmM",
-      "thumbnail": "https://img.youtube.com/vi/lSuYBXp_TmM/mqdefault.jpg",
-      "date": "2026-10-19"
+      "id": "DV8L9KRVQ6A",
+      "title": "인물소개 – 마더 테레사",
+      "url": "https://www.youtube.com/watch?v=DV8L9KRVQ6A",
+      "thumbnail": "https://img.youtube.com/vi/DV8L9KRVQ6A/mqdefault.jpg",
+      "date": "2026-10-16"
     },
     {
       "id": "dXR-JkLINtM",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=CSGhLuIIZ0w",
       "thumbnail": "https://img.youtube.com/vi/CSGhLuIIZ0w/mqdefault.jpg",
       "date": "2026-09-29"
-    },
-    {
-      "id": "8RKxe5y5DTE",
-      "title": "[별별기자단 결이솔] 9월 23일, 국제 수어의 날",
-      "url": "https://www.youtube.com/watch?v=8RKxe5y5DTE",
-      "thumbnail": "https://img.youtube.com/vi/8RKxe5y5DTE/mqdefault.jpg",
-      "date": "2026-09-22"
     }
   ]
 }
