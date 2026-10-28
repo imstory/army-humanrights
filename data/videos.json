@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-27 19:46 UTC",
+  "updated": "2026-10-28 20:01 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "0rzTZZTRqQE",
+      "title": "[별별기자단 휴먼프레임] 권리는, 누가 지키는 걸까요? | 권리를 지키는 시간 — 제20회 대구자원봉사박람회",
+      "url": "https://www.youtube.com/watch?v=0rzTZZTRqQE",
+      "thumbnail": "https://img.youtube.com/vi/0rzTZZTRqQE/mqdefault.jpg",
+      "date": "2026-10-28"
+    },
     {
       "id": "gg6m4tCWMoc",
       "title": "[별별기자단 심재덕] EBS 시각장애인 학습자료 준비 미흡 사건 정리",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=Fdw37qWj7eQ",
       "thumbnail": "https://img.youtube.com/vi/Fdw37qWj7eQ/mqdefault.jpg",
       "date": "2026-09-30"
-    },
-    {
-      "id": "YYwBcoe5vRk",
-      "title": "[군인권, 보호관이 챙겼군] 이 조사 이후, 군 훈련 기준이 바뀌었다",
-      "url": "https://www.youtube.com/watch?v=YYwBcoe5vRk",
-      "thumbnail": "https://img.youtube.com/vi/YYwBcoe5vRk/mqdefault.jpg",
-      "date": "2026-09-29"
     }
   ]
 }
