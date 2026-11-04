@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-03 20:43 UTC",
+  "updated": "2026-11-04 21:00 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "U--tAxLeX80",
+      "title": "🏆 2026 인권공모전 포스터 수상작 | 우리의 일상을 바꾸는 따뜻한 시선",
+      "url": "https://www.youtube.com/watch?v=U--tAxLeX80",
+      "thumbnail": "https://img.youtube.com/vi/U--tAxLeX80/mqdefault.jpg",
+      "date": "2026-11-04"
+    },
     {
       "id": "5pJOtjXgOI0",
       "title": "[별별기자단 차준호] 돌보는 사람도 존중받아야 한다",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=7GpoIZDUBtU",
       "thumbnail": "https://img.youtube.com/vi/7GpoIZDUBtU/mqdefault.jpg",
       "date": "2026-10-01"
-    },
-    {
-      "id": "reN5kKk_r5E",
-      "title": "[현장스케치] 2026 인권옹호자회의 현장 속으로! 🕊️",
-      "url": "https://www.youtube.com/watch?v=reN5kKk_r5E",
-      "thumbnail": "https://img.youtube.com/vi/reN5kKk_r5E/mqdefault.jpg",
-      "date": "2026-09-30"
     }
   ]
 }
