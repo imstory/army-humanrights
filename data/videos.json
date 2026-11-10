@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-08 19:16 UTC",
+  "updated": "2026-11-10 21:08 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "jZFievUwFVc",
+      "title": "[군인권보호관 업무 일지] 한국도 할 말 있어서 왔어요! 잠깐, 여기 어디?",
+      "url": "https://www.youtube.com/watch?v=jZFievUwFVc",
+      "thumbnail": "https://img.youtube.com/vi/jZFievUwFVc/mqdefault.jpg",
+      "date": "2026-11-10"
+    },
     {
       "id": "U--tAxLeX80",
       "title": "🏆 2026 인권공모전 포스터 수상작 | 우리의 일상을 바꾸는 따뜻한 시선",
@@ -79,13 +86,6 @@
       "url": "https://www.youtube.com/watch?v=2ni0Fs7cRNY",
       "thumbnail": "https://img.youtube.com/vi/2ni0Fs7cRNY/mqdefault.jpg",
       "date": "2026-10-02"
-    },
-    {
-      "id": "7GpoIZDUBtU",
-      "title": "[별별기자단 차준호] 10월 2일 노인의 날",
-      "url": "https://www.youtube.com/watch?v=7GpoIZDUBtU",
-      "thumbnail": "https://img.youtube.com/vi/7GpoIZDUBtU/mqdefault.jpg",
-      "date": "2026-10-01"
     }
   ]
 }
