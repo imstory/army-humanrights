@@ -1,8 +1,22 @@
 {
-  "updated": "2026-11-16 23:36 UTC",
+  "updated": "2026-11-17 22:44 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "xR2VUaJ5DxY",
+      "title": "[Vlog] 국가인권위원회 제네바 출장기 쇼츠 2편",
+      "url": "https://www.youtube.com/watch?v=xR2VUaJ5DxY",
+      "thumbnail": "https://img.youtube.com/vi/xR2VUaJ5DxY/mqdefault.jpg",
+      "date": "2026-11-17"
+    },
+    {
+      "id": "JwW79OYow60",
+      "title": "[Vlog] 국가인권위원회 제네바 출장기 쇼츠 1편",
+      "url": "https://www.youtube.com/watch?v=JwW79OYow60",
+      "thumbnail": "https://img.youtube.com/vi/JwW79OYow60/mqdefault.jpg",
+      "date": "2026-11-17"
+    },
     {
       "id": "vpF4EhZhTJ4",
       "title": "[결정례] 인권사건파일 시즌2: 눈치보지 않고 아이를 키울 권리 | 육아휴직을 쓰면 동료들이 싫어한다?",
@@ -72,20 +86,6 @@
       "url": "https://www.youtube.com/watch?v=WWKdjkxbXgg",
       "thumbnail": "https://img.youtube.com/vi/WWKdjkxbXgg/mqdefault.jpg",
       "date": "2026-11-13"
-    },
-    {
-      "id": "EsJOFncrhJY",
-      "title": "[결정례] 인권사건파일 시즌2: 민주주의의 꽃 선거? 우리에겐 그림의 꽃!",
-      "url": "https://www.youtube.com/watch?v=EsJOFncrhJY",
-      "thumbnail": "https://img.youtube.com/vi/EsJOFncrhJY/mqdefault.jpg",
-      "date": "2026-11-13"
-    },
-    {
-      "id": "526vFDUA6l0",
-      "title": "[결정례] 인권사건파일 시즌2: 2035년 달라질 우리를 위해 | 온실가스 감축, 왜 53%가 문제일까?",
-      "url": "https://www.youtube.com/watch?v=526vFDUA6l0",
-      "thumbnail": "https://img.youtube.com/vi/526vFDUA6l0/mqdefault.jpg",
-      "date": "2026-11-12"
     }
   ]
 }
