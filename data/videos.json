@@ -1,13 +1,27 @@
 {
-  "updated": "2026-11-19 22:31 UTC",
+  "updated": "2026-11-20 22:04 UTC",
   "channel": "https://www.youtube.com/@NHRCkr",
   "count": 12,
   "items": [
+    {
+      "id": "ShqkoeegGxA",
+      "title": "👤 인물소개 – 야누슈 코르착",
+      "url": "https://www.youtube.com/watch?v=ShqkoeegGxA",
+      "thumbnail": "https://img.youtube.com/vi/ShqkoeegGxA/mqdefault.jpg",
+      "date": "2026-11-20"
+    },
     {
       "id": "Qtf8K0uxFTU",
       "title": "2026 인권공모전 포스터 수상작",
       "url": "https://www.youtube.com/watch?v=Qtf8K0uxFTU",
       "thumbnail": "https://img.youtube.com/vi/Qtf8K0uxFTU/mqdefault.jpg",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "KDn5wW9e00c",
+      "title": "[현장스케치] 2026 인권옹호자회의 현장 속으로!",
+      "url": "https://www.youtube.com/watch?v=KDn5wW9e00c",
+      "thumbnail": "https://img.youtube.com/vi/KDn5wW9e00c/mqdefault.jpg",
       "date": "2026-11-19"
     },
     {
@@ -72,20 +86,6 @@
       "url": "https://www.youtube.com/watch?v=JeTGSBHh6Lw",
       "thumbnail": "https://img.youtube.com/vi/JeTGSBHh6Lw/mqdefault.jpg",
       "date": "2026-11-14"
-    },
-    {
-      "id": "WJ0Cmt2F_Gc",
-      "title": "[결정례] 인권사건파일 시즌2: 눈치보지 않고 아이를 키울 권리",
-      "url": "https://www.youtube.com/watch?v=WJ0Cmt2F_Gc",
-      "thumbnail": "https://img.youtube.com/vi/WJ0Cmt2F_Gc/mqdefault.jpg",
-      "date": "2026-11-14"
-    },
-    {
-      "id": "3HwkbCCjgD4",
-      "title": "2026 국제 인권 콘퍼런스 - 한국통역",
-      "url": "https://www.youtube.com/watch?v=3HwkbCCjgD4",
-      "thumbnail": "https://img.youtube.com/vi/3HwkbCCjgD4/mqdefault.jpg",
-      "date": "2026-11-13"
     }
   ]
 }
